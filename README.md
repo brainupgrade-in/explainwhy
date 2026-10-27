@@ -2,6 +2,8 @@
 
 **Open Agent Hackathon 2026 · Track 2: The Agent That Can Explain Why · team gheware (solo)**
 
+**Demo video (2:30):** https://youtu.be/wXIJE2PfYvo · **Slides:** [deck/ExplainWhy-deck.pdf](deck/ExplainWhy-deck.pdf)
+
 Ask a bounded "why" question about data spread across several sources. ExplainWhy plans competing
 hypotheses, tests each one with SQL against **Zetaris**, has a critic check every claim against the rows the
 queries returned, sends unsupported claims back for more evidence, and answers with **only the claims that
