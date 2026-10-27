@@ -1,0 +1,90 @@
+{
+  "question": "Why does Apple's revenue history under the us-gaap Revenues concept stop at fiscal year 2018?",
+  "run_id": "20261027-195730-22ac",
+  "backend": "local-sqlite (SAMPLE_MODE mirror of the Zetaris views)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "summary": "Apple reported no data for the traditional 'Revenues' concept after fiscal year 2018, while it began filing figures for the 'RevenueFromContractWithCustomerExcludingAssessedTax' concept starting in FY\u202f2019. This change is likely because Apple adopted ASC\u202f606, which required companies to recognize revenue using the new contract\u2011based concept rather than the older generic revenues line item.",
+  "verified_claims": [
+    {
+      "text": "Apple has 0 rows for the 'Revenues' concept after fiscal year 2018.",
+      "evidence": [
+        "E-bdbb98"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "Apple has rows for the 'RevenueFromContractWithCustomerExcludingAssessedTax' concept for fiscal years 2019, 2020, 2021, 2022, and 2023.",
+      "evidence": [
+        "E-53fe1d"
+      ],
+      "verdict": "supported"
+    }
+  ],
+  "unverified_claims": [],
+  "inferences": [
+    {
+      "text": "The switch aligns with ASC\u202f606 adoption, which required entities to use the new revenue recognition concept.",
+      "basis": "Claims show cessation of old concept and start of new concept after 2018."
+    }
+  ],
+  "hypotheses": {
+    "H-ec70e6": {
+      "text": "After fiscal year 2018 Apple stopped filing under the legacy us\u2011gaap 'Revenues' concept and began using the newer 'RevenueFromContractWithCustomerExcludingAssessedTax' concept due to ASC\u202f606 adoption, so the old concept simply has no rows after 2018.",
+      "status": "supported",
+      "evidence": [
+        "E-53fe1d",
+        "E-bdbb98"
+      ],
+      "why": "Old concept disappears exactly when new concept appears, consistent with a standard-driven change."
+    },
+    "H-2811fd": {
+      "text": "The EDGAR ingestion pipeline experienced a coverage gap for Apple\u2019s filings after a certain date (e.g., due to a temporary API throttling or CIK\u2011match failure), so no facts\u2014including those under 'Revenues'\u2014were loaded for periods beyond FY\u202f2018.",
+      "status": "refuted",
+      "evidence": [
+        "E-53fe1d"
+      ],
+      "why": "New concept rows exist after 2018, proving data were loaded for that period."
+    },
+    "H-dee925": {
+      "text": "Duplicate filing handling logic inadvertently removed older 'Revenues' facts when a later filing (e.g., an amended 10\u2011K/A) with the same period but a later filed_date was ingested, leaving only the newest version which may have omitted the legacy concept.",
+      "status": "refuted",
+      "evidence": [
+        "E-53fe1d",
+        "E-bdbb98"
+      ],
+      "why": "If duplicate removal had occurred, some 'Revenues' rows would remain; instead there are none after 2018."
+    },
+    "H-cb2288": {
+      "text": "Apple reclassified a portion of its revenue (e.g., services, licensing) into separate line items that are no longer captured under the aggregate 'Revenues' concept, causing the reported total under that concept to appear flat or missing after 2018 while overall revenue continues to rise.",
+      "status": "refuted",
+      "evidence": [
+        "E-bdbb98"
+      ],
+      "why": "A partial reclassification would still leave some 'Revenues' values; the concept shows zero rows after 2018."
+    }
+  },
+  "evidence": {
+    "E-bdbb98": {
+      "sql": "SELECT MAX(fiscal_year) AS max_fy FROM edgar.revenue_facts WHERE cik = 320193 AND concept = 'Revenues'\nLIMIT 200",
+      "purpose": "Find the latest fiscal year for which Apple has a fact under the us-gaap Revenues concept.",
+      "row_count": 1
+    },
+    "E-53fe1d": {
+      "sql": "select distinct fiscal_year from edgar.revenue_facts where cik=320193 and concept='RevenueFromContractWithCustomerExcludingAssessedTax' and fiscal_year>2018 order by fiscal_year limit 5",
+      "purpose": "Test if Apple uses the newer revenue concept after FY2018, supporting H-ec70e6.",
+      "row_count": 5
+    }
+  },
+  "critic_rounds": 1,
+  "memories_written": 2,
+  "markovian": {
+    "steps": 3,
+    "prompt_tokens_used": 1375,
+    "full_transcript_estimate": 2382,
+    "tokens_saved": 1007,
+    "efficiency_percent": 42.3,
+    "status": "completed"
+  },
+  "llm_calls": 7,
+  "elapsed_s": 59.6
+}

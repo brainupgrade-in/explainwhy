@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT fiscal_year, concept, COUNT(*) AS fact_count FROM edgar.revenue_facts WHERE cik=1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY fiscal_year, concept ORDER BY fiscal_year, concept\",\n  \"purpose\": \"See how many facts Tesla has for each revenue concept per fiscal year to understand adoption pattern.\",\n  \"tests\": [\"H-94e4c0\", \"H-8ea727\", \"H-15e299\", \"H-cea464\", \"H-f5a54e\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\"COMPLETED\": \"\", \"REMAINING\": \"Determine Tesla's revenue concept usage across years.\", \"DECISIONS\": \"\", \"CONTEXT\": \"\"},\n  \"answer\": {}\n}"
+}

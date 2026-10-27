@@ -1,0 +1,23 @@
+19:57:30 [harness] backend: local mirror (Zetaris not requested); model: nvidia/nemotron-3-super-120b-a12b
+19:57:30 [memory] H-MEM recalled 0 prior finding(s)
+19:57:42 [planner] H-ec70e6: After fiscal year 2018 Apple stopped filing under the legacy us‑gaap 'Revenues' concept and began using the newer 'RevenueFromContractWithCustomerExcludingAssessedTax' concept due to ASC 606 adoption, so the old concept simply has no rows after 2018.
+19:57:42 [planner] H-2811fd: The EDGAR ingestion pipeline experienced a coverage gap for Apple’s filings after a certain date (e.g., due to a temporary API throttling or CIK‑match failure), so no facts—including those under 'Revenues'—were loaded for periods beyond FY 2018.
+19:57:42 [planner] H-dee925: Duplicate filing handling logic inadvertently removed older 'Revenues' facts when a later filing (e.g., an amended 10‑K/A) with the same period but a later filed_date was ingested, leaving only the newest version which may have omitted the legacy concept.
+19:57:42 [planner] H-cb2288: Apple reclassified a portion of its revenue (e.g., services, licensing) into separate line items that are no longer captured under the aggregate 'Revenues' concept, causing the reported total under that concept to appear flat or missing after 2018 while overall revenue continues to rise.
+19:57:44 [sql] E-bdbb98 Find the latest fiscal year for which Apple has a fact under the us-gaap Revenues concept.
+    SELECT MAX(fiscal_year) AS max_fy FROM edgar.revenue_facts WHERE cik = 320193 AND concept = 'Revenues' LIMIT 200
+19:57:44 [sql] E-bdbb98 -> 1 row(s)
+19:57:44 [markovian] step 1 [STATE_CHECKPOINT] carryover: Determine if Apple's Revenues concept stops after FY 2018 and why.
+19:57:48 [sql] E-53fe1d Test if Apple uses the newer revenue concept after FY2018, supporting H-ec70e6.
+    select distinct fiscal_year from edgar.revenue_facts where cik=320193 and concept='RevenueFromContractWithCustomerExcludingAssessedTax' and fiscal_year>2018 order by fiscal_year limit 5
+19:57:48 [sql] E-53fe1d -> 5 row(s)
+19:57:48 [markovian] step 2 [STATE_CHECKPOINT] carryover: Determine if Apple's Revenues concept stops after FY 2018 and why.
+19:58:24 [investigator] H-ec70e6 -> supported ['E-bdbb98', 'E-53fe1d']
+19:58:24 [investigator] H-2811fd -> refuted ['E-53fe1d']
+19:58:24 [investigator] H-dee925 -> refuted ['E-bdbb98', 'E-53fe1d']
+19:58:24 [investigator] H-cb2288 -> refuted ['E-bdbb98']
+19:58:24 [investigator] [TASK_COMPLETE]
+19:58:28 [critic] claim 0 SUPPORTED (llm): The evidence shows the maximum fiscal year for the 'Revenues' concept is 2018, indicating no rows exist after 2018.
+19:58:28 [critic] claim 1 SUPPORTED (llm): The evidence lists distinct fiscal years 2019, 2020, 2021, 2022, and 2023 for the specified concept, matching the claim exactly.
+19:58:30 [writer] summary written from verified claims
+19:58:30 [agent] done in 59.6s: 2 verified claim(s), 0 unverified; report /home/rajesh/open-agent-2026/runs/20261027-195730-22ac/report.md

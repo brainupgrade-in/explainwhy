@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence shows the maximum fiscal year for the 'Revenues' concept is 2018, indicating no rows exist after 2018.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence lists distinct fiscal years 2019, 2020, 2021, 2022, and 2023 for the specified concept, matching the claim exactly.\"\n    }\n  ]\n}"
+}

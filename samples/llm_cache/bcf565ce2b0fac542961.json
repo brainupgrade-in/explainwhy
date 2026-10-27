@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT sic_code FROM company_dns.sic_codes_table LIMIT 5\",\n  \"purpose\": \"Sample sic_code values in reference table to see its format and range\",\n  \"tests\": [\"H-c948f3\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked IBM's sic_code value and duplicate rows; checked whitespace; confirmed single row, non-null, no whitespace\",\n    \"REMAINING\": \"Verify match with reference table; test zero-padding; test obsolescence\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"IBM sic_code is 3570\"\n  },\n  \"answer\": {}\n}"
+}

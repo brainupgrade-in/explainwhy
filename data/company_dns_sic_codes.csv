@@ -1,0 +1,1006 @@
+sic_code,description,division,division_desc,major_group,major_group_desc,industry_group,industry_group_desc
+0111,Wheat,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,011,Cash Grains
+0112,Rice,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,011,Cash Grains
+0115,Corn,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,011,Cash Grains
+0116,Soybeans,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,011,Cash Grains
+0119,"Cash Grains, Not Elsewhere Classified",A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,011,Cash Grains
+0131,Cotton,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,013,"Field Crops, Except Cash Grains"
+0132,Tobacco,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,013,"Field Crops, Except Cash Grains"
+0133,Sugarcane and Sugar Beets,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,013,"Field Crops, Except Cash Grains"
+0134,Irish Potatoes,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,013,"Field Crops, Except Cash Grains"
+0139,"Field Crops, Except Cash Grains, Not Elsewhere Classified",A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,013,"Field Crops, Except Cash Grains"
+0161,Vegetables and Melons,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,016,Vegetables And Melons
+0171,Berry Crops,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,017,Fruits And Tree Nuts
+0172,Grapes,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,017,Fruits And Tree Nuts
+0173,Tree Nuts,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,017,Fruits And Tree Nuts
+0174,Citrus Fruits,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,017,Fruits And Tree Nuts
+0175,Deciduous Tree Fruits,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,017,Fruits And Tree Nuts
+0179,"Fruits and Tree Nuts, Not Elsewhere Classified",A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,017,Fruits And Tree Nuts
+0181,Ornamental Floriculture and Nursery Products,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,018,Horticultural Specialties
+0182,Food Crops Grown Under Cover,A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,018,Horticultural Specialties
+0191,"General Farms, Primarily Crop",A,"Agriculture, Forestry, And Fishing",01,Agricultural Production Crops,019,"General Farms, Primarily Crop"
+0211,Beef Cattle Feedlots,A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,021,"Livestock, Except Dairy And Poultry"
+0212,"Beef Cattle, Except Feedlots",A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,021,"Livestock, Except Dairy And Poultry"
+0213,Hogs,A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,021,"Livestock, Except Dairy And Poultry"
+0214,Sheep and Goats,A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,021,"Livestock, Except Dairy And Poultry"
+0219,"General Livestock, Except Dairy and Poultry",A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,021,"Livestock, Except Dairy And Poultry"
+0241,Dairy Farms,A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,024,Dairy Farms
+0251,"Broiler, Fryer, and Roaster Chickens",A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,025,Poultry And Eggs
+0252,Chicken Eggs,A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,025,Poultry And Eggs
+0253,Turkeys and Turkey Eggs,A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,025,Poultry And Eggs
+0254,Poultry Hatcheries,A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,025,Poultry And Eggs
+0259,"Poultry and Eggs, Not Elsewhere Classified",A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,025,Poultry And Eggs
+0271,Fur-Bearing Animals and Rabbits,A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,027,Animal Specialties
+0272,Horses and Other Equines,A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,027,Animal Specialties
+0273,Animal Aquaculture,A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,027,Animal Specialties
+0279,"Animal Specialties, Not Elsewhere Classified",A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,027,Animal Specialties
+0291,"General Farms, Primarily Livestock and Animal Specialties",A,"Agriculture, Forestry, And Fishing",02,Agriculture production livestock and animal specialties,029,"General Farms, Primarily Livestock And Animal"
+0711,Soil Preparation Services,A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,071,Soil Preparation Services
+0721,"Crop Planting, Cultivating, and Protecting",A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,072,Crop Services
+0722,"Crop Harvesting, Primarily by Machine",A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,072,Crop Services
+0723,"Crop Preparation Services for Market, Except Cotton Ginning",A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,072,Crop Services
+0724,Cotton Ginning,A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,072,Crop Services
+0741,Veterinary Services for Livestock,A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,074,Veterinary Services
+0742,Veterinary Services for Animal Specialties,A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,074,Veterinary Services
+0751,"Livestock Services, Except Veterinary",A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,075,"Animal Services, Except Veterinary"
+0752,"Animal Specialty Services, Except Veterinary",A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,075,"Animal Services, Except Veterinary"
+0761,Farm Labor Contractors and Crew Leaders,A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,076,Farm Labor And Management Services
+0762,Farm Management Services,A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,076,Farm Labor And Management Services
+0781,Landscape Counseling and Planning,A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,078,Landscape And Horticultural Services
+0782,Lawn and Garden Services,A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,078,Landscape And Horticultural Services
+0783,Ornamental Shrub and Tree Services,A,"Agriculture, Forestry, And Fishing",07,Agricultural Services,078,Landscape And Horticultural Services
+0811,Timber Tracts,A,"Agriculture, Forestry, And Fishing",08,Forestry,081,Timber Tracts
+0831,Forest Nurseries and Gathering of Forest Products,A,"Agriculture, Forestry, And Fishing",08,Forestry,083,Forest Nurseries And Gathering Of Forest
+0851,Forestry Services,A,"Agriculture, Forestry, And Fishing",08,Forestry,085,Forestry Services
+0912,Finfish,A,"Agriculture, Forestry, And Fishing",09,Fishing hunting and trapping,091,Commercial Fishing
+0913,Shellfish,A,"Agriculture, Forestry, And Fishing",09,Fishing hunting and trapping,091,Commercial Fishing
+0919,Miscellaneous Marine Products,A,"Agriculture, Forestry, And Fishing",09,Fishing hunting and trapping,091,Commercial Fishing
+0921,Fish Hatcheries and Preserves,A,"Agriculture, Forestry, And Fishing",09,Fishing hunting and trapping,092,Fish Hatcheries And Preserves
+0971,"Hunting and Trapping, and Game Propagation",A,"Agriculture, Forestry, And Fishing",09,Fishing hunting and trapping,097,"Hunting And Trapping, And Game Propagation"
+1011,Iron Ores,B,Mining,10,Metal Mining,101,Iron Ores
+1021,Copper Ores,B,Mining,10,Metal Mining,102,Copper Ores
+1031,Lead and Zinc Ores,B,Mining,10,Metal Mining,103,Lead And Zinc Ores
+1041,Gold Ores,B,Mining,10,Metal Mining,104,Gold And Silver Ores
+1044,Silver Ores,B,Mining,10,Metal Mining,104,Gold And Silver Ores
+1061,"Ferroalloy Ores, Except Vanadium",B,Mining,10,Metal Mining,106,"Ferroalloy Ores, Except Vanadium"
+1081,Metal Mining Services,B,Mining,10,Metal Mining,108,Metal Mining Services
+1094,Uranium-Radium-Vanadium Ores,B,Mining,10,Metal Mining,109,Miscellaneous Metal Ores
+1099,"Miscellaneous Metal Ores, Not Elsewhere Classified",B,Mining,10,Metal Mining,109,Miscellaneous Metal Ores
+1221,Bituminous Coal and Lignite Surface Mining,B,Mining,12,Coal Mining,122,Bituminous Coal And Lignite Mining
+1222,Bituminous Coal Underground Mining,B,Mining,12,Coal Mining,122,Bituminous Coal And Lignite Mining
+1231,Anthracite Mining,B,Mining,12,Coal Mining,123,Anthracite Mining
+1241,Coal Mining Services,B,Mining,12,Coal Mining,124,Coal Mining Services
+1311,Crude Petroleum and Natural Gas,B,Mining,13,Oil And Gas Extraction,131,Crude Petroleum And Natural Gas
+1321,Natural Gas Liquids,B,Mining,13,Oil And Gas Extraction,132,Natural Gas Liquids
+1381,Drilling Oil and Gas Wells,B,Mining,13,Oil And Gas Extraction,138,Oil And Gas Field Services
+1382,Oil and Gas Field Exploration Services,B,Mining,13,Oil And Gas Extraction,138,Oil And Gas Field Services
+1389,"Oil and Gas Field Services, Not Elsewhere Classified",B,Mining,13,Oil And Gas Extraction,138,Oil And Gas Field Services
+1411,Dimension Stone,B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",141,Dimension Stone
+1422,Crushed and Broken Limestone,B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",142,"Crushed And Broken Stone, Including Riprap"
+1423,Crushed and Broken Granite,B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",142,"Crushed And Broken Stone, Including Riprap"
+1429,"Crushed and Broken Stone, Not Elsewhere Classified",B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",142,"Crushed And Broken Stone, Including Riprap"
+1442,Construction Sand and Gravel,B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",144,Sand And Gravel
+1446,Industrial Sand,B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",144,Sand And Gravel
+1455,Kaolin and Ball Clay,B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",145,"Clay, Ceramic, And Refractory Minerals"
+1459,"Clay, Ceramic, and Refractory Minerals, Not Elsewhere Classified",B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",145,"Clay, Ceramic, And Refractory Minerals"
+1474,"Potash, Soda, and Borate Minerals",B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",147,Chemical And Fertilizer Mineral Mining
+1475,Phosphate Rock,B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",147,Chemical And Fertilizer Mineral Mining
+1479,"Chemical and Fertilizer Mineral Mining, Not Elsewhere Classified",B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",147,Chemical And Fertilizer Mineral Mining
+1481,"Nonmetallic Minerals Services, Except Fuels",B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",148,"Nonmetallic Minerals Services, Except Fuels"
+1499,"Miscellaneous Nonmetallic Minerals, Except Fuels",B,Mining,14,"Mining And Quarrying Of Nonmetallic Minerals, Except Fuels",149,"Miscellaneous Nonmetallic Minerals, Except"
+1521,General Contractors-Single-Family Houses,C,Construction,15,Building Construction General Contractors And Operative Builders,152,General Building Contractors-residential
+1522,"General Contractors-Residential Buildings, Other Than Single-Family",C,Construction,15,Building Construction General Contractors And Operative Builders,152,General Building Contractors-residential
+1531,Operative Builders,C,Construction,15,Building Construction General Contractors And Operative Builders,153,Operative Builders
+1541,General Contractors-Industrial Buildings and Warehouses,C,Construction,15,Building Construction General Contractors And Operative Builders,154,General Building Contractors-nonresidential
+1542,"General Contractors-Nonresidential Buildings, Other than Industrial Buildings and Warehouses",C,Construction,15,Building Construction General Contractors And Operative Builders,154,General Building Contractors-nonresidential
+1611,"Highway and Street Construction, Except Elevated Highways",C,Construction,16,Heavy Construction Other Than Building Construction Contractors,161,"Highway And Street Construction, Except"
+1622,"Bridge, Tunnel, and Elevated Highway Construction",C,Construction,16,Heavy Construction Other Than Building Construction Contractors,162,"Heavy Construction, Except Highway And Street"
+1623,"Water, Sewer, Pipeline, and Communications and Power Line Construction",C,Construction,16,Heavy Construction Other Than Building Construction Contractors,162,"Heavy Construction, Except Highway And Street"
+1629,"Heavy Construction, Not Elsewhere Classified",C,Construction,16,Heavy Construction Other Than Building Construction Contractors,162,"Heavy Construction, Except Highway And Street"
+1711,"Plumbing, Heating and Air-Conditioning",C,Construction,17,Construction Special Trade Contractors,171,"Plumbing, Heating And Air-conditioning"
+1721,Painting and Paper Hanging,C,Construction,17,Construction Special Trade Contractors,172,Painting And Paper Hanging
+1731,Electrical Work,C,Construction,17,Construction Special Trade Contractors,173,Electrical Work
+1741,"Masonry, Stone Setting, and Other Stone Work",C,Construction,17,Construction Special Trade Contractors,174,"Masonry, Stonework, Tile Setting, And Plastering"
+1742,"Plastering, Drywall, Acoustical, and Insulation Work",C,Construction,17,Construction Special Trade Contractors,174,"Masonry, Stonework, Tile Setting, And Plastering"
+1743,"Terrazzo, Tile, Marble, and Mosaic Work",C,Construction,17,Construction Special Trade Contractors,174,"Masonry, Stonework, Tile Setting, And Plastering"
+1751,Carpentry Work,C,Construction,17,Construction Special Trade Contractors,175,Carpentry And Floor Work
+1752,"Floor Laying and Other Floor Work, Not Elsewhere Classified",C,Construction,17,Construction Special Trade Contractors,175,Carpentry And Floor Work
+1761,"Roofing, Siding, and Sheet Metal Work",C,Construction,17,Construction Special Trade Contractors,176,"Roofing, Siding, And Sheet Metal Work"
+1771,Concrete Work,C,Construction,17,Construction Special Trade Contractors,177,Concrete Work
+1781,Water Well Drilling,C,Construction,17,Construction Special Trade Contractors,178,Water Well Drilling
+1791,Structural Steel Erection,C,Construction,17,Construction Special Trade Contractors,179,Miscellaneous Special Trade Contractors
+1793,Glass and Glazing Work,C,Construction,17,Construction Special Trade Contractors,179,Miscellaneous Special Trade Contractors
+1794,Excavation Work,C,Construction,17,Construction Special Trade Contractors,179,Miscellaneous Special Trade Contractors
+1795,Wrecking and Demolition Work,C,Construction,17,Construction Special Trade Contractors,179,Miscellaneous Special Trade Contractors
+1796,"Installation or Erection of Building Equipment, Not Elsewhere",C,Construction,17,Construction Special Trade Contractors,179,Miscellaneous Special Trade Contractors
+1799,"Special Trade Contractors, Not Elsewhere Classified",C,Construction,17,Construction Special Trade Contractors,179,Miscellaneous Special Trade Contractors
+2011,Meat Packing Plants,D,Manufacturing,20,Food And Kindred Products,201,Meat Products
+2013,Sausages and Other Prepared Meat Products,D,Manufacturing,20,Food And Kindred Products,201,Meat Products
+2015,Poultry Slaughtering and Processing,D,Manufacturing,20,Food And Kindred Products,201,Meat Products
+2021,Creamery Butter,D,Manufacturing,20,Food And Kindred Products,202,Dairy Products
+2022,"Natural, Processed, and Imitation Cheese",D,Manufacturing,20,Food And Kindred Products,202,Dairy Products
+2023,"Dry, Condensed, and Evaporated Dairy Products",D,Manufacturing,20,Food And Kindred Products,202,Dairy Products
+2024,Ice Cream and Frozen Desserts,D,Manufacturing,20,Food And Kindred Products,202,Dairy Products
+2026,Fluid Milk,D,Manufacturing,20,Food And Kindred Products,202,Dairy Products
+2032,Canned Specialties,D,Manufacturing,20,Food And Kindred Products,203,"Canned, Frozen, And Preserved Fruits, Vegetables, and Food Specialties"
+2033,"Canned Fruits, Vegetables, Preserves, Jams, and Jellies",D,Manufacturing,20,Food And Kindred Products,203,"Canned, Frozen, And Preserved Fruits, Vegetables, and Food Specialties"
+2034,"Dried and Dehydrated Fruits, Vegetables, and Soup Mixes",D,Manufacturing,20,Food And Kindred Products,203,"Canned, Frozen, And Preserved Fruits, Vegetables, and Food Specialties"
+2035,"Pickled Fruits and Vegetables, Vegetable Sauces and Seasonings, and Salad Dressings",D,Manufacturing,20,Food And Kindred Products,203,"Canned, Frozen, And Preserved Fruits, Vegetables, and Food Specialties"
+2037,"Frozen Fruits, Fruit Juices, and Vegetables",D,Manufacturing,20,Food And Kindred Products,203,"Canned, Frozen, And Preserved Fruits, Vegetables, and Food Specialties"
+2038,"Frozen Specialties, Not Elsewhere Classified",D,Manufacturing,20,Food And Kindred Products,203,"Canned, Frozen, And Preserved Fruits, Vegetables, and Food Specialties"
+2041,Flour and Other Grain Mill Products,D,Manufacturing,20,Food And Kindred Products,204,Grain Mill Products
+2043,Cereal Breakfast Foods,D,Manufacturing,20,Food And Kindred Products,204,Grain Mill Products
+2044,Rice Milling,D,Manufacturing,20,Food And Kindred Products,204,Grain Mill Products
+2045,Prepared Flour Mixes and Doughs,D,Manufacturing,20,Food And Kindred Products,204,Grain Mill Products
+2046,Wet Corn Milling,D,Manufacturing,20,Food And Kindred Products,204,Grain Mill Products
+2047,Dog and Cat Food,D,Manufacturing,20,Food And Kindred Products,204,Grain Mill Products
+2048,"Prepared Feed and Feed Ingredients for Animals and Fowls, Except Dogs and Cats",D,Manufacturing,20,Food And Kindred Products,204,Grain Mill Products
+2051,"Bread and Other Bakery Products, Except Cookies and Crackers",D,Manufacturing,20,Food And Kindred Products,205,Bakery Products
+2052,Cookies and Crackers,D,Manufacturing,20,Food And Kindred Products,205,Bakery Products
+2053,"Frozen Bakery Products, Except Bread",D,Manufacturing,20,Food And Kindred Products,205,Bakery Products
+2061,"Cane Sugar, Except Refining",D,Manufacturing,20,Food And Kindred Products,206,Sugar And Confectionery Products
+2062,Cane Sugar Refining,D,Manufacturing,20,Food And Kindred Products,206,Sugar And Confectionery Products
+2063,Beet Sugar,D,Manufacturing,20,Food And Kindred Products,206,Sugar And Confectionery Products
+2064,Candy and Other Confectionery Products,D,Manufacturing,20,Food And Kindred Products,206,Sugar And Confectionery Products
+2066,Chocolate and Cocoa Products,D,Manufacturing,20,Food And Kindred Products,206,Sugar And Confectionery Products
+2067,Chewing Gum,D,Manufacturing,20,Food And Kindred Products,206,Sugar And Confectionery Products
+2068,Salted and Roasted Nuts and Seeds,D,Manufacturing,20,Food And Kindred Products,206,Sugar And Confectionery Products
+2074,Cottonseed Oil Mills,D,Manufacturing,20,Food And Kindred Products,207,Fats And Oils
+2075,Soybean Oil Mills,D,Manufacturing,20,Food And Kindred Products,207,Fats And Oils
+2076,"Vegetable Oil Mills, Except Corn, Cottonseed, and Soybean",D,Manufacturing,20,Food And Kindred Products,207,Fats And Oils
+2077,Animal and Marine Fats and Oils,D,Manufacturing,20,Food And Kindred Products,207,Fats And Oils
+2079,"Shortening, Table Oils, Margarine, and Other Edible Fats and Oils, Not Elsewhere Classified",D,Manufacturing,20,Food And Kindred Products,207,Fats And Oils
+2082,Malt Beverages,D,Manufacturing,20,Food And Kindred Products,208,Beverages
+2083,Malt,D,Manufacturing,20,Food And Kindred Products,208,Beverages
+2084,"Wines, Brandy, and Brandy Spirits",D,Manufacturing,20,Food And Kindred Products,208,Beverages
+2085,Distilled and Blended Liquors,D,Manufacturing,20,Food And Kindred Products,208,Beverages
+2086,Bottled and Canned Soft Drinks and Carbonated Waters,D,Manufacturing,20,Food And Kindred Products,208,Beverages
+2087,"Flavoring Extracts and Flavoring Syrups, Not Elsewhere Classified",D,Manufacturing,20,Food And Kindred Products,208,Beverages
+2091,Canned and Cured Fish and Seafoods,D,Manufacturing,20,Food And Kindred Products,209,Miscellaneous Food Preparations And Kindred
+2092,Prepared Fresh or Frozen Fish and Seafoods,D,Manufacturing,20,Food And Kindred Products,209,Miscellaneous Food Preparations And Kindred
+2095,Roasted Coffee,D,Manufacturing,20,Food And Kindred Products,209,Miscellaneous Food Preparations And Kindred
+2096,"Potato Chips, Corn Chips, and Similar Snacks",D,Manufacturing,20,Food And Kindred Products,209,Miscellaneous Food Preparations And Kindred
+2097,Manufactured Ice,D,Manufacturing,20,Food And Kindred Products,209,Miscellaneous Food Preparations And Kindred
+2098,"Macaroni, Spaghetti, Vermicelli, and Noodles",D,Manufacturing,20,Food And Kindred Products,209,Miscellaneous Food Preparations And Kindred
+2099,"Food Preparations, Not Elsewhere Classified",D,Manufacturing,20,Food And Kindred Products,209,Miscellaneous Food Preparations And Kindred
+2111,Cigarettes,D,Manufacturing,21,Tobacco Products,211,Cigarettes
+2121,Cigars,D,Manufacturing,21,Tobacco Products,212,Cigars
+2131,Chewing and Smoking Tobacco and Snuff,D,Manufacturing,21,Tobacco Products,213,Chewing And Smoking Tobacco And Snuff
+2141,Tobacco Stemming and Redrying,D,Manufacturing,21,Tobacco Products,214,Tobacco Stemming And Redrying
+2211,"Broadwoven Fabric Mills, Cotton",D,Manufacturing,22,Textile Mill Products,221,"Broadwoven Fabric Mills, Cotton"
+2221,"Broadwoven Fabric Mills, Manmade Fiber and Silk",D,Manufacturing,22,Textile Mill Products,222,"Broadwoven Fabric Mills, Manmade Fiber And Silk"
+2231,"Broadwoven Fabric Mills, Wool (Including Dyeing and Finishing)",D,Manufacturing,22,Textile Mill Products,223,"Broadwoven Fabric Mills, Wool (including Dyeing and Finishing)"
+2241,"Narrow Fabric and Other Smallware Mills: Cotton, Wool, Silk, and Manmade Fiber",D,Manufacturing,22,Textile Mill Products,224,"Narrow Fabric And Other Smallwares Mills, Cotton, Wool, Silk, and Manmade Fiber"
+2251,"Women's Full-Length and Knee-Length Hosiery, Except Socks",D,Manufacturing,22,Textile Mill Products,225,Knitting Mills
+2252,"Hosiery, Not Elsewhere Classified",D,Manufacturing,22,Textile Mill Products,225,Knitting Mills
+2253,Knit Outerwear Mills,D,Manufacturing,22,Textile Mill Products,225,Knitting Mills
+2254,Knit Underwear and Nightwear Mills,D,Manufacturing,22,Textile Mill Products,225,Knitting Mills
+2257,Weft Knit Fabric Mills,D,Manufacturing,22,Textile Mill Products,225,Knitting Mills
+2258,Lace and Warp Knit Fabric Mills,D,Manufacturing,22,Textile Mill Products,225,Knitting Mills
+2259,"Knitting Mills, Not Elsewhere Classified",D,Manufacturing,22,Textile Mill Products,225,Knitting Mills
+2261,Finishers of Broadwoven Fabrics of Cotton,D,Manufacturing,22,Textile Mill Products,226,"Dyeing And Finishing Textiles, Except Wool Fabrics"
+2262,Finishers of Broadwoven Fabrics of Manmade Fiber and Silk,D,Manufacturing,22,Textile Mill Products,226,"Dyeing And Finishing Textiles, Except Wool Fabrics"
+2269,"Finishers of Textiles, Not elsewhere Classified",D,Manufacturing,22,Textile Mill Products,226,"Dyeing And Finishing Textiles, Except Wool Fabrics"
+2273,Carpets and Rugs,D,Manufacturing,22,Textile Mill Products,227,Carpets And Rugs
+2281,Yarn Spinning Mills,D,Manufacturing,22,Textile Mill Products,228,Yarn And Thread Mills
+2282,"Yarn Texturizing, Throwing, Twisting, and Winding Mills",D,Manufacturing,22,Textile Mill Products,228,Yarn And Thread Mills
+2284,Thread Mills,D,Manufacturing,22,Textile Mill Products,228,Yarn And Thread Mills
+2295,"Coated Fabrics, Not Rubberized",D,Manufacturing,22,Textile Mill Products,229,Miscellaneous Textile Goods
+2296,Tire Cord and Fabrics,D,Manufacturing,22,Textile Mill Products,229,Miscellaneous Textile Goods
+2297,Non-woven Fabrics,D,Manufacturing,22,Textile Mill Products,229,Miscellaneous Textile Goods
+2298,Cordage and Twine,D,Manufacturing,22,Textile Mill Products,229,Miscellaneous Textile Goods
+2299,"Textile goods, Not Elsewhere Classified",D,Manufacturing,22,Textile Mill Products,229,Miscellaneous Textile Goods
+2311,"Men's and Boys' Suits, Coats, and Overcoats",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,231,"Men's And Boys' Suits, Coats, And Overcoats"
+2321,"Men's and Boys' Shirts, Except Work Shirts",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,232,"Men's And Boys' Furnishings, Work Clothing, And Allied Garments"
+2322,Men's and Boys' Underwear and Nightwear,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,232,"Men's And Boys' Furnishings, Work Clothing, And Allied Garments"
+2323,Men's and Boys' Neckwear,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,232,"Men's And Boys' Furnishings, Work Clothing, And Allied Garments"
+2325,Men's and Boys' Separate Trousers and Slacks,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,232,"Men's And Boys' Furnishings, Work Clothing, And Allied Garments"
+2326,Men's and Boys' Work Clothing,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,232,"Men's And Boys' Furnishings, Work Clothing, And Allied Garments"
+2329,"Men's and Boys' Clothing, Not Elsewhere Classified",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,232,"Men's And Boys' Furnishings, Work Clothing, And Allied Garments"
+2331,"Women's, Misses', and Juniors' Blouses and Shirts",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,233,"Women's, Misses', And Juniors' Outerwear"
+2335,"Women's, Misses', and Juniors' Dresses",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,233,"Women's, Misses', And Juniors' Outerwear"
+2337,"Women's, Misses', and Juniors' Suits, Skirts, and Coats",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,233,"Women's, Misses', And Juniors' Outerwear"
+2339,"Women's, Misses', and Juniors' Outerwear, Not Elsewhere Classified",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,233,"Women's, Misses', And Juniors' Outerwear"
+2341,"Women's, Misses', Children's, and Infants' Underwear and Nightwear",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,234,"Women's, Misses', Children's, And Infants'"
+2342,"Brassieres, Girdles, and Allied Garments",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,234,"Women's, Misses', Children's, And Infants'"
+2353,"Hats, Caps, and Millinery",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,235,"Hats, Caps, And Millinery"
+2361,"Girls', Children's, and Infants' Dresses, Blouses, and Shirts",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,236,"Girls', Children's, And Infants' Outerwear"
+2369,"Girls', Children's, and Infants' Outerwear, Not Elsewhere Classified",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,236,"Girls', Children's, And Infants' Outerwear"
+2371,Fur Goods,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,237,Fur Goods
+2381,"Dress and Work Gloves, Except Knit and All-Leather",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,238,Miscellaneous Apparel And Accessories
+2384,Robes and Dressing Gowns,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,238,Miscellaneous Apparel And Accessories
+2385,Waterproof Outerwear,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,238,Miscellaneous Apparel And Accessories
+2386,Leather and Sheep-Lined Clothing,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,238,Miscellaneous Apparel And Accessories
+2387,Apparel belts,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,238,Miscellaneous Apparel And Accessories
+2389,"Apparel and Accessories, Not Elsewhere Classified",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,238,Miscellaneous Apparel And Accessories
+2391,Curtains and Draperies,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,239,Miscellaneous Fabricated Textile Products
+2392,"House furnishing, Except Curtains and Draperies",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,239,Miscellaneous Fabricated Textile Products
+2393,Textile Bags,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,239,Miscellaneous Fabricated Textile Products
+2394,Canvas and Related Products,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,239,Miscellaneous Fabricated Textile Products
+2395,"Pleating, Decorative and Novelty Stitching, and Tucking for the Trade",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,239,Miscellaneous Fabricated Textile Products
+2396,"Automotive Trimmings, Apparel Findings, and Related Products",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,239,Miscellaneous Fabricated Textile Products
+2397,Schiffli Machine Embroideries,D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,239,Miscellaneous Fabricated Textile Products
+2399,"Fabricated Textile Products, Not Elsewhere Classified",D,Manufacturing,23,Apparel And Other Finished Products Made From Fabrics And Similar Materials,239,Miscellaneous Fabricated Textile Products
+2411,Logging,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",241,Logging
+2421,"Sawmills and Planing Mills, General",D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",242,Sawmills And Planing Mills
+2426,Hardwood Dimension and Flooring Mills,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",242,Sawmills And Planing Mills
+2429,"Special Product Sawmills, Not Elsewhere Classified",D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",242,Sawmills And Planing Mills
+2431,Millwork,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",243,"Millwork, Veneer, Plywood, And Structural Wood"
+2434,Wood Kitchen Cabinets,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",243,"Millwork, Veneer, Plywood, And Structural Wood"
+2435,Hardwood Veneer and Plywood,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",243,"Millwork, Veneer, Plywood, And Structural Wood"
+2436,Softwood Veneer and Plywood,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",243,"Millwork, Veneer, Plywood, And Structural Wood"
+2439,"Structural Wood Members, Not Elsewhere Classified",D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",243,"Millwork, Veneer, Plywood, And Structural Wood"
+2441,Nailed and Lock Corner Wood Boxes and Shook,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",244,Wood Containers
+2448,Wood Pallets and Skids,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",244,Wood Containers
+2449,"Wood Containers, Not Elsewhere Classified",D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",244,Wood Containers
+2451,Mobile Homes,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",245,Wood Buildings And Mobile Homes
+2452,Prefabricated Wood Buildings and Components,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",245,Wood Buildings And Mobile Homes
+2491,Wood Preserving,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",249,Miscellaneous Wood Products
+2493,Reconstituted Wood Products,D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",249,Miscellaneous Wood Products
+2499,"Wood Products, Not Elsewhere Classified",D,Manufacturing,24,"Lumber And Wood Products, Except Furniture",249,Miscellaneous Wood Products
+2511,"Wood Household Furniture, Except Upholstered",D,Manufacturing,25,Furniture And Fixtures,251,Household Furniture
+2512,"Wood Household Furniture, Upholstered",D,Manufacturing,25,Furniture And Fixtures,251,Household Furniture
+2514,Metal Household Furniture,D,Manufacturing,25,Furniture And Fixtures,251,Household Furniture
+2515,"Mattresses, Foundations, and Convertible Beds",D,Manufacturing,25,Furniture And Fixtures,251,Household Furniture
+2517,"Wood Television, Radio, Phonograph, and Sewing Machine Cabinets",D,Manufacturing,25,Furniture And Fixtures,251,Household Furniture
+2519,"Household Furniture, Not Elsewhere Classified",D,Manufacturing,25,Furniture And Fixtures,251,Household Furniture
+2521,Wood Office Furniture,D,Manufacturing,25,Furniture And Fixtures,252,Office Furniture
+2522,"Office Furniture, Except Wood",D,Manufacturing,25,Furniture And Fixtures,252,Office Furniture
+2531,Public Building and Related Furniture,D,Manufacturing,25,Furniture And Fixtures,253,Public Building And Related Furniture
+2541,"Wood Office and Store Fixtures, Partitions, Shelving, and Lockers",D,Manufacturing,25,Furniture And Fixtures,254,"Partitions, Shelving, Lockers, And Office And"
+2542,"Office and Store Fixtures, Partitions, Shelving, and Lockers, Except Wood",D,Manufacturing,25,Furniture And Fixtures,254,"Partitions, Shelving, Lockers, And Office And"
+2591,Drapery Hardware and Window Blinds and Shades,D,Manufacturing,25,Furniture And Fixtures,259,Miscellaneous Furniture And Fixtures
+2599,"Furniture and Fixtures, Not Elsewhere Classified",D,Manufacturing,25,Furniture And Fixtures,259,Miscellaneous Furniture And Fixtures
+2611,Pulp Mills,D,Manufacturing,26,Paper And Allied Products,261,Pulp Mills
+2621,Paper Mills,D,Manufacturing,26,Paper And Allied Products,262,Paper Mills
+2631,Paperboard Mills,D,Manufacturing,26,Paper And Allied Products,263,Paperboard Mills
+2652,Setup Paperboard Boxes,D,Manufacturing,26,Paper And Allied Products,265,Paperboard Containers And Boxes
+2653,Corrugated and Solid Fiber Boxes,D,Manufacturing,26,Paper And Allied Products,265,Paperboard Containers And Boxes
+2655,"Fiber Cans, Tubes, Drums, and Similar Products",D,Manufacturing,26,Paper And Allied Products,265,Paperboard Containers And Boxes
+2656,"Sanitary Food Containers, Except Folding",D,Manufacturing,26,Paper And Allied Products,265,Paperboard Containers And Boxes
+2657,"Folding Paperboard Boxes, Including Sanitary",D,Manufacturing,26,Paper And Allied Products,265,Paperboard Containers And Boxes
+2671,"Packaging Paper and Plastics Film, Coated and Laminated",D,Manufacturing,26,Paper And Allied Products,267,"Converted Paper And Paperboard Products, Except"
+2672,"Coated and Laminated Paper, Not Elsewhere Classified",D,Manufacturing,26,Paper And Allied Products,267,"Converted Paper And Paperboard Products, Except"
+2673,"Plastics, Foil, and Coated Paper Bags",D,Manufacturing,26,Paper And Allied Products,267,"Converted Paper And Paperboard Products, Except"
+2674,Uncoated Paper and Multiwall Bags,D,Manufacturing,26,Paper And Allied Products,267,"Converted Paper And Paperboard Products, Except"
+2675,Die-Cut Paper and Paperboard and Cardboard,D,Manufacturing,26,Paper And Allied Products,267,"Converted Paper And Paperboard Products, Except"
+2676,Sanitary Paper Products,D,Manufacturing,26,Paper And Allied Products,267,"Converted Paper And Paperboard Products, Except"
+2677,Envelopes,D,Manufacturing,26,Paper And Allied Products,267,"Converted Paper And Paperboard Products, Except"
+2678,"Stationery, Tablets, and Related Products",D,Manufacturing,26,Paper And Allied Products,267,"Converted Paper And Paperboard Products, Except"
+2679,"Converted Paper and Paperboard Products, Not Elsewhere Classified",D,Manufacturing,26,Paper And Allied Products,267,"Converted Paper And Paperboard Products, Except"
+2711,"Newspapers: Publishing, or Publishing and Printing",D,Manufacturing,27,"Printing, Publishing, And Allied Industries",271,Newspaper
+2721,"Periodicals: Publishing, or Publishing and Printing",D,Manufacturing,27,"Printing, Publishing, And Allied Industries",272,Periodical
+2731,"Books: Publishing, or Publishing and Printing",D,Manufacturing,27,"Printing, Publishing, And Allied Industries",273,Books
+2732,Book Printing,D,Manufacturing,27,"Printing, Publishing, And Allied Industries",273,Books
+2741,Miscellaneous Publishing,D,Manufacturing,27,"Printing, Publishing, And Allied Industries",274,Miscellaneous Publishing
+2752,"Commercial Printing, Lithographic",D,Manufacturing,27,"Printing, Publishing, And Allied Industries",275,Commercial Printing
+2754,"Commercial Printing, Gravure",D,Manufacturing,27,"Printing, Publishing, And Allied Industries",275,Commercial Printing
+2759,"Commercial Printing, Not Elsewhere Classified",D,Manufacturing,27,"Printing, Publishing, And Allied Industries",275,Commercial Printing
+2761,Manifold Business Forms,D,Manufacturing,27,"Printing, Publishing, And Allied Industries",276,Manifold Business Forms
+2771,Greeting Cards,D,Manufacturing,27,"Printing, Publishing, And Allied Industries",277,Greeting Cards
+2782,"Blankbooks, Looseleaf Binders and Devices",D,Manufacturing,27,"Printing, Publishing, And Allied Industries",278,"Blankbooks, Looseleaf Binders, And Bookbinding"
+2789,Bookbinding and Related Work,D,Manufacturing,27,"Printing, Publishing, And Allied Industries",278,"Blankbooks, Looseleaf Binders, And Bookbinding"
+2791,Typesetting,D,Manufacturing,27,"Printing, Publishing, And Allied Industries",279,Service Industries For The Printing Trade
+2796,Platemaking and Related Services,D,Manufacturing,27,"Printing, Publishing, And Allied Industries",279,Service Industries For The Printing Trade
+2812,Alkalies and Chlorine,D,Manufacturing,28,Chemicals And Allied Products,281,Industrial Inorganic Chemicals
+2813,Industrial Gases,D,Manufacturing,28,Chemicals And Allied Products,281,Industrial Inorganic Chemicals
+2816,Inorganic Pigments,D,Manufacturing,28,Chemicals And Allied Products,281,Industrial Inorganic Chemicals
+2819,"Industrial Inorganic Chemicals, Not Elsewhere Classified",D,Manufacturing,28,Chemicals And Allied Products,281,Industrial Inorganic Chemicals
+2821,"Plastics Materials, Synthetic Resins, and Nonvulcanizable Elastomers",D,Manufacturing,28,Chemicals And Allied Products,282,"Plastics Materials And Synthetic Resins, Synthetic"
+2822,Synthetic Rubber (Vulcanizable Elastomers),D,Manufacturing,28,Chemicals And Allied Products,282,"Plastics Materials And Synthetic Resins, Synthetic"
+2823,Cellulosic Manmade Fibers,D,Manufacturing,28,Chemicals And Allied Products,282,"Plastics Materials And Synthetic Resins, Synthetic"
+2824,"Manmade Organic Fibers, Except Cellulosic",D,Manufacturing,28,Chemicals And Allied Products,282,"Plastics Materials And Synthetic Resins, Synthetic"
+2833,Medicinal Chemicals and Botanical Products,D,Manufacturing,28,Chemicals And Allied Products,283,Drugs
+2834,Pharmaceutical Preparations,D,Manufacturing,28,Chemicals And Allied Products,283,Drugs
+2835,In Vitro and In Vivo Diagnostic Substances,D,Manufacturing,28,Chemicals And Allied Products,283,Drugs
+2836,"Biological Products, Except Diagnostic Substances",D,Manufacturing,28,Chemicals And Allied Products,283,Drugs
+2841,"Soap and Other Detergents, Except Specialty Cleaners",D,Manufacturing,28,Chemicals And Allied Products,284,"Soap, Detergents, And Cleaning Preparations; Perfumes, Cosmetics, and Other Toilet Preparations"
+2842,"Specialty Cleaning, Polishing, and Sanitation Preparations",D,Manufacturing,28,Chemicals And Allied Products,284,"Soap, Detergents, And Cleaning Preparations; Perfumes, Cosmetics, and Other Toilet Preparations"
+2843,"Surface Active Agents, Finishing Agents, Sulfonated Oils, and Assistants",D,Manufacturing,28,Chemicals And Allied Products,284,"Soap, Detergents, And Cleaning Preparations; Perfumes, Cosmetics, and Other Toilet Preparations"
+2844,"Perfumes, Cosmetics, and Other Toilet Preparations",D,Manufacturing,28,Chemicals And Allied Products,284,"Soap, Detergents, And Cleaning Preparations; Perfumes, Cosmetics, and Other Toilet Preparations"
+2851,"Paints, Varnishes, Lacquers, Enamels, and Allied Products",D,Manufacturing,28,Chemicals And Allied Products,285,"Paints, Varnishes, Lacquers, Enamels, And Allied"
+2861,Gum and Wood Chemicals,D,Manufacturing,28,Chemicals And Allied Products,286,Industrial Organic Chemicals
+2865,"Cyclic Organic Crudes and Intermediates, and Organic Dyes and Pigments",D,Manufacturing,28,Chemicals And Allied Products,286,Industrial Organic Chemicals
+2869,"Industrial Organic Chemicals, Not Elsewhere Classified",D,Manufacturing,28,Chemicals And Allied Products,286,Industrial Organic Chemicals
+2873,Nitrogenous Fertilizers,D,Manufacturing,28,Chemicals And Allied Products,287,Agricultural Chemicals
+2874,Phosphatic Fertilizers,D,Manufacturing,28,Chemicals And Allied Products,287,Agricultural Chemicals
+2875,"Fertilizers, Mixing Only",D,Manufacturing,28,Chemicals And Allied Products,287,Agricultural Chemicals
+2879,"Pesticides and Agricultural Chemicals, Not Elsewhere Classified",D,Manufacturing,28,Chemicals And Allied Products,287,Agricultural Chemicals
+2891,Adhesives and Sealants,D,Manufacturing,28,Chemicals And Allied Products,289,Miscellaneous Chemical Products
+2892,Explosives,D,Manufacturing,28,Chemicals And Allied Products,289,Miscellaneous Chemical Products
+2893,Printing Ink,D,Manufacturing,28,Chemicals And Allied Products,289,Miscellaneous Chemical Products
+2895,Carbon Black,D,Manufacturing,28,Chemicals And Allied Products,289,Miscellaneous Chemical Products
+2899,"Chemicals and Chemical Preparations, Not Elsewhere Classified",D,Manufacturing,28,Chemicals And Allied Products,289,Miscellaneous Chemical Products
+2911,Petroleum Refining,D,Manufacturing,29,Petroleum Refining And Related Industries,291,Petroleum Refining
+2951,Asphalt Paving Mixtures and Blocks,D,Manufacturing,29,Petroleum Refining And Related Industries,295,Asphalt Paving And Roofing Materials
+2952,Asphalt Felts and Coatings,D,Manufacturing,29,Petroleum Refining And Related Industries,295,Asphalt Paving And Roofing Materials
+2992,Lubricating Oils and Greases,D,Manufacturing,29,Petroleum Refining And Related Industries,299,Miscellaneous Products Of Petroleum And Coal
+2999,"Products of Petroleum and Coal, Not Elsewhere Classified",D,Manufacturing,29,Petroleum Refining And Related Industries,299,Miscellaneous Products Of Petroleum And Coal
+3011,Tires and Inner Tubes,D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,301,Tires And Inner Tubes
+3021,Rubber and Plastics Footwear,D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,302,Rubber And Plastics Footwear
+3052,Rubber and Plastics Hose and Belting,D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,305,"Gaskets, Packing, And Sealing Devices And Rubber"
+3053,"Gaskets, Packing, and Sealing Devices",D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,305,"Gaskets, Packing, And Sealing Devices And Rubber"
+3061,"Molded, Extruded, and Lathe-Cut Mechanical Rubber Goods",D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,306,"Fabricated Rubber Products, Not Elsewhere"
+3069,"Fabricated Rubber Products, Not Elsewhere Classified",D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,306,"Fabricated Rubber Products, Not Elsewhere"
+3081,Unsupported Plastics Film and Sheet,D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,308,Miscellaneous Plastics Products
+3082,Unsupported Plastics Profile Shapes,D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,308,Miscellaneous Plastics Products
+3083,"Laminated Plastics Plate, Sheet, and Profile Shapes",D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,308,Miscellaneous Plastics Products
+3084,Plastics Pipe,D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,308,Miscellaneous Plastics Products
+3085,Plastics Bottles,D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,308,Miscellaneous Plastics Products
+3086,Plastics Foam Products,D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,308,Miscellaneous Plastics Products
+3087,Custom Compounding of Purchased Plastics Resins,D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,308,Miscellaneous Plastics Products
+3088,Plastics Plumbing Fixtures,D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,308,Miscellaneous Plastics Products
+3089,"Plastics Products, Not Elsewhere Classified",D,Manufacturing,30,Rubber And Miscellaneous Plastics Products,308,Miscellaneous Plastics Products
+3111,Leather Tanning and Finishing,D,Manufacturing,31,Leather And Leather Products,311,Leather Tanning And Finishing
+3131,Boot and Shoe Cut Stock and Findings,D,Manufacturing,31,Leather And Leather Products,313,Boot And Shoe Cut Stock And Findings
+3142,House Slippers,D,Manufacturing,31,Leather And Leather Products,314,"Footwear, Except Rubber"
+3143,"Men's Footwear, Except Athletic",D,Manufacturing,31,Leather And Leather Products,314,"Footwear, Except Rubber"
+3144,"Women's Footwear, Except Athletic",D,Manufacturing,31,Leather And Leather Products,314,"Footwear, Except Rubber"
+3149,"Footwear, Except Rubber, Not Elsewhere Classified",D,Manufacturing,31,Leather And Leather Products,314,"Footwear, Except Rubber"
+3151,Leather Gloves and Mittens,D,Manufacturing,31,Leather And Leather Products,315,Leather Gloves And Mittens
+3161,Luggage,D,Manufacturing,31,Leather And Leather Products,316,Luggage
+3171,Women's Handbags and Purses,D,Manufacturing,31,Leather And Leather Products,317,Handbags And Other Personal Leather Goods
+3172,"Personal Leather Goods, Except Women's Handbags and Purses",D,Manufacturing,31,Leather And Leather Products,317,Handbags And Other Personal Leather Goods
+3199,"Leather Goods, Not Elsewhere Classified",D,Manufacturing,31,Leather And Leather Products,319,"Leather Goods, Not Elsewhere Classified"
+3211,Flat Glass,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",321,Flat Glass
+3221,Glass Containers,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",322,"Glass And Glassware, Pressed Or Blown"
+3229,"Pressed and Blown Glass and Glassware, Not Elsewhere Classified",D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",322,"Glass And Glassware, Pressed Or Blown"
+3231,"Glass Products, Made of Purchased Glass",D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",323,"Glass Products, Made Of Purchased Glass"
+3241,"Cement, Hydraulic",D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",324,"Cement, Hydraulic"
+3251,Brick and Structural Clay Tile,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",325,Structural Clay Products
+3253,Ceramic Wall and Floor Tile,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",325,Structural Clay Products
+3255,Clay Refractories,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",325,Structural Clay Products
+3259,"Structural Clay Products, Not Elsewhere Classified",D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",325,Structural Clay Products
+3261,Vitreous China Plumbing Fixtures and China and Earthenware Fittings and Bathroom Accessories,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",326,Pottery And Related Products
+3262,Vitreous China Table and Kitchen Articles,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",326,Pottery And Related Products
+3263,Fine Earthenware (Whiteware) Table and Kitchen Articles,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",326,Pottery And Related Products
+3264,Porcelain Electrical Supplies,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",326,Pottery And Related Products
+3269,"Pottery Products, Not Elsewhere Classified",D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",326,Pottery And Related Products
+3271,Concrete Block and Brick,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",327,"Concrete, Gypsum, And Plaster Products"
+3272,"Concrete Products, Except Block and Brick",D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",327,"Concrete, Gypsum, And Plaster Products"
+3273,Ready-Mixed Concrete,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",327,"Concrete, Gypsum, And Plaster Products"
+3274,Lime,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",327,"Concrete, Gypsum, And Plaster Products"
+3275,Gypsum Products,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",327,"Concrete, Gypsum, And Plaster Products"
+3281,Cut Stone and Stone Products,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",328,Cut Stone And Stone Products
+3291,Abrasive Products,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",329,"Abrasive, Asbestos, And Miscellaneous"
+3292,Asbestos Products,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",329,"Abrasive, Asbestos, And Miscellaneous"
+3295,"Minerals and Earths, Ground or Otherwise Treated",D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",329,"Abrasive, Asbestos, And Miscellaneous"
+3296,Mineral Wool,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",329,"Abrasive, Asbestos, And Miscellaneous"
+3297,Nonclay Refractories,D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",329,"Abrasive, Asbestos, And Miscellaneous"
+3299,"Nonmetallic Mineral Products, Not Elsewhere Classified",D,Manufacturing,32,"Stone, Clay, Glass, And Concrete Products",329,"Abrasive, Asbestos, And Miscellaneous"
+3312,"Steel Works, Blast Furnaces (Including Coke Ovens), and Rolling Mills",D,Manufacturing,33,Primary Metal Industries,331,"Steel Works, Blast Furnaces, And Rolling And Finishing Mills"
+3313,"Electrometallurgical Products, Except Steel",D,Manufacturing,33,Primary Metal Industries,331,"Steel Works, Blast Furnaces, And Rolling And Finishing Mills"
+3315,Steel Wiredrawing and Steel Nails and Spikes,D,Manufacturing,33,Primary Metal Industries,331,"Steel Works, Blast Furnaces, And Rolling And Finishing Mills"
+3316,"Cold-Rolled Steel Sheet, Strip, and Bars",D,Manufacturing,33,Primary Metal Industries,331,"Steel Works, Blast Furnaces, And Rolling And Finishing Mills"
+3317,Steel Pipe and Tubes,D,Manufacturing,33,Primary Metal Industries,331,"Steel Works, Blast Furnaces, And Rolling And Finishing Mills"
+3321,Gray and Ductile Iron Foundries,D,Manufacturing,33,Primary Metal Industries,332,Iron And Steel Foundries
+3322,Malleable Iron Foundries,D,Manufacturing,33,Primary Metal Industries,332,Iron And Steel Foundries
+3324,Steel Investment Foundries,D,Manufacturing,33,Primary Metal Industries,332,Iron And Steel Foundries
+3325,"Steel Foundries, Not Elsewhere Classified",D,Manufacturing,33,Primary Metal Industries,332,Iron And Steel Foundries
+3331,Primary Smelting and Refining of Copper,D,Manufacturing,33,Primary Metal Industries,333,Primary Smelting And Refining Of Nonferrous
+3334,Primary Production of Aluminum,D,Manufacturing,33,Primary Metal Industries,333,Primary Smelting And Refining Of Nonferrous
+3339,"Primary Smelting and Refining of Nonferrous Metals, Except Copper and Aluminum",D,Manufacturing,33,Primary Metal Industries,333,Primary Smelting And Refining Of Nonferrous
+3341,Secondary Smelting and Refining of Nonferrous Metals,D,Manufacturing,33,Primary Metal Industries,334,Secondary Smelting And Refining Of Nonferrous
+3351,"Rolling, Drawing, and Extruding Of Copper",D,Manufacturing,33,Primary Metal Industries,335,"Rolling, Drawing, And Extruding Of Nonferrous"
+3353,"Aluminum Sheet, Plate, and Foil",D,Manufacturing,33,Primary Metal Industries,335,"Rolling, Drawing, And Extruding Of Nonferrous"
+3354,Aluminum Extruded Products,D,Manufacturing,33,Primary Metal Industries,335,"Rolling, Drawing, And Extruding Of Nonferrous"
+3355,"Aluminum Rolling and Drawing, Not Elsewhere Classified",D,Manufacturing,33,Primary Metal Industries,335,"Rolling, Drawing, And Extruding Of Nonferrous"
+3356,"Rolling, Drawing, and Extruding of Nonferrous Metals, Except Copper and Aluminum",D,Manufacturing,33,Primary Metal Industries,335,"Rolling, Drawing, And Extruding Of Nonferrous"
+3357,Drawing and Insulating of Nonferrous Wire,D,Manufacturing,33,Primary Metal Industries,335,"Rolling, Drawing, And Extruding Of Nonferrous"
+3363,Aluminum Die-Castings,D,Manufacturing,33,Primary Metal Industries,336,Nonferrous Foundries (castings)
+3364,"Nonferrous Die-Castings, Except Aluminum",D,Manufacturing,33,Primary Metal Industries,336,Nonferrous Foundries (castings)
+3365,Aluminum Foundries,D,Manufacturing,33,Primary Metal Industries,336,Nonferrous Foundries (castings)
+3366,Copper Foundries,D,Manufacturing,33,Primary Metal Industries,336,Nonferrous Foundries (castings)
+3369,"Nonferrous Foundries, Except Aluminum and Copper",D,Manufacturing,33,Primary Metal Industries,336,Nonferrous Foundries (castings)
+3398,Metal Heat Treating,D,Manufacturing,33,Primary Metal Industries,339,Miscellaneous Primary Metal Products
+3399,"Primary Metal Products, Not Elsewhere Classified",D,Manufacturing,33,Primary Metal Industries,339,Miscellaneous Primary Metal Products
+3411,Metal Cans,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",341,Metal Cans And Shipping Containers
+3412,"Metal Shipping Barrels, Drums, Kegs, and Pails",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",341,Metal Cans And Shipping Containers
+3421,Cutlery,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",342,"Cutlery, Handtools, And General Hardware"
+3423,"Hand and Edge Tools, Except Machine Tools and Handsaws",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",342,"Cutlery, Handtools, And General Hardware"
+3425,Saw Blades and Handsaws,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",342,"Cutlery, Handtools, And General Hardware"
+3429,"Hardware, Not Elsewhere Classified",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",342,"Cutlery, Handtools, And General Hardware"
+3431,Enameled Iron and Metal Sanitary Ware,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",343,"Heating Equipment, Except Electric And Warm Air;"
+3432,Plumbing Fixture Fittings and Trim,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",343,"Heating Equipment, Except Electric And Warm Air;"
+3433,"Heating Equipment, Except Electric and Warm Air Furnaces",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",343,"Heating Equipment, Except Electric And Warm Air;"
+3441,Fabricated Structural Metal,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",344,Fabricated Structural Metal Products
+3442,"Metal Doors, Sash, Frames, Molding, and Trim Manufacturing",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",344,Fabricated Structural Metal Products
+3443,Fabricated Plate Work (Boiler Shops),D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",344,Fabricated Structural Metal Products
+3444,Sheet Metal Work,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",344,Fabricated Structural Metal Products
+3446,Architectural and Ornamental Metal Work,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",344,Fabricated Structural Metal Products
+3448,Prefabricated Metal Buildings and Components,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",344,Fabricated Structural Metal Products
+3449,Miscellaneous Structural Metal Work,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",344,Fabricated Structural Metal Products
+3451,Screw Machine Products,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",345,"Screw Machine Products, And Bolts, Nuts, Screws, Rivets, And Washers"
+3452,"Bolts, Nuts, Screws, Rivets, and Washers",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",345,"Screw Machine Products, And Bolts, Nuts, Screws, Rivets, And Washers"
+3462,Iron and Steel Forgings,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",346,Metal Forgings And Stampings
+3463,Nonferrous Forgings,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",346,Metal Forgings And Stampings
+3465,Automotive Stampings,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",346,Metal Forgings And Stampings
+3466,Crowns and Closures,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",346,Metal Forgings And Stampings
+3469,"Metal Stampings, Not Elsewhere Classified",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",346,Metal Forgings And Stampings
+3471,"Electroplating, Plating, Polishing, Anodizing, and Coloring",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",347,"Coating, Engraving, And Allied Services"
+3479,"Coating, Engraving, and Allied Services, Not Elsewhere Classified",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",347,"Coating, Engraving, And Allied Services"
+3482,Small Arms Ammunition,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",348,"Ordnance And Accessories, Except Vehicles And Guided Missiles"
+3483,"Ammunition, Except for Small Arms",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",348,"Ordnance And Accessories, Except Vehicles And Guided Missiles"
+3484,Small Arms,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",348,"Ordnance And Accessories, Except Vehicles And Guided Missiles"
+3489,"Ordnance and Accessories, Not Elsewhere Classified",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",348,"Ordnance And Accessories, Except Vehicles And Guided Missiles"
+3491,Industrial Valves,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",349,Miscellaneous Fabricated Metal Products
+3492,Fluid Power Valves and Hose Fittings,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",349,Miscellaneous Fabricated Metal Products
+3493,"Steel Springs, Except Wire",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",349,Miscellaneous Fabricated Metal Products
+3494,"Valves and Pipe Fittings, Not Elsewhere Classified",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",349,Miscellaneous Fabricated Metal Products
+3495,Wire Springs,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",349,Miscellaneous Fabricated Metal Products
+3496,Miscellaneous Fabricated Wire Products,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",349,Miscellaneous Fabricated Metal Products
+3497,Metal Foil and Leaf,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",349,Miscellaneous Fabricated Metal Products
+3498,Fabricated Pipe and Pipe Fittings,D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",349,Miscellaneous Fabricated Metal Products
+3499,"Fabricated Metal Products, Not Elsewhere Classified",D,Manufacturing,34,"Fabricated Metal Products, Except Machinery And Transportation Equipment",349,Miscellaneous Fabricated Metal Products
+3511,"Steam, Gas, and Hydraulic Turbines, and Turbine Generator Set Units",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,351,Engines And Turbines
+3519,"Internal Combustion Engines, Not Elsewhere Classified",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,351,Engines And Turbines
+3523,Farm Machinery and Equipment,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,352,Farm And Garden Machinery And Equipment
+3524,Lawn and Garden Tractors and Home Lawn and Garden Equipment,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,352,Farm And Garden Machinery And Equipment
+3531,Construction Machinery and Equipment,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,353,"Construction, Mining, And Materials Handling"
+3532,"Mining Machinery and Equipment, Except Oil and Gas Field Machinery and Equipment",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,353,"Construction, Mining, And Materials Handling"
+3533,Oil and Gas Field Machinery and Equipment,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,353,"Construction, Mining, And Materials Handling"
+3534,Elevators and Moving Stairways,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,353,"Construction, Mining, And Materials Handling"
+3535,Conveyors and Conveying Equipment,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,353,"Construction, Mining, And Materials Handling"
+3536,"Overhead Traveling Cranes, Hoists, and Monorail Systems",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,353,"Construction, Mining, And Materials Handling"
+3537,"Industrial Trucks, Tractors, Trailers, and Stackers",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,353,"Construction, Mining, And Materials Handling"
+3541,"Machine Tools, Metal Cutting Types",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,354,Metalworking Machinery And Equipment
+3542,"Machine Tools, Metal Forming Types",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,354,Metalworking Machinery And Equipment
+3543,Industrial Patterns,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,354,Metalworking Machinery And Equipment
+3544,"Special Dies and Tools, Die Sets, Jigs and Fixtures, and Industrial Molds",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,354,Metalworking Machinery And Equipment
+3545,"Cutting Tools, Machine Tool Accessories, and Machinists' Precision Measuring Devices",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,354,Metalworking Machinery And Equipment
+3546,Power-Driven Handtools,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,354,Metalworking Machinery And Equipment
+3547,Rolling Mill Machinery and Equipment,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,354,Metalworking Machinery And Equipment
+3548,Electric and Gas Welding and Soldering Equipment,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,354,Metalworking Machinery And Equipment
+3549,"Metalworking Machinery, Not Elsewhere Classified",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,354,Metalworking Machinery And Equipment
+3552,Textile Machinery,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,355,"Special Industry Machinery, Except Metalworking"
+3553,Woodworking Machinery,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,355,"Special Industry Machinery, Except Metalworking"
+3554,Paper Industries Machinery,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,355,"Special Industry Machinery, Except Metalworking"
+3555,Printing Trades Machinery and Equipment,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,355,"Special Industry Machinery, Except Metalworking"
+3556,Food Products Machinery,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,355,"Special Industry Machinery, Except Metalworking"
+3559,"Special Industry Machinery, Not Elsewhere Classified",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,355,"Special Industry Machinery, Except Metalworking"
+3561,Pumps and Pumping Equipment,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,356,General Industrial Machinery And Equipment
+3562,Ball and Roller Bearings,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,356,General Industrial Machinery And Equipment
+3563,Air and Gas Compressors,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,356,General Industrial Machinery And Equipment
+3564,Industrial and Commercial Fans and Blowers and Air Purification Equipment,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,356,General Industrial Machinery And Equipment
+3565,Packaging Machinery,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,356,General Industrial Machinery And Equipment
+3566,"Speed Changers, Industrial High-Speed Drives, and Gears",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,356,General Industrial Machinery And Equipment
+3567,Industrial Process Furnaces and Ovens,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,356,General Industrial Machinery And Equipment
+3568,"Mechanical Power Transmission Equipment, Not Elsewhere Classified",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,356,General Industrial Machinery And Equipment
+3569,"General Industrial Machinery and Equipment, Not Elsewhere",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,356,General Industrial Machinery And Equipment
+3571,Electronic Computers,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,357,Computer And Office Equipment
+3572,Computer Storage Devices,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,357,Computer And Office Equipment
+3575,Computer Terminals,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,357,Computer And Office Equipment
+3577,"Computer Peripheral Equipment, Not Elsewhere Classified",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,357,Computer And Office Equipment
+3578,"Calculating and Accounting Machines, Except Electronic Computers",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,357,Computer And Office Equipment
+3579,"Office Machines, Not Elsewhere Classified",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,357,Computer And Office Equipment
+3581,Automatic Vending Machines,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,358,Refrigeration And Service Industry Machinery
+3582,"Commercial Laundry, Drycleaning, and Pressing Machines",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,358,Refrigeration And Service Industry Machinery
+3585,Air-Conditioning and Warm Air Heating Equipment and Commercial and Industrial Refrigeration Equipment,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,358,Refrigeration And Service Industry Machinery
+3586,Measuring and Dispensing Pumps,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,358,Refrigeration And Service Industry Machinery
+3589,"Service Industry Machinery, Not Elsewhere Classified",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,358,Refrigeration And Service Industry Machinery
+3592,"Carburetors, Pistons, Piston Rings, and Valves",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,359,Miscellaneous Industrial And Commercial
+3593,Fluid Power Cylinders and Actuators,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,359,Miscellaneous Industrial And Commercial
+3594,Fluid Power Pumps and Motors,D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,359,Miscellaneous Industrial And Commercial
+3596,"Scales and Balances, Except Laboratory",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,359,Miscellaneous Industrial And Commercial
+3599,"Industrial and Commercial Machinery and Equipment, Not Elsewhere Classified",D,Manufacturing,35,Industrial And Commercial Machinery And Computer Equipment,359,Miscellaneous Industrial And Commercial
+3612,"Power, Distribution, and Specialty Transformers",D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",361,Electric Transmission And Distribution Equipment
+3613,Switchgear and Switchboard Apparatus,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",361,Electric Transmission And Distribution Equipment
+3621,Motors and Generators,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",362,Electrical Industrial Apparatus
+3624,Carbon and Graphite Products,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",362,Electrical Industrial Apparatus
+3625,Relays and Industrial Controls,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",362,Electrical Industrial Apparatus
+3629,"Electrical Industrial Apparatus, Not Elsewhere Classified",D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",362,Electrical Industrial Apparatus
+3631,Household Cooking Equipment,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",363,Household Appliances
+3632,Household Refrigerators and HOme and Farm Freezers,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",363,Household Appliances
+3633,Household Laundry Equipment,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",363,Household Appliances
+3634,Electric Housewares and Fans,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",363,Household Appliances
+3635,Household Vacuum Cleaners,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",363,Household Appliances
+3639,"Household Appliances, Not Elsewhere Classified",D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",363,Household Appliances
+3641,Electric Lamp Bulbs and Tubes,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",364,Electric Lighting And Wiring Equipment
+3643,Current-Carrying Wiring Devices,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",364,Electric Lighting And Wiring Equipment
+3644,Noncurrent-Carrying Wiring Devices,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",364,Electric Lighting And Wiring Equipment
+3645,Residential Electric Lighting Fixtures,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",364,Electric Lighting And Wiring Equipment
+3646,"Commercial, Industrial, and Institutional Electric Lighting Fixtures",D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",364,Electric Lighting And Wiring Equipment
+3647,Vehicular Lighting Equipment,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",364,Electric Lighting And Wiring Equipment
+3648,"Lighting Equipment, Not Elsewhere Classified",D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",364,Electric Lighting And Wiring Equipment
+3651,Household Audio and Video Equipment,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",365,"Household Audio And Video Equipment, And Audio"
+3652,Phonograph Records and Prerecorded Audio Tapes and Disks,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",365,"Household Audio And Video Equipment, And Audio"
+3661,Telephone and Telegraph Apparatus,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",366,Communications Equipment
+3663,Radio and Television Broadcasting and Communications Equipment,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",366,Communications Equipment
+3669,"Communications Equipment, Not Elsewhere Classified",D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",366,Communications Equipment
+3671,Electron Tubes,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",367,Electronic Components And Accessories
+3672,Printed Circuit Boards,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",367,Electronic Components And Accessories
+3674,Semiconductors and Related Devices,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",367,Electronic Components And Accessories
+3675,Electronic Capacitors,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",367,Electronic Components And Accessories
+3676,Electronic Resistors,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",367,Electronic Components And Accessories
+3677,"Electronic Coils, Transformers, and Other Inductors",D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",367,Electronic Components And Accessories
+3678,Electronic Connectors,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",367,Electronic Components And Accessories
+3679,"Electronic Components, Not Elsewhere Classified",D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",367,Electronic Components And Accessories
+3691,Storage Batteries,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",369,"Miscellaneous Electrical Machinery, Equipment, and Supplies"
+3692,"Primary Batteries, Dry and Wet",D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",369,"Miscellaneous Electrical Machinery, Equipment, and Supplies"
+3694,Electrical Equipment for Internal Combustion Engines,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",369,"Miscellaneous Electrical Machinery, Equipment, and Supplies"
+3695,Magnetic And Optical Recording Media,D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",369,"Miscellaneous Electrical Machinery, Equipment, and Supplies"
+3699,"Electrical Machinery, Equipment, and Supplies, Not Elsewhere",D,Manufacturing,36,"Electronic And Other Electrical Equipment And Components, Except Computer Equipment",369,"Miscellaneous Electrical Machinery, Equipment, and Supplies"
+3711,Motor Vehicles and Passenger Car Bodies,D,Manufacturing,37,Transportation Equipment,371,Motor Vehicles And Motor Vehicle Equipment
+3713,Truck and Bus Bodies,D,Manufacturing,37,Transportation Equipment,371,Motor Vehicles And Motor Vehicle Equipment
+3714,Motor Vehicle Parts and Accessories,D,Manufacturing,37,Transportation Equipment,371,Motor Vehicles And Motor Vehicle Equipment
+3715,Truck Trailers,D,Manufacturing,37,Transportation Equipment,371,Motor Vehicles And Motor Vehicle Equipment
+3716,Motor Homes,D,Manufacturing,37,Transportation Equipment,371,Motor Vehicles And Motor Vehicle Equipment
+3721,Aircraft,D,Manufacturing,37,Transportation Equipment,372,Aircraft And Parts
+3724,Aircraft Engines and Engine Parts,D,Manufacturing,37,Transportation Equipment,372,Aircraft And Parts
+3728,"Aircraft Parts and Auxiliary Equipment, Not Elsewhere Classified",D,Manufacturing,37,Transportation Equipment,372,Aircraft And Parts
+3731,Ship Building and Repairing,D,Manufacturing,37,Transportation Equipment,373,Ship And Boat Building And Repairing
+3732,Boat Building and Repairing,D,Manufacturing,37,Transportation Equipment,373,Ship And Boat Building And Repairing
+3743,Railroad Equipment,D,Manufacturing,37,Transportation Equipment,374,Railroad Equipment
+3751,"Motorcycles, Bicycles, and Parts",D,Manufacturing,37,Transportation Equipment,375,"Motorcycles, Bicycles, And Parts"
+3761,Guided Missiles and Space Vehicles,D,Manufacturing,37,Transportation Equipment,376,Guided Missiles And Space Vehicles And Parts
+3764,Guided Missile and Space Vehicle Propulsion Units and Propulsion Unit Parts,D,Manufacturing,37,Transportation Equipment,376,Guided Missiles And Space Vehicles And Parts
+3769,"Guided Missile Space Vehicle Parts and Auxiliary Equipment, Not Elsewhere Classified",D,Manufacturing,37,Transportation Equipment,376,Guided Missiles And Space Vehicles And Parts
+3792,Travel Trailers and Campers,D,Manufacturing,37,Transportation Equipment,379,Miscellaneous Transportation Equipment
+3795,Tanks and Tank Components,D,Manufacturing,37,Transportation Equipment,379,Miscellaneous Transportation Equipment
+3799,"Transportation Equipment, Not Elsewhere Classified",D,Manufacturing,37,Transportation Equipment,379,Miscellaneous Transportation Equipment
+3812,"Search, Detection, Navigation, Guidance, Aeronautical, and Nautical Systems and Instruments",D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",381,"Search, Detection, Navigation, Guidance, Aeronautical, and Nautical Systems, Instruments, and Equipment"
+3821,Laboratory Apparatus and Furniture,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",382,"Laboratory Apparatus And Analytical, Optical, Measuring, and Controlling Instruments"
+3822,Automatic Controls for Regulating Residential and Commercial Environments and Appliances,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",382,"Laboratory Apparatus And Analytical, Optical, Measuring, and Controlling Instruments"
+3823,"Industrial Instruments for Measurement, Display, and Control of Process Variables; and Related Products",D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",382,"Laboratory Apparatus And Analytical, Optical, Measuring, and Controlling Instruments"
+3824,Totalizing Fluid Meters and Counting Devices,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",382,"Laboratory Apparatus And Analytical, Optical, Measuring, and Controlling Instruments"
+3825,Instruments for Measuring and Testing of Electricity and Electrical Signals,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",382,"Laboratory Apparatus And Analytical, Optical, Measuring, and Controlling Instruments"
+3826,Laboratory Analytical Instruments,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",382,"Laboratory Apparatus And Analytical, Optical, Measuring, and Controlling Instruments"
+3827,Optical Instruments and Lenses,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",382,"Laboratory Apparatus And Analytical, Optical, Measuring, and Controlling Instruments"
+3829,"Measuring and Controlling Devices, Not Elsewhere Classified",D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",382,"Laboratory Apparatus And Analytical, Optical, Measuring, and Controlling Instruments"
+3841,Surgical and Medical Instruments and Apparatus,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",384,"Surgical, Medical, And Dental Instruments And Supplies"
+3842,"Orthopedic, Prosthetic, and Surgical Appliances and Supplies",D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",384,"Surgical, Medical, And Dental Instruments And Supplies"
+3843,Dental Equipment and Supplies,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",384,"Surgical, Medical, And Dental Instruments And Supplies"
+3844,X-Ray Apparatus and Tubes and Related Irradiation Apparatus,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",384,"Surgical, Medical, And Dental Instruments And Supplies"
+3845,Electromedical and Electrotherapeutic Apparatus,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",384,"Surgical, Medical, And Dental Instruments And Supplies"
+3851,Ophthalmic Goods,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",385,Ophthalmic Goods
+3861,Photographic Equipment and Supplies,D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",386,Photographic Equipment And Supplies
+3873,"Watches, Clocks, Clockwork Operated Devices, and Parts",D,Manufacturing,38,"Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks",387,"Watches, Clocks, Clockwork Operated Devices, and Parts"
+3911,"Jewelry, Precious Metal",D,Manufacturing,39,Miscellaneous Manufacturing Industries,391,"Jewelry, Silverware, And Plated Ware"
+3914,"Silverware, Plated Ware, and Stainless Steel Ware",D,Manufacturing,39,Miscellaneous Manufacturing Industries,391,"Jewelry, Silverware, And Plated Ware"
+3915,"Jewelers' Findings and Materials, and Lapidary Work",D,Manufacturing,39,Miscellaneous Manufacturing Industries,391,"Jewelry, Silverware, And Plated Ware"
+3931,Musical Instruments,D,Manufacturing,39,Miscellaneous Manufacturing Industries,393,Musical Instruments
+3942,Dolls and Stuffed Toys,D,Manufacturing,39,Miscellaneous Manufacturing Industries,394,"Dolls, Toys, Games And Sporting And Athletic"
+3944,"Games, Toys, and Children's Vehicles, Except Dolls and Bicycles",D,Manufacturing,39,Miscellaneous Manufacturing Industries,394,"Dolls, Toys, Games And Sporting And Athletic"
+3949,"Sporting and Athletic Goods, Not Elsewhere Classified",D,Manufacturing,39,Miscellaneous Manufacturing Industries,394,"Dolls, Toys, Games And Sporting And Athletic"
+3951,"Pens, Mechanical Pencils, and Parts",D,Manufacturing,39,Miscellaneous Manufacturing Industries,395,"Pens, Pencils, And Other Artists Materials"
+3952,"Lead Pencils, Crayons, and Artists' Materials",D,Manufacturing,39,Miscellaneous Manufacturing Industries,395,"Pens, Pencils, And Other Artists Materials"
+3953,Marking Devices,D,Manufacturing,39,Miscellaneous Manufacturing Industries,395,"Pens, Pencils, And Other Artists Materials"
+3955,Carbon Paper and Inked Ribbons,D,Manufacturing,39,Miscellaneous Manufacturing Industries,395,"Pens, Pencils, And Other Artists Materials"
+3961,"Costume Jewelry and Costume Novelties, Except Precious Metal",D,Manufacturing,39,Miscellaneous Manufacturing Industries,396,"Costume Jewelry, Costume Novelties, Buttons, And Miscellaneous Notions, Ecept Precious Metal"
+3965,"Fasteners, Buttons, Needles, and Pins",D,Manufacturing,39,Miscellaneous Manufacturing Industries,396,"Costume Jewelry, Costume Novelties, Buttons, And Miscellaneous Notions, Ecept Precious Metal"
+3991,Brooms and Brushes,D,Manufacturing,39,Miscellaneous Manufacturing Industries,399,Miscellaneous Manufacturing Industries
+3993,Signs and Advertising Specialties,D,Manufacturing,39,Miscellaneous Manufacturing Industries,399,Miscellaneous Manufacturing Industries
+3995,Burial Caskets,D,Manufacturing,39,Miscellaneous Manufacturing Industries,399,Miscellaneous Manufacturing Industries
+3996,"Linoleum, Asphalted-Felt-Base, and Other Hard Surface Floor Coverings, Not Elsewhere Classified",D,Manufacturing,39,Miscellaneous Manufacturing Industries,399,Miscellaneous Manufacturing Industries
+3999,"Manufacturing Industries, Not Elsewhere Classified",D,Manufacturing,39,Miscellaneous Manufacturing Industries,399,Miscellaneous Manufacturing Industries
+4011,"Railroads, Line-Haul Operating",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",40,Railroad Transportation,401,Railroads
+4013,Railroad Switching and Terminal Establishments,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",40,Railroad Transportation,401,Railroads
+4111,Local and Suburban Transit,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",41,Local And Suburban Transit And Interurban Highway Passenger Transportation,411,Local And Suburban Passenger Transportation
+4119,"Local Passenger Transportation, Not Elsewhere Classified",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",41,Local And Suburban Transit And Interurban Highway Passenger Transportation,411,Local And Suburban Passenger Transportation
+4121,Taxicabs,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",41,Local And Suburban Transit And Interurban Highway Passenger Transportation,412,Taxicabs
+4131,Intercity and Rural Bus Transportation,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",41,Local And Suburban Transit And Interurban Highway Passenger Transportation,413,Intercity And Rural Bus Transportation
+4141,Local Bus Charter Service,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",41,Local And Suburban Transit And Interurban Highway Passenger Transportation,414,Bus Charter Service
+4142,"Bus Charter Service, Except Local",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",41,Local And Suburban Transit And Interurban Highway Passenger Transportation,414,Bus Charter Service
+4151,School Buses,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",41,Local And Suburban Transit And Interurban Highway Passenger Transportation,415,School Buses
+4173,Terminal and Service Facilities for Motor Vehicle Passenger Transportation,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",41,Local And Suburban Transit And Interurban Highway Passenger Transportation,417,Terminal And Service Facilities For Motor Vehicle
+4212,Local Trucking Without Storage,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",42,Motor Freight Transportation And Warehousing,421,"Trucking And Courier Services, Except Air"
+4213,"Trucking, Except Local",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",42,Motor Freight Transportation And Warehousing,421,"Trucking And Courier Services, Except Air"
+4214,Local Trucking With Storage,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",42,Motor Freight Transportation And Warehousing,421,"Trucking And Courier Services, Except Air"
+4215,"Courier Services, Except by Air",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",42,Motor Freight Transportation And Warehousing,421,"Trucking And Courier Services, Except Air"
+4221,Farm Product Warehousing and Storage,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",42,Motor Freight Transportation And Warehousing,422,Public Warehousing And Storage
+4222,Refrigerated Warehousing and Storage,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",42,Motor Freight Transportation And Warehousing,422,Public Warehousing And Storage
+4225,General Warehousing and Storage,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",42,Motor Freight Transportation And Warehousing,422,Public Warehousing And Storage
+4226,"Special Warehousing and Storage, Not Elsewhere Classified",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",42,Motor Freight Transportation And Warehousing,422,Public Warehousing And Storage
+4231,Terminal and Joint Terminal Maintenance Facilities for Motor Freight Transportation,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",42,Motor Freight Transportation And Warehousing,423,Terminal And Joint Terminal Maintenance
+4311,United States Postal Service,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",43,United States Postal Service,431,United States Postal Service
+4412,Deep Sea Foreign Transportation of Freight,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",44,Water Transportation,441,Deep Sea Foreign Transportation Of Freight
+4424,Deep Sea Domestic Transportation of Freight,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",44,Water Transportation,442,Deep Sea Domestic Transportation Of Freight
+4432,Freight Transportation on the Great Lakes-St. Lawrence Seaway,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",44,Water Transportation,443,Freight Transportation On The Great Lakes-st.
+4449,"Water Transportation of Freight, Not Elsewhere Classified",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",44,Water Transportation,444,"Water Transportation Of Freight, Not Elsewhere"
+4481,"Deep Sea Transportation of Passengers, Except by Ferry",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",44,Water Transportation,448,Water Transportation Of Passengers
+4482,Ferries,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",44,Water Transportation,448,Water Transportation Of Passengers
+4489,"Water Transportation of Passengers, Not Elsewhere Classified",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",44,Water Transportation,448,Water Transportation Of Passengers
+4491,Marine Cargo Handling,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",44,Water Transportation,449,Services Incidental To Water Transportation
+4492,Towing and Tugboat Services,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",44,Water Transportation,449,Services Incidental To Water Transportation
+4493,Marinas,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",44,Water Transportation,449,Services Incidental To Water Transportation
+4499,"Water Transportation Services, Not Elsewhere Classified",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",44,Water Transportation,449,Services Incidental To Water Transportation
+4512,"Air Transportation, Scheduled",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",45,Transportation By Air,451,"Air Transportation, Scheduled, And Air Courier"
+4513,Air Courier Services,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",45,Transportation By Air,451,"Air Transportation, Scheduled, And Air Courier"
+4522,"Air Transportation, Nonscheduled",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",45,Transportation By Air,452,"Air Transportation, Nonscheduled"
+4581,"Airports, Flying Fields, and Airport Terminal Services",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",45,Transportation By Air,458,"Airports, Flying Fields, And Airport Terminal"
+4612,Crude Petroleum Pipelines,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",46,"Pipelines, Except Natural Gas",461,"Pipelines, Except Natural Gas"
+4613,Refined Petroleum Pipelines,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",46,"Pipelines, Except Natural Gas",461,"Pipelines, Except Natural Gas"
+4619,"Pipelines, Not Elsewhere Classified",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",46,"Pipelines, Except Natural Gas",461,"Pipelines, Except Natural Gas"
+4724,Travel Agencies,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",47,Transportation Services,472,Arrangement Of Passenger Transportation
+4725,Tour Operators,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",47,Transportation Services,472,Arrangement Of Passenger Transportation
+4729,"Arrangement of Passenger Transportation, Not Elsewhere Classified",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",47,Transportation Services,472,Arrangement Of Passenger Transportation
+4731,Arrangement of Transportation of Freight and Cargo,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",47,Transportation Services,473,Arrangement Of Transportation Of Freight And Cargo
+4741,Rental of Railroad Cars,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",47,Transportation Services,474,Rental Of Railroad Cars
+4783,Packing and Crating,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",47,Transportation Services,478,Miscellaneous Services Incidental To Transportation
+4785,Fixed Facilities and Inspection and Weighing Services for Motor Vehicle Transportation,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",47,Transportation Services,478,Miscellaneous Services Incidental To Transportation
+4789,"Transportation Services, Not Elsewhere Classified",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",47,Transportation Services,478,Miscellaneous Services Incidental To Transportation
+4812,Radiotelephone Communications,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",48,Communications,481,Telephone Communications
+4813,"Telephone Communications, Except Radiotelephone",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",48,Communications,481,Telephone Communications
+4822,Telegraph and Other Message Communications,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",48,Communications,482,Telegraph And Other Message Communications
+4832,Radio Broadcasting Stations,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",48,Communications,483,Radio And Television Broadcasting Stations
+4833,Television Broadcasting Stations,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",48,Communications,483,Radio And Television Broadcasting Stations
+4841,Cable and Other Pay Television Services,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",48,Communications,484,Cable And Other Pay Television Services
+4899,"Communications Services, Not Elsewhere Classified",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",48,Communications,489,"Communications Services, Not Elsewhere"
+4911,Electric Services,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",491,Electric Services
+4922,Natural Gas Transmission,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",492,Gas Production And Distribution
+4923,Natural Gas Transmission and Distribution,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",492,Gas Production And Distribution
+4924,Natural Gas Distribution,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",492,Gas Production And Distribution
+4925,"Mixed, Manufactured, or Liquefied Petroleum Gas Production and/or",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",492,Gas Production And Distribution
+4931,Electric and Other Services Combined,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",493,"Combination Electric And Gas, And Other Utility"
+4932,Gas and Other Services Combined,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",493,"Combination Electric And Gas, And Other Utility"
+4939,"Combination Utilities, Not Elsewhere Classified",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",493,"Combination Electric And Gas, And Other Utility"
+4941,Water Supply,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",494,Water Supply
+4952,Sewerage Systems,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",495,Sanitary Services
+4953,Refuse Systems,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",495,Sanitary Services
+4959,"Sanitary Services, Not Elsewhere Classified",E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",495,Sanitary Services
+4961,Steam and Air-Conditioning Supply,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",496,Steam And Air-conditioning Supply
+4971,Irrigation Systems,E,"Transportation, Communications, Electric, Gas, And Sanitary Services",49,"Electric, Gas, And Sanitary Services",497,Irrigation Systems
+5012,Automobiles and Other Motor Vehicles,F,Wholesale Trade,50,Wholesale Trade-durable Goods,501,Motor Vehicles And Motor Vehicle Parts And Supplies
+5013,Motor Vehicle Supplies and New Parts,F,Wholesale Trade,50,Wholesale Trade-durable Goods,501,Motor Vehicles And Motor Vehicle Parts And Supplies
+5014,Tires and Tubes,F,Wholesale Trade,50,Wholesale Trade-durable Goods,501,Motor Vehicles And Motor Vehicle Parts And Supplies
+5015,"Motor Vehicle Parts, Used",F,Wholesale Trade,50,Wholesale Trade-durable Goods,501,Motor Vehicles And Motor Vehicle Parts And Supplies
+5021,Furniture,F,Wholesale Trade,50,Wholesale Trade-durable Goods,502,Furniture And Home Furnishings
+5023,Home furnishings,F,Wholesale Trade,50,Wholesale Trade-durable Goods,502,Furniture And Home Furnishings
+5031,"Lumber, Plywood, Millwork, and Wood Panels",F,Wholesale Trade,50,Wholesale Trade-durable Goods,503,Lumber And Other Construction Materials
+5032,"Brick, Stone, and Related Construction Materials",F,Wholesale Trade,50,Wholesale Trade-durable Goods,503,Lumber And Other Construction Materials
+5033,"Roofing, Siding, and Insulation Materials",F,Wholesale Trade,50,Wholesale Trade-durable Goods,503,Lumber And Other Construction Materials
+5039,"Construction Materials, Not Elsewhere Classified",F,Wholesale Trade,50,Wholesale Trade-durable Goods,503,Lumber And Other Construction Materials
+5043,Photographic Equipment and Supplies,F,Wholesale Trade,50,Wholesale Trade-durable Goods,504,Professional And Commercial Equipment And Supplies
+5044,Office Equipment,F,Wholesale Trade,50,Wholesale Trade-durable Goods,504,Professional And Commercial Equipment And Supplies
+5045,Computers and Computer Peripheral Equipment and Software,F,Wholesale Trade,50,Wholesale Trade-durable Goods,504,Professional And Commercial Equipment And Supplies
+5046,"Commercial Equipment, Not Elsewhere Classified",F,Wholesale Trade,50,Wholesale Trade-durable Goods,504,Professional And Commercial Equipment And Supplies
+5047,"Medical, Dental, and Hospital Equipment and Supplies",F,Wholesale Trade,50,Wholesale Trade-durable Goods,504,Professional And Commercial Equipment And Supplies
+5048,Ophthalmic Goods,F,Wholesale Trade,50,Wholesale Trade-durable Goods,504,Professional And Commercial Equipment And Supplies
+5049,"Professional Equipment and Supplies, Not Elsewhere Classified",F,Wholesale Trade,50,Wholesale Trade-durable Goods,504,Professional And Commercial Equipment And Supplies
+5051,Metals Service Centers and Offices,F,Wholesale Trade,50,Wholesale Trade-durable Goods,505,"Metals And Minerals, Except Petroleum"
+5052,Coal and Other Minerals and Ores,F,Wholesale Trade,50,Wholesale Trade-durable Goods,505,"Metals And Minerals, Except Petroleum"
+5063,"Electrical Apparatus and Equipment Wiring Supplies, and Construction Materials",F,Wholesale Trade,50,Wholesale Trade-durable Goods,506,Electrical Goods
+5064,"Electrical Appliances, Television and Radio Sets",F,Wholesale Trade,50,Wholesale Trade-durable Goods,506,Electrical Goods
+5065,"Electronic Parts and Equipment, Not Elsewhere Classified",F,Wholesale Trade,50,Wholesale Trade-durable Goods,506,Electrical Goods
+5072,Hardware,F,Wholesale Trade,50,Wholesale Trade-durable Goods,507,"Hardware, And Plumbing And Heating Equipment"
+5074,Plumbing and Heating Equipment and Supplies (Hydronics),F,Wholesale Trade,50,Wholesale Trade-durable Goods,507,"Hardware, And Plumbing And Heating Equipment"
+5075,Warm Air Heating and Air-Conditioning Equipment and Supplies,F,Wholesale Trade,50,Wholesale Trade-durable Goods,507,"Hardware, And Plumbing And Heating Equipment"
+5078,Refrigeration Equipment and Supplies,F,Wholesale Trade,50,Wholesale Trade-durable Goods,507,"Hardware, And Plumbing And Heating Equipment"
+5082,Construction and Mining (Except Petroleum) Machinery and Equipment,F,Wholesale Trade,50,Wholesale Trade-durable Goods,508,"Machinery, Equipment, And Supplies"
+5083,Farm and Garden Machinery and Equipment,F,Wholesale Trade,50,Wholesale Trade-durable Goods,508,"Machinery, Equipment, And Supplies"
+5084,Industrial Machinery and Equipment,F,Wholesale Trade,50,Wholesale Trade-durable Goods,508,"Machinery, Equipment, And Supplies"
+5085,Industrial Supplies,F,Wholesale Trade,50,Wholesale Trade-durable Goods,508,"Machinery, Equipment, And Supplies"
+5087,Service Establishment Equipment and Supplies,F,Wholesale Trade,50,Wholesale Trade-durable Goods,508,"Machinery, Equipment, And Supplies"
+5088,"Transportation Equipment and Supplies, Except Motor Vehicles",F,Wholesale Trade,50,Wholesale Trade-durable Goods,508,"Machinery, Equipment, And Supplies"
+5091,Sporting and Recreational Goods and Supplies,F,Wholesale Trade,50,Wholesale Trade-durable Goods,509,Miscellaneous Durable Goods
+5092,Toys and Hobby Goods and Supplies,F,Wholesale Trade,50,Wholesale Trade-durable Goods,509,Miscellaneous Durable Goods
+5093,Scrap and Waste Materials,F,Wholesale Trade,50,Wholesale Trade-durable Goods,509,Miscellaneous Durable Goods
+5094,"Jewelry, Watches, Precious Stones, and Precious Metals",F,Wholesale Trade,50,Wholesale Trade-durable Goods,509,Miscellaneous Durable Goods
+5099,"Durable Goods, Not Elsewhere Classified",F,Wholesale Trade,50,Wholesale Trade-durable Goods,509,Miscellaneous Durable Goods
+5111,Printing and Writing Paper,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,511,Paper And Paper Products
+5112,Stationery and Office Supplies,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,511,Paper And Paper Products
+5113,Industrial and Personal Service Paper,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,511,Paper And Paper Products
+5122,"Drugs, Drug Proprietaries, and Druggists' Sundries",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,512,"Drugs, Drug Proprietaries, And Druggists' Sundries"
+5131,"Piece Goods, Notions, and Other Dry Good",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,513,"Apparel, Piece Goods, And Notions"
+5136,Men's and Boy's Clothing and Furnishings,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,513,"Apparel, Piece Goods, And Notions"
+5137,"Women's, Children's, and Infants' Clothing and Accessories",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,513,"Apparel, Piece Goods, And Notions"
+5139,Footwear,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,513,"Apparel, Piece Goods, And Notions"
+5141,"Groceries, General Line",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,514,Groceries And Related Products
+5142,Packaged Frozen Foods,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,514,Groceries And Related Products
+5143,"Dairy Products, Except Dried or Canned",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,514,Groceries And Related Products
+5144,Poultry and Poultry Products,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,514,Groceries And Related Products
+5145,Confectionery,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,514,Groceries And Related Products
+5146,Fish and Seafoods,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,514,Groceries And Related Products
+5147,Meats and Meat Products,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,514,Groceries And Related Products
+5148,Fresh Fruits and Vegetables,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,514,Groceries And Related Products
+5149,"Groceries and Related Products, Not Elsewhere Classified",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,514,Groceries And Related Products
+5153,Grain and Field Beans,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,515,Farm-product Raw Materials
+5154,Livestock,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,515,Farm-product Raw Materials
+5159,"Farm-Product Raw Materials, Not Elsewhere Classified",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,515,Farm-product Raw Materials
+5162,Plastics Materials and Basic Forms and Shapes,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,516,Chemicals And Allied Products
+5169,"Chemicals and Allied Products, Not Elsewhere Classified",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,516,Chemicals And Allied Products
+5171,Petroleum Bulk stations and Terminals,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,517,Petroleum And Petroleum Products
+5172,"Petroleum and Petroleum Products Wholesalers, Except Bulk Stations and Terminals",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,517,Petroleum And Petroleum Products
+5181,Beer and Ale,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,518,"Beer, Wine, And Distilled Alcoholic Beverages"
+5182,Wine and Distilled Alcoholic Beverages,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,518,"Beer, Wine, And Distilled Alcoholic Beverages"
+5191,Farm Supplies,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,519,Miscellaneous Non-durable Goods
+5192,"Books, Periodicals, and Newspapers",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,519,Miscellaneous Non-durable Goods
+5193,"Flowers, Nursery Stock, and Florists' Supplies",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,519,Miscellaneous Non-durable Goods
+5194,Tobacco and Tobacco Products,F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,519,Miscellaneous Non-durable Goods
+5198,"Paints, Varnishes, and Supplies",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,519,Miscellaneous Non-durable Goods
+5199,"Nondurable Goods, Not Elsewhere Classified",F,Wholesale Trade,51,Wholesale Trade-non-durable Goods,519,Miscellaneous Non-durable Goods
+5211,Lumber and Other Building Materials Dealers,G,Retail Trade,52,"Building Materials, Hardware, Garden Supply, And Mobile Home Dealers",521,Lumber And Other Building Materials Dealers
+5231,"Paint, Glass, and Wallpaper Stores",G,Retail Trade,52,"Building Materials, Hardware, Garden Supply, And Mobile Home Dealers",523,"Paint, Glass And Wallpaper Stores"
+5251,Hardware Stores,G,Retail Trade,52,"Building Materials, Hardware, Garden Supply, And Mobile Home Dealers",525,Hardware Stores
+5261,"Retail Nurseries, Lawn and Garden Supply Stores",G,Retail Trade,52,"Building Materials, Hardware, Garden Supply, And Mobile Home Dealers",526,"Retail Nurseries, Lawn And Garden Supply Stores"
+5271,Mobile Home Dealers,G,Retail Trade,52,"Building Materials, Hardware, Garden Supply, And Mobile Home Dealers",527,Mobile Home Dealers
+5311,Department Stores,G,Retail Trade,53,General Merchandise Stores,531,Department Stores
+5331,Variety Stores,G,Retail Trade,53,General Merchandise Stores,533,Variety Stores
+5399,Miscellaneous General Merchandise Stores,G,Retail Trade,53,General Merchandise Stores,539,Miscellaneous General Merchandise Stores
+5411,Grocery Stores,G,Retail Trade,54,Food Stores,541,Grocery Stores
+5421,"Meat and Fish (Seafood) Markets, Including Freezer Provisioners",G,Retail Trade,54,Food Stores,542,"Meat And Fish (seafood) Markets, Including"
+5431,Fruit and Vegetable Markets,G,Retail Trade,54,Food Stores,543,Fruit And Vegetable Markets
+5441,"Candy, Nut, and Confectionery Stores",G,Retail Trade,54,Food Stores,544,"Candy, Nut, And Confectionery Stores"
+5451,Dairy Products Stores,G,Retail Trade,54,Food Stores,545,Dairy Products Stores
+5461,Retail Bakeries,G,Retail Trade,54,Food Stores,546,Retail Bakeries
+5499,Miscellaneous Food Stores,G,Retail Trade,54,Food Stores,549,Miscellaneous Food Stores
+5511,Motor Vehicle Dealers (New and Used),G,Retail Trade,55,Automotive Dealers And Gasoline Service Stations,551,Motor Vehicle Dealers (new And Used)
+5521,Motor Vehicle Dealers (Used Only),G,Retail Trade,55,Automotive Dealers And Gasoline Service Stations,552,Motor Vehicle Dealers (used Only)
+5531,Auto and Home Supply Stores,G,Retail Trade,55,Automotive Dealers And Gasoline Service Stations,553,Auto And Home Supply Stores
+5541,Gasoline Service Stations,G,Retail Trade,55,Automotive Dealers And Gasoline Service Stations,554,Gasoline Service Stations
+5551,Boat Dealers,G,Retail Trade,55,Automotive Dealers And Gasoline Service Stations,555,Boat Dealers
+5561,Recreational Vehicle Dealers,G,Retail Trade,55,Automotive Dealers And Gasoline Service Stations,556,Recreational Vehicle Dealers
+5571,Motorcycle Dealers,G,Retail Trade,55,Automotive Dealers And Gasoline Service Stations,557,Motorcycle Dealers
+5599,"Automotive Dealers, Not Elsewhere Classified",G,Retail Trade,55,Automotive Dealers And Gasoline Service Stations,559,"Automotive Dealers, Not Elsewhere Classified"
+5611,Men's and Boys' Clothing and Accessory Stores,G,Retail Trade,56,Apparel And Accessory Stores,561,Men's And Boys' Clothing And Accessory Stores
+5621,Women's Clothing Stores,G,Retail Trade,56,Apparel And Accessory Stores,562,Women's Clothing Stores
+5632,Women's Accessory and Specialty Stores,G,Retail Trade,56,Apparel And Accessory Stores,563,Women's Accessory And Specialty Stores
+5641,Children's and Infants' Wear Stores,G,Retail Trade,56,Apparel And Accessory Stores,564,Children's And Infants' Wear Stores
+5651,Family Clothing Stores,G,Retail Trade,56,Apparel And Accessory Stores,565,Family Clothing Stores
+5661,Shoe Stores,G,Retail Trade,56,Apparel And Accessory Stores,566,Shoe Stores
+5699,Miscellaneous Apparel and Accessory Stores,G,Retail Trade,56,Apparel And Accessory Stores,569,Miscellaneous Apparel And Accessory Stores
+5712,Furniture Stores,G,Retail Trade,57,"Home Furniture, Furnishings, And Equipment Stores",571,Home Furniture And Furnishings Stores
+5713,Floor Covering Stores,G,Retail Trade,57,"Home Furniture, Furnishings, And Equipment Stores",571,Home Furniture And Furnishings Stores
+5714,"Drapery, Curtain, and Upholstery Stores",G,Retail Trade,57,"Home Furniture, Furnishings, And Equipment Stores",571,Home Furniture And Furnishings Stores
+5719,Miscellaneous home furnishings Stores,G,Retail Trade,57,"Home Furniture, Furnishings, And Equipment Stores",571,Home Furniture And Furnishings Stores
+5722,Household Appliance Stores,G,Retail Trade,57,"Home Furniture, Furnishings, And Equipment Stores",572,Household Appliance Stores
+5731,"Radio, Television, and Consumer Electronics Stores",G,Retail Trade,57,"Home Furniture, Furnishings, And Equipment Stores",573,"Radio, Television, Consumer Electronics, And Music Stores"
+5734,Computer and Computer Software Stores,G,Retail Trade,57,"Home Furniture, Furnishings, And Equipment Stores",573,"Radio, Television, Consumer Electronics, And Music Stores"
+5735,Record and Prerecorded Tape Stores,G,Retail Trade,57,"Home Furniture, Furnishings, And Equipment Stores",573,"Radio, Television, Consumer Electronics, And Music Stores"
+5736,Musical Instrument Stores,G,Retail Trade,57,"Home Furniture, Furnishings, And Equipment Stores",573,"Radio, Television, Consumer Electronics, And Music Stores"
+5812,Eating Places,G,Retail Trade,58,Eating And Drinking Places,581,Eating And Drinking Places
+5813,Drinking Places (alcoholic Beverages),G,Retail Trade,58,Eating And Drinking Places,581,Eating And Drinking Places
+5912,Drug Stores and Proprietary Stores,G,Retail Trade,59,Miscellaneous Retail,591,Drug Stores And Proprietary Stores
+5921,Liquor Stores,G,Retail Trade,59,Miscellaneous Retail,592,Liquor Stores
+5932,Used Merchandise Stores,G,Retail Trade,59,Miscellaneous Retail,593,Used Merchandise Stores
+5941,Sporting Goods Stores and Bicycle Shops,G,Retail Trade,59,Miscellaneous Retail,594,Miscellaneous Shopping Goods Stores
+5942,Book Stores,G,Retail Trade,59,Miscellaneous Retail,594,Miscellaneous Shopping Goods Stores
+5943,Stationery Stores,G,Retail Trade,59,Miscellaneous Retail,594,Miscellaneous Shopping Goods Stores
+5944,Jewelry Stores,G,Retail Trade,59,Miscellaneous Retail,594,Miscellaneous Shopping Goods Stores
+5945,"Hobby, Toy, and Game Shops",G,Retail Trade,59,Miscellaneous Retail,594,Miscellaneous Shopping Goods Stores
+5946,Camera and Photographic Supply Stores,G,Retail Trade,59,Miscellaneous Retail,594,Miscellaneous Shopping Goods Stores
+5947,"Gift, Novelty, and Souvenir Shops",G,Retail Trade,59,Miscellaneous Retail,594,Miscellaneous Shopping Goods Stores
+5948,Luggage and Leather Goods Stores,G,Retail Trade,59,Miscellaneous Retail,594,Miscellaneous Shopping Goods Stores
+5949,"Sewing, Needlework, and Piece Goods Stores",G,Retail Trade,59,Miscellaneous Retail,594,Miscellaneous Shopping Goods Stores
+5961,Catalog and Mail-Order Houses,G,Retail Trade,59,Miscellaneous Retail,596,Nonstore Retailers
+5962,Automatic Merchandising Machine Operators,G,Retail Trade,59,Miscellaneous Retail,596,Nonstore Retailers
+5963,Direct Selling Establishments,G,Retail Trade,59,Miscellaneous Retail,596,Nonstore Retailers
+5983,Fuel Oil Dealers,G,Retail Trade,59,Miscellaneous Retail,598,Fuel Dealers
+5984,Liquefied Petroleum Gas (Bottled Gas) Dealers,G,Retail Trade,59,Miscellaneous Retail,598,Fuel Dealers
+5989,"Fuel Dealers, Not Elsewhere Classified",G,Retail Trade,59,Miscellaneous Retail,598,Fuel Dealers
+5992,Florists,G,Retail Trade,59,Miscellaneous Retail,599,"Retail Stores, Not Elsewhere Classified"
+5993,Tobacco Stores and Stands,G,Retail Trade,59,Miscellaneous Retail,599,"Retail Stores, Not Elsewhere Classified"
+5994,News Dealers and Newsstands,G,Retail Trade,59,Miscellaneous Retail,599,"Retail Stores, Not Elsewhere Classified"
+5995,Optical Goods Stores,G,Retail Trade,59,Miscellaneous Retail,599,"Retail Stores, Not Elsewhere Classified"
+5999,"Miscellaneous Retail Stores, Not Elsewhere Classified",G,Retail Trade,59,Miscellaneous Retail,599,"Retail Stores, Not Elsewhere Classified"
+6011,Federal Reserve Banks,H,"Finance, Insurance, And Real Estate",60,Depository Institutions,601,Central Reserve Depository Institutions
+6019,"Central Reserve Depository Institutions, Not Elsewhere Classified",H,"Finance, Insurance, And Real Estate",60,Depository Institutions,601,Central Reserve Depository Institutions
+6021,National Commercial Banks,H,"Finance, Insurance, And Real Estate",60,Depository Institutions,602,Commercial Banks
+6022,State Commercial Banks,H,"Finance, Insurance, And Real Estate",60,Depository Institutions,602,Commercial Banks
+6029,"Commercial Banks, Not Elsewhere Classified",H,"Finance, Insurance, And Real Estate",60,Depository Institutions,602,Commercial Banks
+6035,"Savings Institutions, Federally Chartered",H,"Finance, Insurance, And Real Estate",60,Depository Institutions,603,Savings Institutions
+6036,"Savings Institutions, Not Federally Chartered",H,"Finance, Insurance, And Real Estate",60,Depository Institutions,603,Savings Institutions
+6061,"Credit Unions, Federally Chartered",H,"Finance, Insurance, And Real Estate",60,Depository Institutions,606,Credit Unions
+6062,"Credit Unions, Not Federally Chartered",H,"Finance, Insurance, And Real Estate",60,Depository Institutions,606,Credit Unions
+6081,Branches and Agencies of Foreign Banks,H,"Finance, Insurance, And Real Estate",60,Depository Institutions,608,Foreign Banking And Branches And Agencies Of
+6082,Foreign Trade and International Banking Institutions,H,"Finance, Insurance, And Real Estate",60,Depository Institutions,608,Foreign Banking And Branches And Agencies Of
+6091,"Non-deposit Trust Facilities,",H,"Finance, Insurance, And Real Estate",60,Depository Institutions,609,Functions Related To Depository Banking
+6099,"Functions Related to Depository Banking, Not Elsewhere Classified",H,"Finance, Insurance, And Real Estate",60,Depository Institutions,609,Functions Related To Depository Banking
+6111,Federal and Federally-Sponsored Credit Agencies,H,"Finance, Insurance, And Real Estate",61,Non-depository Credit Institutions,611,Federal And Federally-sponsored Credit Agencies
+6141,Personal Credit Institutions,H,"Finance, Insurance, And Real Estate",61,Non-depository Credit Institutions,614,Personal Credit Institutions
+6153,"Short-Term Business Credit Institutions, Except Agricultural",H,"Finance, Insurance, And Real Estate",61,Non-depository Credit Institutions,615,Business Credit Institutions
+6159,Miscellaneous business Credit Institutions,H,"Finance, Insurance, And Real Estate",61,Non-depository Credit Institutions,615,Business Credit Institutions
+6162,Mortgage Bankers and Loan Correspondents,H,"Finance, Insurance, And Real Estate",61,Non-depository Credit Institutions,616,Mortgage Bankers And Brokers
+6163,Loan Brokers,H,"Finance, Insurance, And Real Estate",61,Non-depository Credit Institutions,616,Mortgage Bankers And Brokers
+6211,"Security Brokers, Dealers, and Flotation Companies",H,"Finance, Insurance, And Real Estate",62,"Security And Commodity Brokers, Dealers, Exchanges, And Services",621,"Security Brokers, Dealers, And Flotation"
+6221,Commodity Contracts Brokers and Dealers,H,"Finance, Insurance, And Real Estate",62,"Security And Commodity Brokers, Dealers, Exchanges, And Services",622,Commodity Contracts Brokers And Dealers
+6231,Security and Commodity Exchanges,H,"Finance, Insurance, And Real Estate",62,"Security And Commodity Brokers, Dealers, Exchanges, And Services",623,Security And Commodity Exchanges
+6282,Investment Advice,H,"Finance, Insurance, And Real Estate",62,"Security And Commodity Brokers, Dealers, Exchanges, And Services",628,Services Allied With The Exchange Of Securities
+6289,"Services Allied With the Exchange of Securities or Commodities, Not Elsewhere Classified",H,"Finance, Insurance, And Real Estate",62,"Security And Commodity Brokers, Dealers, Exchanges, And Services",628,Services Allied With The Exchange Of Securities
+6311,Life Insurance,H,"Finance, Insurance, And Real Estate",63,Insurance Carriers,631,Life Insurance
+6321,Accident and Health Insurance,H,"Finance, Insurance, And Real Estate",63,Insurance Carriers,632,Accident And Health Insurance And Medical
+6324,Hospital and Medical Service Plans,H,"Finance, Insurance, And Real Estate",63,Insurance Carriers,632,Accident And Health Insurance And Medical
+6331,"Fire, Marine, and Casualty Insurance",H,"Finance, Insurance, And Real Estate",63,Insurance Carriers,633,"Fire, Marine, And Casualty Insurance"
+6351,Surety Insurance,H,"Finance, Insurance, And Real Estate",63,Insurance Carriers,635,Surety Insurance
+6361,Title Insurance,H,"Finance, Insurance, And Real Estate",63,Insurance Carriers,636,Title Insurance
+6371,"Pension, Health, and Welfare Funds",H,"Finance, Insurance, And Real Estate",63,Insurance Carriers,637,"Pension, Health, And Welfare Funds"
+6399,"Insurance Carriers, Not Elsewhere Classified",H,"Finance, Insurance, And Real Estate",63,Insurance Carriers,639,"Insurance Carriers, Not Elsewhere Classified"
+6411,"Insurance Agents, Brokers, and Service",H,"Finance, Insurance, And Real Estate",64,"Insurance Agents, Brokers, And Service",641,"Insurance Agents, Brokers, And Service"
+6512,Operators of Nonresidential Buildings,H,"Finance, Insurance, And Real Estate",65,Real Estate,651,Real Estate Operators (except Developers) And Lessors
+6513,Operators of Apartment Buildings,H,"Finance, Insurance, And Real Estate",65,Real Estate,651,Real Estate Operators (except Developers) And Lessors
+6514,Operators of Dwellings Other Than Apartment Buildings,H,"Finance, Insurance, And Real Estate",65,Real Estate,651,Real Estate Operators (except Developers) And Lessors
+6515,Operators of Residential Mobile Home Sites,H,"Finance, Insurance, And Real Estate",65,Real Estate,651,Real Estate Operators (except Developers) And Lessors
+6517,Lessors of Railroad Property,H,"Finance, Insurance, And Real Estate",65,Real Estate,651,Real Estate Operators (except Developers) And Lessors
+6519,"Lessors of Real Property, Not Elsewhere Classified",H,"Finance, Insurance, And Real Estate",65,Real Estate,651,Real Estate Operators (except Developers) And Lessors
+6531,Real Estate Agents and Managers,H,"Finance, Insurance, And Real Estate",65,Real Estate,653,Real Estate Agents And Managers
+6541,Title Abstract Offices,H,"Finance, Insurance, And Real Estate",65,Real Estate,654,Title Abstract Offices
+6552,"Land Subdividers and Developers, Except Cemeteries",H,"Finance, Insurance, And Real Estate",65,Real Estate,655,Land Subdividers And Developers
+6553,Cemetery Subdividers and Developers,H,"Finance, Insurance, And Real Estate",65,Real Estate,655,Land Subdividers And Developers
+6712,Offices of Bank Holding Companies,H,"Finance, Insurance, And Real Estate",67,Holding And Other Investment Offices,671,Holding Offices
+6719,"Offices of Holding Companies, Not Elsewhere Classified",H,"Finance, Insurance, And Real Estate",67,Holding And Other Investment Offices,671,Holding Offices
+6722,"Management Investment Offices, Open-End",H,"Finance, Insurance, And Real Estate",67,Holding And Other Investment Offices,672,Investment Offices
+6726,"Unit Investment Trusts, Face-Amount Certificate Offices, and Closed-End Management Investment Offices",H,"Finance, Insurance, And Real Estate",67,Holding And Other Investment Offices,672,Investment Offices
+6732,"Educational, Religious, and Charitable Trusts",H,"Finance, Insurance, And Real Estate",67,Holding And Other Investment Offices,673,Trusts
+6733,"Trusts, Except Educational, Religious, and Charitable",H,"Finance, Insurance, And Real Estate",67,Holding And Other Investment Offices,673,Trusts
+6792,Oil Royalty Traders,H,"Finance, Insurance, And Real Estate",67,Holding And Other Investment Offices,679,Miscellaneous Investing
+6794,Patent Owners and Lessors,H,"Finance, Insurance, And Real Estate",67,Holding And Other Investment Offices,679,Miscellaneous Investing
+6798,Real Estate Investment Trusts,H,"Finance, Insurance, And Real Estate",67,Holding And Other Investment Offices,679,Miscellaneous Investing
+6799,"Investors, Not Elsewhere Classified",H,"Finance, Insurance, And Real Estate",67,Holding And Other Investment Offices,679,Miscellaneous Investing
+7011,Hotels and Motels,I,Services,70,"Hotels, Rooming Houses, Camps, And Other Lodging Places",701,Hotels And Motels
+7021,Rooming and Boarding Houses,I,Services,70,"Hotels, Rooming Houses, Camps, And Other Lodging Places",702,Rooming And Boarding Houses
+7032,Sporting and Recreational Camps,I,Services,70,"Hotels, Rooming Houses, Camps, And Other Lodging Places",703,Camps And Recreational Vehicle Parks
+7033,Recreational Vehicle Parks and Campsites,I,Services,70,"Hotels, Rooming Houses, Camps, And Other Lodging Places",703,Camps And Recreational Vehicle Parks
+7041,"Organization Hotels and Lodging Houses, on Membership Basis",I,Services,70,"Hotels, Rooming Houses, Camps, And Other Lodging Places",704,"Organization Hotels And Lodging Houses, On"
+7211,"Power Laundries, Family and Commercial",I,Services,72,Personal Services,721,"Laundry, Cleaning, And Garment Services"
+7212,"Garment Pressing, and Agents for Laundries and Drycleaners",I,Services,72,Personal Services,721,"Laundry, Cleaning, And Garment Services"
+7213,Linen Supply,I,Services,72,Personal Services,721,"Laundry, Cleaning, And Garment Services"
+7215,Coin-Operated Laundries and Drycleaning,I,Services,72,Personal Services,721,"Laundry, Cleaning, And Garment Services"
+7216,"Drycleaning Plants, Except Rug Cleaning",I,Services,72,Personal Services,721,"Laundry, Cleaning, And Garment Services"
+7217,Carpet and Upholstery Cleaning,I,Services,72,Personal Services,721,"Laundry, Cleaning, And Garment Services"
+7218,Industrial Launderers,I,Services,72,Personal Services,721,"Laundry, Cleaning, And Garment Services"
+7219,"Laundry and Garment Services, Not Elsewhere Classified",I,Services,72,Personal Services,721,"Laundry, Cleaning, And Garment Services"
+7221,"Photographic Studios, Portrait",I,Services,72,Personal Services,722,"Photographic Studios, Portrait"
+7231,Beauty Shops,I,Services,72,Personal Services,723,Beauty Shops
+7241,Barber Shops,I,Services,72,Personal Services,724,Barber Shops
+7251,Shoe Repair Shops and Shoeshine Parlors,I,Services,72,Personal Services,725,Shoe Repair Shops And Shoeshine Parlors
+7261,Funeral Service and Crematories,I,Services,72,Personal Services,726,Funeral Service And Crematories
+7291,Tax Return Preparation Services,I,Services,72,Personal Services,729,Miscellaneous Personal Services
+7299,"Miscellaneous Personal Services, Not Elsewhere Classified",I,Services,72,Personal Services,729,Miscellaneous Personal Services
+7311,Advertising Agencies,I,Services,73,Business Services,731,Advertising
+7312,Outdoor Advertising Services,I,Services,73,Business Services,731,Advertising
+7313,"Radio, Television, and Publishers' Advertising Representatives",I,Services,73,Business Services,731,Advertising
+7319,"Advertising, Not Elsewhere Classified",I,Services,73,Business Services,731,Advertising
+7322,Adjustment and Collection Services,I,Services,73,Business Services,732,"Consumer Credit Reporting Agencies, Mercantile"
+7323,Credit Reporting Services,I,Services,73,Business Services,732,"Consumer Credit Reporting Agencies, Mercantile"
+7331,Direct Mail Advertising Services,I,Services,73,Business Services,733,"Mailing, Reproduction, Commercial Art And Photography, and Stenographic Services"
+7334,Photocopying and Duplicating Services,I,Services,73,Business Services,733,"Mailing, Reproduction, Commercial Art And Photography, and Stenographic Services"
+7335,Commercial Photography,I,Services,73,Business Services,733,"Mailing, Reproduction, Commercial Art And Photography, and Stenographic Services"
+7336,Commercial Art and Graphic Design,I,Services,73,Business Services,733,"Mailing, Reproduction, Commercial Art And Photography, and Stenographic Services"
+7338,Secretarial and Court Reporting Services,I,Services,73,Business Services,733,"Mailing, Reproduction, Commercial Art And Photography, and Stenographic Services"
+7342,Disinfecting and Pest Control Services,I,Services,73,Business Services,734,Services To Dwellings And Other Buildings
+7349,"Building Cleaning and Maintenance Services, Not Elsewhere",I,Services,73,Business Services,734,Services To Dwellings And Other Buildings
+7352,Medical Equipment Rental and Leasing,I,Services,73,Business Services,735,Miscellaneous Equipment Rental And Leasing
+7353,Heavy Construction Equipment Rental and Leasing,I,Services,73,Business Services,735,Miscellaneous Equipment Rental And Leasing
+7359,"Equipment Rental and Leasing, Not Elsewhere Classified",I,Services,73,Business Services,735,Miscellaneous Equipment Rental And Leasing
+7361,Employment Agencies,I,Services,73,Business Services,736,Personnel Supply Services
+7363,Help Supply Services,I,Services,73,Business Services,736,Personnel Supply Services
+7371,Computer Programming Services,I,Services,73,Business Services,737,"Computer Programming, Data Processing, And Other Computer Related Services"
+7372,Prepackaged Software,I,Services,73,Business Services,737,"Computer Programming, Data Processing, And Other Computer Related Services"
+7373,Computer Integrated Systems Design,I,Services,73,Business Services,737,"Computer Programming, Data Processing, And Other Computer Related Services"
+7374,Computer Processing and Data Preparation and Processing Services,I,Services,73,Business Services,737,"Computer Programming, Data Processing, And Other Computer Related Services"
+7375,Information Retrieval Services,I,Services,73,Business Services,737,"Computer Programming, Data Processing, And Other Computer Related Services"
+7376,Computer Facilities Management Services,I,Services,73,Business Services,737,"Computer Programming, Data Processing, And Other Computer Related Services"
+7377,Computer Rental and Leasing,I,Services,73,Business Services,737,"Computer Programming, Data Processing, And Other Computer Related Services"
+7378,Computer Maintenance and Repair,I,Services,73,Business Services,737,"Computer Programming, Data Processing, And Other Computer Related Services"
+7379,"Computer Related Services, Not Elsewhere Classified",I,Services,73,Business Services,737,"Computer Programming, Data Processing, And Other Computer Related Services"
+7381,"Detective, Guard, and Armored Car Services",I,Services,73,Business Services,738,Miscellaneous Business Services
+7382,Security Systems Services,I,Services,73,Business Services,738,Miscellaneous Business Services
+7383,News Syndicates,I,Services,73,Business Services,738,Miscellaneous Business Services
+7384,Photofinishing Laboratories,I,Services,73,Business Services,738,Miscellaneous Business Services
+7389,"Business Services, Not Elsewhere Classified",I,Services,73,Business Services,738,Miscellaneous Business Services
+7513,"Truck Rental and Leasing, Without Drivers",I,Services,75,"Automotive Repair, Services, And Parking",751,"Automotive Rental And Leasing, Without Drivers"
+7514,Passenger Car Rental,I,Services,75,"Automotive Repair, Services, And Parking",751,"Automotive Rental And Leasing, Without Drivers"
+7515,Passenger Car Leasing,I,Services,75,"Automotive Repair, Services, And Parking",751,"Automotive Rental And Leasing, Without Drivers"
+7519,Utility Trailer and Recreational Vehicle Rental,I,Services,75,"Automotive Repair, Services, And Parking",751,"Automotive Rental And Leasing, Without Drivers"
+7521,Automobile Parking,I,Services,75,"Automotive Repair, Services, And Parking",752,Automobile Parking
+7532,"Top, Body, and Upholstery Repair Shops and Paint Shops",I,Services,75,"Automotive Repair, Services, And Parking",753,Automotive Repair Shops
+7533,Automotive Exhaust System Repair Shops,I,Services,75,"Automotive Repair, Services, And Parking",753,Automotive Repair Shops
+7534,Tire Retreading and Repair Shops,I,Services,75,"Automotive Repair, Services, And Parking",753,Automotive Repair Shops
+7536,Automotive Glass Replacement Shops,I,Services,75,"Automotive Repair, Services, And Parking",753,Automotive Repair Shops
+7537,Automotive Transmission Repair Shops,I,Services,75,"Automotive Repair, Services, And Parking",753,Automotive Repair Shops
+7538,General Automotive Repair Shops,I,Services,75,"Automotive Repair, Services, And Parking",753,Automotive Repair Shops
+7539,"Automotive Repair Shops, Not Elsewhere Classified",I,Services,75,"Automotive Repair, Services, And Parking",753,Automotive Repair Shops
+7542,Carwashes,I,Services,75,"Automotive Repair, Services, And Parking",754,"Automotive Services, Except Repair"
+7549,"Automotive Services, Except Repair and Carwashes",I,Services,75,"Automotive Repair, Services, And Parking",754,"Automotive Services, Except Repair"
+7622,Radio and Television Repair Shops,I,Services,76,Miscellaneous Repair Services,762,Electrical Repair Shops
+7623,Refrigeration and Air-Conditioning Service and Repair Shops,I,Services,76,Miscellaneous Repair Services,762,Electrical Repair Shops
+7629,"Electrical and Electronic Repair Shops, Not Elsewhere Classified",I,Services,76,Miscellaneous Repair Services,762,Electrical Repair Shops
+7631,"Watch, Clock, and Jewelry Repair",I,Services,76,Miscellaneous Repair Services,763,"Watch, Clock, And Jewelry Repair"
+7641,Reupholstery and Furniture Repair,I,Services,76,Miscellaneous Repair Services,764,Reupholstery And Furniture Repair
+7692,Welding Repair,I,Services,76,Miscellaneous Repair Services,769,Miscellaneous Repair Shops And Related Services
+7694,Armature Rewinding Shops,I,Services,76,Miscellaneous Repair Services,769,Miscellaneous Repair Shops And Related Services
+7699,"Repair Shops and Related Services, Not Elsewhere Classified",I,Services,76,Miscellaneous Repair Services,769,Miscellaneous Repair Shops And Related Services
+7812,Motion Picture and Video Tape Production,I,Services,78,Motion Pictures,781,Motion Picture Production And Allied Services
+7819,Services Allied to Motion Picture Production,I,Services,78,Motion Pictures,781,Motion Picture Production And Allied Services
+7822,Motion Picture and Video Tape Distribution,I,Services,78,Motion Pictures,782,Motion Picture Distribution And Allied Services
+7829,Services Allied to Motion Picture Distribution,I,Services,78,Motion Pictures,782,Motion Picture Distribution And Allied Services
+7832,"Motion Picture Theaters, Except Drive-In",I,Services,78,Motion Pictures,783,Motion Picture Theaters
+7833,Drive-In Motion Picture Theaters,I,Services,78,Motion Pictures,783,Motion Picture Theaters
+7841,Video Tape Rental,I,Services,78,Motion Pictures,784,Video Tape Rental
+7911,"Dance Studios, Schools, and Halls",I,Services,79,Amusement And Recreation Services,791,"Dance Studios, Schools, And Halls"
+7922,Theatrical Producers (Except Motion Picture) and Miscellaneous Theatrical Services,I,Services,79,Amusement And Recreation Services,792,"Theatrical Producers (except Motion Picture),"
+7929,"Bands, Orchestras, Actors, and Other Entertainers and Entertainment Groups",I,Services,79,Amusement And Recreation Services,792,"Theatrical Producers (except Motion Picture),"
+7933,Bowling Centers,I,Services,79,Amusement And Recreation Services,793,Bowling Centers
+7941,Professional Sports Clubs and Promoters,I,Services,79,Amusement And Recreation Services,794,Commercial Sports
+7948,"Racing, Including Track Operation",I,Services,79,Amusement And Recreation Services,794,Commercial Sports
+7991,Physical Fitness Facilities,I,Services,79,Amusement And Recreation Services,799,Miscellaneous Amusement And Recreation
+7992,Public Golf Courses,I,Services,79,Amusement And Recreation Services,799,Miscellaneous Amusement And Recreation
+7993,Coin-Operated Amusement Devices,I,Services,79,Amusement And Recreation Services,799,Miscellaneous Amusement And Recreation
+7996,Amusement Parks,I,Services,79,Amusement And Recreation Services,799,Miscellaneous Amusement And Recreation
+7997,Membership Sports and Recreation Clubs,I,Services,79,Amusement And Recreation Services,799,Miscellaneous Amusement And Recreation
+7999,"Amusement and Recreation Services, Not Elsewhere Classified",I,Services,79,Amusement And Recreation Services,799,Miscellaneous Amusement And Recreation
+8011,Offices and Clinics of Doctors of Medicine,I,Services,80,Health Services,801,Offices And Clinics Of Doctors Of Medicine
+8021,Offices and Clinics of Dentists,I,Services,80,Health Services,802,Offices And Clinics Of Dentists
+8031,Offices and Clinics of Doctors of Osteopathy,I,Services,80,Health Services,803,Offices And Clinics Of Doctors Of Osteopathy
+8041,Offices and Clinics of Chiropractors,I,Services,80,Health Services,804,Offices And Clinics Of Other Health Practitioners
+8042,Offices and Clinics of Optometrists,I,Services,80,Health Services,804,Offices And Clinics Of Other Health Practitioners
+8043,Offices and Clinics of Podiatrists,I,Services,80,Health Services,804,Offices And Clinics Of Other Health Practitioners
+8049,"Offices and Clinics of Health Practitioners, Not Elsewhere Classified",I,Services,80,Health Services,804,Offices And Clinics Of Other Health Practitioners
+8051,Skilled Nursing Care Facilities,I,Services,80,Health Services,805,Nursing And Personal Care Facilities
+8052,Intermediate Care Facilities,I,Services,80,Health Services,805,Nursing And Personal Care Facilities
+8059,"Nursing and Personal Care Facilities, Not Elsewhere Classified",I,Services,80,Health Services,805,Nursing And Personal Care Facilities
+8062,General Medical and Surgical Hospitals,I,Services,80,Health Services,806,Hospitals
+8063,Psychiatric Hospitals,I,Services,80,Health Services,806,Hospitals
+8069,"Specialty Hospitals, Except Psychiatric",I,Services,80,Health Services,806,Hospitals
+8071,Medical Laboratories,I,Services,80,Health Services,807,Medical And Dental Laboratories
+8072,Dental Laboratories,I,Services,80,Health Services,807,Medical And Dental Laboratories
+8082,Home Health Care Services,I,Services,80,Health Services,808,Home Health Care Services
+8092,Kidney Dialysis Centers,I,Services,80,Health Services,809,"Miscellaneous Health And Allied Services, Not"
+8093,"Specialty Outpatient Facilities, Not Elsewhere Classified",I,Services,80,Health Services,809,"Miscellaneous Health And Allied Services, Not"
+8099,"Health and Allied Services, Not Elsewhere Classified",I,Services,80,Health Services,809,"Miscellaneous Health And Allied Services, Not"
+8111,Legal Services,I,Services,81,Legal Services,811,Legal Services
+8211,Elementary and Secondary Schools,I,Services,82,Educational Services,821,Elementary And Secondary Schools
+8221,"Colleges, Universities, and Professional Schools",I,Services,82,Educational Services,822,"Colleges, Universities, Professional Schools, And"
+8222,Junior Colleges and Technical Institutes,I,Services,82,Educational Services,822,"Colleges, Universities, Professional Schools, And"
+8231,Libraries,I,Services,82,Educational Services,823,Libraries
+8243,Data Processing Schools,I,Services,82,Educational Services,824,Vocational Schools
+8244,Business and Secretarial Schools,I,Services,82,Educational Services,824,Vocational Schools
+8249,"Vocational Schools, Not Elsewhere Classified",I,Services,82,Educational Services,824,Vocational Schools
+8299,"Schools and Educational Services, Not Elsewhere Classified",I,Services,82,Educational Services,829,"Schools And Educational Services, Not Elsewhere"
+8322,Individual and Family Social Services,I,Services,83,Social Services,832,Individual And Family Social Services
+8331,Job Training and Vocational Rehabilitation Services,I,Services,83,Social Services,833,Job Training And Vocational Rehabilitation
+8351,Child Day Care Services,I,Services,83,Social Services,835,Child Day Care Services
+8361,Residential Care,I,Services,83,Social Services,836,Residential Care
+8399,"Social Services, Not Elsewhere Classified",I,Services,83,Social Services,839,"Social Services, Not Elsewhere Classified"
+8412,Museums and Art Galleries,I,Services,84,"Museums, Art Galleries, And Botanical And Zoological Gardens",841,Museums And Art Galleries
+8422,Arboreta and Botanical or Zoological Gardens,I,Services,84,"Museums, Art Galleries, And Botanical And Zoological Gardens",842,Arboreta And Botanical Or Zoological Gardens
+8611,Business Associations,I,Services,86,Membership Organizations,861,Business Associations
+8621,Professional Membership Organizations,I,Services,86,Membership Organizations,862,Professional Membership Organizations
+8631,Labor Unions and Similar Labor Organizations,I,Services,86,Membership Organizations,863,Labor Unions And Similar Labor Organizations
+8641,"Civic, Social, and Fraternal Associations",I,Services,86,Membership Organizations,864,"Civic, Social, And Fraternal Associations"
+8651,Political Organizations,I,Services,86,Membership Organizations,865,Political Organizations
+8661,Religious Organizations,I,Services,86,Membership Organizations,866,Religious Organizations
+8699,"Membership Organizations, Not Elsewhere Classified",I,Services,86,Membership Organizations,869,"Membership Organizations, Not Elsewhere"
+8711,Engineering Services,I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",871,"Engineering, Architectural, And Surveying"
+8712,Architectural Services,I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",871,"Engineering, Architectural, And Surveying"
+8713,Surveying Services,I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",871,"Engineering, Architectural, And Surveying"
+8721,"Accounting, Auditing, and Bookkeeping Services",I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",872,"Accounting, Auditing, And Bookkeeping Services"
+8731,Commercial Physical and Biological Research,I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",873,"Research, Development, And Testing Services"
+8732,"Commercial Economic, Sociological, and Educational Research",I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",873,"Research, Development, And Testing Services"
+8733,Noncommercial Research Organizations,I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",873,"Research, Development, And Testing Services"
+8734,Testing Laboratories,I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",873,"Research, Development, And Testing Services"
+8741,Management Services,I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",874,Management And Public Relations Services
+8742,Management Consulting Services,I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",874,Management And Public Relations Services
+8743,Public Relations Services,I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",874,Management And Public Relations Services
+8744,Facilities Support Management Services,I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",874,Management And Public Relations Services
+8748,"Business Consulting Services, Not Elsewhere Classified",I,Services,87,"Engineering, Accounting, Research, Management, And Related Services",874,Management And Public Relations Services
+8811,Private Households,I,Services,88,Private Households,881,Private Households
+8999,"Services, Not Elsewhere Classified",I,Services,89,Miscellaneous Services,899,Miscellaneous Services
+9111,Executive Offices,J,Public Administration,91,"Executive, Legislative, And General Government, Except Finance",911,Executive Offices
+9121,Legislative Bodies,J,Public Administration,91,"Executive, Legislative, And General Government, Except Finance",912,Legislative Bodies
+9131,Executive and Legislative Offices Combined,J,Public Administration,91,"Executive, Legislative, And General Government, Except Finance",913,Executive And Legislative Offices Combined
+9199,"General Government, Not Elsewhere Classified",J,Public Administration,91,"Executive, Legislative, And General Government, Except Finance",919,"General Government, Not Elsewhere Classified"
+9211,Courts,J,Public Administration,92,"Justice, Public Order, And Safety",921,Courts
+9221,Police Protection,J,Public Administration,92,"Justice, Public Order, And Safety",922,Public Order And Safety
+9222,Legal Counsel and Prosecution,J,Public Administration,92,"Justice, Public Order, And Safety",922,Public Order And Safety
+9223,Correctional Institutions,J,Public Administration,92,"Justice, Public Order, And Safety",922,Public Order And Safety
+9224,Fire Protection,J,Public Administration,92,"Justice, Public Order, And Safety",922,Public Order And Safety
+9229,"Public Order and Safety, Not Elsewhere Classified",J,Public Administration,92,"Justice, Public Order, And Safety",922,Public Order And Safety
+9311,"Public Finance, Taxation, and Monetary Policy",J,Public Administration,93,"Public Finance, Taxation, And Monetary Policy",931,"Public Finance, Taxation, And Monetary Policy"
+9411,Administration of Educational Programs,J,Public Administration,94,Administration Of Human Resource Programs,941,Administration Of Educational Programs
+9431,Administration of Public Health Programs,J,Public Administration,94,Administration Of Human Resource Programs,943,Administration Of Public Health Programs
+9441,"Administration of Social, Human Resource and Income Maintenance Programs",J,Public Administration,94,Administration Of Human Resource Programs,944,"Administration Of Social, Human Resource And"
+9451,"Administration of Veterans' Affairs, Except Health and Insurance",J,Public Administration,94,Administration Of Human Resource Programs,945,"Administration Of Veteran's Affairs, Except"
+9511,Air and Water Resource and Solid Waste Management,J,Public Administration,95,Administration Of Environmental Quality And Housing Programs,951,Administration Of Environmental Quality
+9512,"Land, Mineral, Wildlife, and Forest Conservation",J,Public Administration,95,Administration Of Environmental Quality And Housing Programs,951,Administration Of Environmental Quality
+9531,Administration of Housing Programs,J,Public Administration,95,Administration Of Environmental Quality And Housing Programs,953,Administration Of Housing And Urban
+9532,Administration of Urban Planning and Community and Rural Development,J,Public Administration,95,Administration Of Environmental Quality And Housing Programs,953,Administration Of Housing And Urban
+9611,Administration of General Economic Programs,J,Public Administration,96,Administration Of Economic Programs,961,Administration Of General Economic Programs
+9621,Regulation and Administration of Transportation Programs,J,Public Administration,96,Administration Of Economic Programs,962,Regulation And Administration Of Transportation
+9631,"Regulation and Administration of Communications, Electric, Gas, and Other Utilities",J,Public Administration,96,Administration Of Economic Programs,963,Regulation And Administration Of
+9641,Regulation of Agricultural Marketing and Commodities,J,Public Administration,96,Administration Of Economic Programs,964,Regulation Of Agricultural Marketing And
+9651,"Regulation, Licensing, and Inspection of Miscellaneous Commercial Sectors",J,Public Administration,96,Administration Of Economic Programs,965,"Regulation, Licensing, And Inspection Of"
+9661,Space and Research and Technology,J,Public Administration,96,Administration Of Economic Programs,966,Space Research And Technology
+9711,National Security,J,Public Administration,97,National Security And International Affairs,971,National Security
+9721,International Affairs,J,Public Administration,97,National Security And International Affairs,972,International Affairs
+9999,Nonclassifiable Establishments,J,Public Administration,99,Nonclassifiable Establishments,999,Nonclassifiable Establishments

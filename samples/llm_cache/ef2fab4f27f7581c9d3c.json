@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT cik, entity_name, sic_code FROM edgar.company_profiles WHERE cik = 51143\",\n  \"purpose\": \"Retrieve IBM's sic_code(s) from company_profiles to examine its value and possible duplicates.\",\n  \"tests\": [\"H-fff46c\", \"H-c38b45\", \"H-c948f3\", \"H-6b1937\", \"H-8b80ef\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"\",\n    \"REMAINING\": \"Check IBM's sic_code_format_and_matching\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

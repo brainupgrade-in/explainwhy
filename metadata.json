@@ -1,0 +1,61 @@
+{
+  "project": "ExplainWhy",
+  "tagline": "An agent that explains why data sources disagree, answering only with claims a critic has checked against Zetaris query results.",
+  "team": "gheware",
+  "track": "The Agent That Can Explain Why",
+  "repository_layout": {
+    "agent": "explainwhy/agent.py",
+    "data_harness": "explainwhy/data.py",
+    "meterless_engines": "explainwhy/engines/",
+    "zetaris_objects": "zetaris/01_create.sql",
+    "sample_outputs": "samples/outputs/"
+  },
+  "sponsor_technologies": {
+    "zetaris": {
+      "used": true,
+      "how": "Data harness. All evidence is Lightning SQL sent to the Zetaris REST API (POST /sql-editor/sqls/run) against three views over live REST sources: edgar.revenue_facts (SEC XBRL companyconcept, 5 REST tables unioned), edgar.company_profiles (SEC submissions), company_dns.sic_codes_table (getting-started recipe 12). Cross-source joins run inside Zetaris.",
+      "where": ["zetaris/01_create.sql", "explainwhy/data.py:ZetarisSource"],
+      "note": "Recorded sample runs used the SAMPLE_MODE local mirror of the same views (same names, same SQL)."
+    },
+    "meterless": {
+      "used": true,
+      "engines": ["World Model", "H-MEM", "Markovian"],
+      "how": "Minimal Python implementations of the Meterless engine specs. World Model: event-sourced investigation state, stable content IDs, idempotent ingest, version check; its log is the agent trace. H-MEM: file-based memory with mandatory source and provenance, the spec's hybrid retrieval score, supersession instead of deletion, feedback deltas, audit ledger; verified claims are stored and recalled on later questions. Markovian: each investigator step sees only the goal, the COMPLETED/REMAINING/DECISIONS/CONTEXT carryover and the latest result, with NEEDS_TOOL / STATE_CHECKPOINT / TASK_COMPLETE markers; 42-73% fewer prompt tokens than a full-transcript loop in the sample runs.",
+      "where": ["explainwhy/engines/world_model.py", "explainwhy/engines/hmem.py", "explainwhy/engines/markovian.py"]
+    },
+    "nvidia": {
+      "used": true,
+      "how": "Every agent role (planner, investigator, critic) runs on NVIDIA Nemotron: nvidia/nemotron-3-super-120b-a12b via an OpenAI-compatible endpoint (Nebius Token Factory).",
+      "where": ["explainwhy/llm.py"]
+    },
+    "cursor": {
+      "used": false,
+      "how": "Not used: HackOS Cursor access instructions were still TBC on 27 Oct 2026. Code was written with Claude Code, which the AI Usage Policy allows."
+    },
+    "bright_data": {"used": false}
+  },
+  "models": ["nvidia/nemotron-3-super-120b-a12b"],
+  "pre_existing_components": [],
+  "reference_material_not_copied": [
+    "Meterless engine specs, github.com/Meterless/Meterless (Apache-2.0)",
+    "Zetaris getting-started SQL recipes, github.com/zetaris/getting-started (Apache-2.0)"
+  ],
+  "data_sources": [
+    "SEC EDGAR XBRL companyconcept API (data.sec.gov)",
+    "SEC EDGAR submissions API (data.sec.gov)",
+    "company_dns SIC reference list (company-dns.mediumroast.io)"
+  ],
+  "run": {
+    "offline": "SAMPLE_MODE=true python -m explainwhy --sample 1",
+    "live": "python -m explainwhy \"<why question>\" [--zetaris]",
+    "tests": "python -m pytest -q",
+    "typical_runtime_seconds": "45-120",
+    "gpu_required": false,
+    "runtime_dependencies": "Python 3.11+ standard library only"
+  },
+  "sample_inputs": [
+    "Why does Apple's revenue history under the us-gaap Revenues concept stop at fiscal year 2018?",
+    "Why does IBM drop out when EDGAR company profiles are joined to the company_dns SIC reference list?",
+    "Why does Tesla report revenue under two different XBRL concepts, and which one should be used for which years?"
+  ]
+}

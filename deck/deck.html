@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ExplainWhy — Open Agent Hackathon 2026</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: #1d2433; }
+  .slide { width: 1280px; height: 720px; padding: 64px 80px; position: relative; overflow: hidden;
+           page-break-after: always; background: #fbfaf7; }
+  .slide:last-child { page-break-after: auto; }
+  h1 { font-size: 64px; margin: 0 0 16px; letter-spacing: -1px; }
+  h2 { font-size: 40px; margin: 0 0 28px; letter-spacing: -0.5px; }
+  p, li { font-size: 24px; line-height: 1.45; }
+  ul { padding-left: 28px; margin: 0; }
+  li { margin-bottom: 10px; }
+  .kicker { font-size: 18px; letter-spacing: 2px; text-transform: uppercase; color: #5b6b2f; font-weight: 700; margin-bottom: 18px; }
+  .muted { color: #5c6475; }
+  .accent { color: #3f6212; }
+  .foot { position: absolute; bottom: 28px; left: 80px; right: 80px; font-size: 15px; color: #8a90a0;
+          display: flex; justify-content: space-between; }
+  .title { background: #1d2433; color: #f5f3ee; }
+  .title .kicker { color: #a3c76d; }
+  .title .muted { color: #b9bfcc; }
+  .chips span { display: inline-block; border: 1px solid #a3c76d; color: #d9ecb8; border-radius: 999px;
+                padding: 6px 16px; margin: 0 10px 10px 0; font-size: 18px; }
+  .cols { display: flex; gap: 40px; }
+  .cols > div { flex: 1; }
+  .card { background: #fff; border: 1px solid #e4e1d8; border-radius: 14px; padding: 22px 26px; }
+  .card h3 { margin: 0 0 10px; font-size: 24px; }
+  .card p, .card li { font-size: 19px; }
+  pre, code { font-family: "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace; }
+  pre { background: #1d2433; color: #e8e6df; border-radius: 12px; padding: 22px 26px; font-size: 17px; line-height: 1.5;
+        white-space: pre-wrap; margin: 0; }
+  pre .ok { color: #a3c76d; } pre .q { color: #f0c674; } pre .dim { color: #8a90a0; }
+  table { border-collapse: collapse; width: 100%; font-size: 20px; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid #e4e1d8; vertical-align: top; }
+  th { color: #5c6475; font-weight: 600; font-size: 17px; text-transform: uppercase; letter-spacing: 1px; }
+  .flow { display: flex; align-items: stretch; gap: 14px; margin-top: 8px; }
+  .flow .step { flex: 1; background: #fff; border: 2px solid #c9d8a8; border-radius: 14px; padding: 16px 16px; }
+  .flow .step b { display: block; font-size: 20px; margin-bottom: 6px; color: #3f6212; }
+  .flow .step span { font-size: 16px; line-height: 1.4; color: #3a4252; }
+  .flow .arrow { align-self: center; font-size: 30px; color: #8aa65c; }
+  .loop { margin-top: 18px; font-size: 19px; color: #5c6475; }
+  .big { font-size: 30px; line-height: 1.4; }
+</style>
+</head>
+<body>
+
+<section class="slide title">
+  <div class="kicker">Open Agent Hackathon 2026 · Track 2 · The Agent That Can Explain Why</div>
+  <h1>ExplainWhy</h1>
+  <p class="big" style="max-width: 980px;">An agent that explains <em>why</em> your data sources disagree,
+    and answers only with claims a critic has checked against the query results.</p>
+  <div class="chips" style="margin-top: 40px;">
+    <span>NVIDIA Nemotron</span><span>Zetaris data harness</span><span>Meterless World Model · H-MEM · Markovian</span>
+  </div>
+  <div class="foot"><span>Team gheware (solo) · Rajesh Gheware</span><span>github repo: see submission</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">The problem</div>
+  <h2>"Why don't these numbers line up?" costs analysts hours</h2>
+  <div class="cols">
+    <div>
+      <ul>
+        <li>A revenue series that just <b>stops</b> in 2018.</li>
+        <li>A join that silently <b>drops</b> one company.</li>
+        <li>Two figures for the same thing that <b>don't match</b>.</li>
+      </ul>
+      <p class="muted" style="margin-top: 26px;">The cause is spread across sources: tagging changes,
+        reference-data gaps, duplicated filings, real business events.</p>
+    </div>
+    <div class="card">
+      <h3>A plain LLM is the wrong tool</h3>
+      <p>It answers fluently, invents numbers, and mixes plausible causes with facts.
+        You cannot tell which sentence came from the data.</p>
+      <p class="accent" style="margin-top: 14px;"><b>ExplainWhy works like a careful analyst:</b>
+        hypotheses → checks → ruled out → only what the data shows, with receipts.</p>
+    </div>
+  </div>
+  <div class="foot"><span>ExplainWhy</span><span>2</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">What it does</div>
+  <h2>Hypotheses, SQL evidence, a strict critic, a verified answer</h2>
+  <div class="flow">
+    <div class="step"><b>Recall</b><span>H-MEM brings back prior verified findings, to re-check before use</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>Plan</b><span>3–5 competing hypotheses: data artifacts <i>and</i> real-world causes</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>Investigate</b><span>one bounded step at a time: read-only SQL in Zetaris, every result recorded as evidence E-xxxxxx</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>Critique</b><span>citations exist · numbers appear in cited rows · no vacuous zeros · LLM review</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>Answer</b><span>verified claims only; causes the data can't prove are labelled "likely"</span></div>
+  </div>
+  <p class="loop">↺ Unsupported claims go back to the investigator with the critic's reasons (up to 2 repair rounds).
+    Hard limits: 8-minute run deadline, step budget with forced finish, capped retries, single-SELECT guard.</p>
+  <p class="loop">Every role runs on <b>NVIDIA Nemotron</b> (<code>nemotron-3-super-120b-a12b</code>). The full trace is the
+    World Model event log: question, hypotheses, each query and its rows, each critic verdict, the answer.</p>
+  <div class="foot"><span>ExplainWhy</span><span>3</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Real run · sample 2</div>
+  <h2>Why does IBM drop out of the SIC join?</h2>
+<pre><span class="q">$ python -m explainwhy --sample 2</span>
+<span class="dim">[planner]  5 hypotheses: whitespace · zero-padding · code missing from reference · NULL · duplicate rows
+[sql]      E-c38e8f  IBM's sic_code in company_profiles              -> 1 row (3570)
+[sql]      E-84b0e6  more than one row for IBM?                      -> 1 row
+[sql]      E-1943cf  sic_code = '3570' in sic_codes_table            -> 0 rows
+[sql]      E-a9171e  length before / after trim                      -> 4 / 4
+[sql]      E-be1c50  zero-padded variants ('03570')                  -> 0 rows
+[sql]      E-1943cf  repeated query refused
+[critic]   round 1: "the whole table is zero-padded" PARTIAL -> sent back for proof
+[critic]   round 2: 5 of 5 claims SUPPORTED · hypotheses: 1 supported, 4 refuted</span>
+
+IBM's EDGAR profile lists sic_code 3570, but the company_dns SIC reference table contains no entry
+for 3570 or any zero-padded variant, so the join drops IBM. This likely indicates 3570 is not in
+the reference list (possibly obsolete).
+  <span class="ok">✓</span> IBM's sic_code in edgar.company_profiles is 3570.                       [E-c38e8f]
+  <span class="ok">✓</span> A search for '3570' and zero-padded variants returns zero rows.      [E-1943cf, E-be1c50]
+  <span class="ok">✓</span> IBM's sic_code has no leading or trailing whitespace.                  [E-a9171e]</pre>
+  <div class="foot"><span>Data: SEC EDGAR submissions + company_dns SIC list — two independent public sources</span><span>4</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Trust</div>
+  <h2>The critic decides what you get to read</h2>
+  <div class="cols">
+    <div class="card">
+      <h3>Deterministic checks (no model)</h3>
+      <ul>
+        <li>Every claim cites evidence that was actually recorded.</li>
+        <li>Every year and 4+-digit number in a claim appears in the cited rows or SQL.</li>
+        <li>A zero result proves nothing if its filter value matches no rows
+          (<code>entity_name = 'Apple'</code> when the table says "Apple Inc.").</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Then an LLM review</h3>
+      <ul>
+        <li>Do the cited rows, and only those, show the claim? supported / partial / unsupported.</li>
+        <li>Rejected claims are sent back with reasons; the investigator gathers more evidence or drops them.</li>
+        <li>The final summary is written from verified claims only; a new number in it is rejected.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="muted" style="margin-top: 22px; font-size: 20px;">Caught during today's development runs: invented SIC codes
+    (3599, 3500) not in any row, a "no rows" claim built on a misspelled company name, and partial claims sent back for proof.</p>
+  <div class="foot"><span>ExplainWhy</span><span>5</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Sponsor technology</div>
+  <h2>Where each sponsor sits in the build</h2>
+  <table>
+    <tr><th style="width: 18%;">Sponsor</th><th>How it is used</th></tr>
+    <tr><td><b>Zetaris</b></td><td>The data harness. All evidence is Lightning SQL over the Zetaris REST API against views over live
+      REST sources: SEC XBRL facts (5 REST tables unioned), SEC submissions, company_dns SIC list. Cross-source joins run in Zetaris.
+      <span class="muted">zetaris/01_create.sql · data.py</span></td></tr>
+    <tr><td><b>Meterless</b></td><td><b>World Model</b>: event-sourced investigation state and trace. <b>H-MEM</b>: verified findings
+      with source, provenance, confidence and audit ledger, recalled next time. <b>Markovian</b>: bounded steps with the
+      COMPLETED / REMAINING / DECISIONS / CONTEXT carryover. <span class="muted">engines/</span></td></tr>
+    <tr><td><b>NVIDIA</b></td><td>Nemotron 3 Super 120B runs every role: planner, investigator, critic, writer. <span class="muted">llm.py</span></td></tr>
+    <tr><td><b>Cursor</b></td><td class="muted">Not used: HackOS Cursor access was still "TBC" on 27 Oct. Built with Claude Code (allowed by the AI Usage Policy).</td></tr>
+  </table>
+  <div class="foot"><span>ExplainWhy</span><span>6</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Results</div>
+  <h2>Three real anomalies in public data, explained with evidence</h2>
+  <table>
+    <tr><th>Question</th><th>Verified answer</th><th>Run</th></tr>
+    <tr><td>Why does Apple's <code>Revenues</code> history stop at FY2018?</td>
+      <td>0 rows after FY2018; the ASC 606 concept runs FY2019 on. ASC 606 adoption given as the <i>likely</i> cause.</td>
+      <td>60 s · 3 steps</td></tr>
+    <tr><td>Why does IBM drop out of the SIC join?</td>
+      <td>IBM's SIC 3570 is absent from the reference list; whitespace, NULLs, zero-padding and duplicate rows ruled out.</td>
+      <td>71 s · 9 steps · 2 critic rounds</td></tr>
+    <tr><td>Why does Tesla use two revenue concepts?</td>
+      <td>Only <code>Revenues</code> in FY2011–2017; both from FY2018, in the same filings, sometimes identical (duplicate tagging).</td>
+      <td>47 s · 5 steps</td></tr>
+  </table>
+  <p class="muted" style="font-size: 19px; margin-top: 18px;">Markovian bounded context: 42–73 % fewer prompt tokens than re-sending the
+    transcript, and the gap grows with run length. Offline replay of all three runs: <code>SAMPLE_MODE=true</code>.</p>
+  <div class="foot"><span>ExplainWhy</span><span>7</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Honest limits · next</div>
+  <h2>What is not done yet</h2>
+  <div class="cols">
+    <div>
+      <ul>
+        <li>Recorded sample runs used the local mirror of the Zetaris views (same names, same SQL); the live Zetaris path is
+          implemented against the documented REST API.</li>
+        <li>The critic is strict on numbers and citations, but can still accept a weak interpretation worded as a fact.</li>
+        <li>Small, bounded world: 3 companies, 2 revenue concepts.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Next</h3>
+      <ul>
+        <li>More Zetaris sources through its semantic layer (USL), so questions span many systems.</li>
+        <li>H-MEM "dreaming": propose general rules from many verified findings, with human approval.</li>
+        <li>A small web UI that shows each claim beside its rows.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>ExplainWhy</span><span>8</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Try it</div>
+  <h2>Runs in minutes, no GPU, standard-library Python</h2>
+<pre><span class="dim"># offline replay of the recorded runs, no keys needed</span>
+SAMPLE_MODE=true python -m explainwhy --sample 1
+
+<span class="dim"># live NVIDIA Nemotron on the local data mirror</span>
+python -m explainwhy "Why does Tesla report revenue under two different XBRL concepts?"
+
+<span class="dim"># live Nemotron + live Zetaris (falls back to the mirror, and says so, if unreachable)</span>
+python -m explainwhy --zetaris --sample 2
+
+<span class="dim"># offline tests with a scripted model</span>
+python -m pytest -q</pre>
+  <p class="muted" style="font-size: 19px; margin-top: 22px;">Each run writes report.md (answer, verified and dropped claims,
+    hypotheses, every query with its rows), result.json, events.jsonl (the trace) and trace.log.
+    All code was written on 27 Oct 2026; no pre-existing components.</p>
+  <div class="foot"><span>ExplainWhy · MIT</span><span>9</span></div>
+</section>
+
+</body>
+</html>

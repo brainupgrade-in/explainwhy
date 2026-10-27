@@ -1,0 +1,140 @@
+{
+  "question": "Why does IBM drop out when EDGAR company profiles are joined to the company_dns SIC reference list?",
+  "run_id": "20261027-195830-3d42",
+  "backend": "local-sqlite (SAMPLE_MODE mirror of the Zetaris views)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "summary": "IBM's EDGAR profile lists sic_code 3570, but the company_dns SIC reference table contains no entry for 3570 or any zero\u2011padded variant of that code, so the join fails to find a match and IBM is dropped from the result. This missing match likely indicates that SIC code 3570 is not present in the reference list, possibly because it is obsolete or has been removed.",
+  "verified_claims": [
+    {
+      "text": "IBM's sic_code in edgar.company_profiles is 3570.",
+      "evidence": [
+        "E-c38e8f"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "The reference table contains zero\u2011padded sic_code values such as '0111', '0112', '0115', '0116', '0119'.",
+      "evidence": [
+        "E-cbb22d"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "A search for sic_code '3570' and zero\u2011padded variants (e.g., '03570') returns zero rows in company_dns.sic_codes_table.",
+      "evidence": [
+        "E-1943cf",
+        "E-be1c50"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "IBM has exactly one row in edgar.company_profiles with a non\u2011null sic_code.",
+      "evidence": [
+        "E-84b0e6",
+        "E-c38e8f"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "IBM's sic_code value has no leading or trailing whitespace (length 4 before and after trim).",
+      "evidence": [
+        "E-a9171e"
+      ],
+      "verdict": "supported"
+    }
+  ],
+  "unverified_claims": [],
+  "inferences": [
+    {
+      "text": "The SIC code 3570 is likely obsolete or no longer included in the company_dns reference list, which explains the failed join.",
+      "basis": "Claims that IBM's sic_code is 3570 and that this value yields zero matches in the reference table despite correct formatting."
+    }
+  ],
+  "hypotheses": {
+    "H-fff46c": {
+      "text": "IBM's sic_code in edgar.company_profiles contains leading or trailing whitespace (or invisible characters) that prevents an exact match with the sic_code values in company_dns.sic_codes_table.",
+      "status": "refuted",
+      "evidence": [
+        "E-a9171e"
+      ],
+      "why": "Trimmed and raw lengths are equal, showing no whitespace."
+    },
+    "H-c38b45": {
+      "text": "IBM's sic_code is stored as a numeric value without leading zeros (e.g., 3571) while the reference table expects a zero\u2011padded string format (e.g., '03571'), causing a mismatch on equality join.",
+      "status": "refuted",
+      "evidence": [
+        "E-be1c50"
+      ],
+      "why": "Zero\u2011padded search for '03570' returns no rows."
+    },
+    "H-c948f3": {
+      "text": "The SIC code reported for IBM in edgar.company_profiles is obsolete or no longer present in the company_dns.sic_codes_table reference list (which may only contain currently active SICs).",
+      "status": "supported",
+      "evidence": [
+        "E-1943cf"
+      ],
+      "why": "SIC code 3570 is absent from the reference table, indicating obsolescence."
+    },
+    "H-6b1937": {
+      "text": "IBM's company_profiles row has a NULL or empty sic_code (perhaps because IBM reports primarily via NAICS and the SIC field is blank), so the join produces no matches.",
+      "status": "refuted",
+      "evidence": [
+        "E-84b0e6",
+        "E-c38e8f"
+      ],
+      "why": "Single row with non\u2011null sic_code; not NULL or empty."
+    },
+    "H-8b80ef": {
+      "text": "IBM appears multiple times in edgar.company_profiles (e.g., due to successive filings) with differing sic_code values, and none of those values match any entry in the reference table, resulting in zero rows after the join.",
+      "status": "refuted",
+      "evidence": [
+        "E-84b0e6"
+      ],
+      "why": "Only one company_profiles row for IBM; no differing sic_code values."
+    }
+  },
+  "evidence": {
+    "E-c38e8f": {
+      "sql": "SELECT cik, entity_name, sic_code FROM edgar.company_profiles WHERE cik = 51143\nLIMIT 200",
+      "purpose": "Retrieve IBM's sic_code(s) from company_profiles to examine its value and possible duplicates.",
+      "row_count": 1
+    },
+    "E-84b0e6": {
+      "sql": "SELECT COUNT(*) AS cnt FROM edgar.company_profiles WHERE cik = 51143\nLIMIT 200",
+      "purpose": "Determine if IBM has multiple rows in company_profiles that could cause mismatched sic_code values",
+      "row_count": 1
+    },
+    "E-1943cf": {
+      "sql": "SELECT sic_code FROM company_dns.sic_codes_table WHERE sic_code = '3570' LIMIT 1",
+      "purpose": "Check if IBM's sic_code 3570 exists in the reference SIC table",
+      "row_count": 0
+    },
+    "E-a9171e": {
+      "sql": "select sic_code, length(sic_code) as len_raw, length(trim(sic_code)) as len_trim, trim(sic_code) as sic_trimmed from edgar.company_profiles where cik = 51143\nLIMIT 200",
+      "purpose": "Check for leading/trailing whitespace in IBM's sic_code",
+      "row_count": 1
+    },
+    "E-be1c50": {
+      "sql": "SELECT sic_code FROM company_dns.sic_codes_table WHERE sic_code LIKE '3570' OR sic_code LIKE '03570' OR sic_code LIKE '003570' LIMIT 5",
+      "purpose": "Check if IBM's SIC code 3570 appears in the reference table with any zero-padding",
+      "row_count": 0
+    },
+    "E-cbb22d": {
+      "sql": "SELECT sic_code FROM company_dns.sic_codes_table LIMIT 5",
+      "purpose": "Sample sic_code values in reference table to see its format and range",
+      "row_count": 5
+    }
+  },
+  "critic_rounds": 2,
+  "memories_written": 5,
+  "markovian": {
+    "steps": 9,
+    "prompt_tokens_used": 5290,
+    "full_transcript_estimate": 19548,
+    "tokens_saved": 14258,
+    "efficiency_percent": 72.9,
+    "status": "completed"
+  },
+  "llm_calls": 13,
+  "elapsed_s": 70.6
+}

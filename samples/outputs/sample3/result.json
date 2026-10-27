@@ -1,0 +1,134 @@
+{
+  "question": "Why does Tesla report revenue under two different XBRL concepts, and which one should be used for which years?",
+  "run_id": "20261027-195941-43bc",
+  "backend": "local-sqlite (SAMPLE_MODE mirror of the Zetaris views)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "summary": "Tesla began reporting revenue under two XBRL concepts after adopting ASC\u202f606 in fiscal year\u202f2018, adding the RevenueFromContractWithCustomer concept while retaining the legacy Revenues concept for comparability; before 2018 only the Revenues concept appears. Therefore, for years\u202f2011\u20112017 use the Revenues concept, and for 2018 onward you can use either concept\u2014prefer RevenueFromContractWithCustomer for current reporting, noting that when the values differ you should examine the filing context to determine which reflects the intended measurement.",
+  "verified_claims": [
+    {
+      "text": "For fiscal years 2011\u20112017 Tesla has facts only under the Revenues concept.",
+      "evidence": [
+        "E-713c42"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "Starting in fiscal year 2018 Tesla files contain both concepts within the same accession_number (e.g., 2018 Q1, Q2, Q3, FY and 2023 Q3).",
+      "evidence": [
+        "E-b44e1f",
+        "E-12deec"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "In some filings the two concepts report identical values (e.g., accession 0001564590-18-011086 shows 3408751000 for both concepts), indicating duplicate tagging of the same fact.",
+      "evidence": [
+        "E-12deec"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "In other filings the values differ (e.g., same accession shows Revenues 2696270000 versus RevenueFromContract... 3408751000), suggesting measurement differences or tagging errors.",
+      "evidence": [
+        "E-12deec"
+      ],
+      "verdict": "supported"
+    }
+  ],
+  "unverified_claims": [],
+  "inferences": [
+    {
+      "text": "The post\u20112018 appearance of both concepts aligns with Tesla\u2019s adoption of ASC\u202f606 effective FY\u202f2018, retaining the legacy concept for comparability.",
+      "basis": [
+        "claims 1",
+        "claims 2"
+      ]
+    },
+    {
+      "text": "Duplicate tagging of identical values under both concepts is a data\u2011artifact (filers mistakenly applied both tags) rather than an intentional separate measurement.",
+      "basis": [
+        "claims 3"
+      ]
+    }
+  ],
+  "hypotheses": {
+    "H-94e4c0": {
+      "text": "Data\u2011artifact: Tesla files both 10\u2011K and 10\u2011Q reports, and some filings use the legacy 'Revenues' concept while others use the newer 'RevenueFromContractWithCustomerExcludingAssessedTax' concept, leading to both concepts appearing in the dataset.",
+      "status": "refuted",
+      "evidence": [
+        "E-12deec",
+        "E-b44e1f"
+      ],
+      "why": "Both concepts appear within the same accession (same filing), not just across different filing types."
+    },
+    "H-8ea727": {
+      "text": "Real\u2011world: Tesla adopted ASC\u202f606 (Revenue from Contracts with Customers) effective FY2018. Before adoption it reported total revenue using the legacy 'Revenues' concept; after adoption it began reporting under the ASC\u202f606\u2011specific concept, while still retaining the legacy concept for comparability or for certain regulatory filings.",
+      "status": "supported",
+      "evidence": [
+        "E-12deec",
+        "E-713c42",
+        "E-b44e1f"
+      ],
+      "why": "New concept appears only from 2018 onward, consistent with ASC\u202f606 adoption; legacy concept retained for comparability."
+    },
+    "H-15e299": {
+      "text": "Data\u2011artifact: Tagging/extension errors cause some periods to have duplicate facts with both concepts for the same accession_number (i.e., the same filing incorrectly tags the same numeric value under two concepts).",
+      "status": "supported",
+      "evidence": [
+        "E-12deec",
+        "E-b44e1f"
+      ],
+      "why": "Same accession_number tags both concepts, sometimes with identical values, indicating duplicate tagging."
+    },
+    "H-cea464": {
+      "text": "Real\u2011world: The two concepts represent different measurement bases \u2013 'Revenues' includes gross sales while 'RevenueFromContractWithCustomerExcludingAssessedTax' excludes assessed taxes (e.g., sales tax). Tesla may report both to provide users with gross and net\u2011of\u2011tax views.",
+      "status": "refuted",
+      "evidence": [
+        "E-12deec"
+      ],
+      "why": "Values are not consistently different (some match, some differ), so the concepts do not represent a systematic tax\u2011exclusion distinction."
+    },
+    "H-f5a54e": {
+      "text": "Data\u2011artifact: Coverage gap \u2013 the XBRL taxonomy did not include the 'RevenueFromContractWithCustomerExcludingAssessedTax' concept until after 2017, so earlier years only have the legacy concept; later years have both because filers continue to tag the legacy concept for backward compatibility.",
+      "status": "supported",
+      "evidence": [
+        "E-713c42"
+      ],
+      "why": "RevenueFromContractWithCustomerExcludingAssessedTax has zero facts before 2018 and appears after, indicating a taxonomy coverage gap."
+    }
+  },
+  "evidence": {
+    "E-713c42": {
+      "sql": "SELECT fiscal_year, concept, COUNT(*) AS fact_count FROM edgar.revenue_facts WHERE cik=1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY fiscal_year, concept ORDER BY fiscal_year, concept\nLIMIT 200",
+      "purpose": "See how many facts Tesla has for each revenue concept per fiscal year to understand adoption pattern.",
+      "row_count": 21
+    },
+    "E-158c56": {
+      "sql": "SELECT fiscal_year, concept, form_type, COUNT(*) AS fact_count FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY fiscal_year, concept, form_type ORDER BY fiscal_year, concept, form_type LIMIT 100",
+      "purpose": "See which filing types (10-K, 10-Q, etc.) use each revenue concept per year to test if split is due to filing type differences.",
+      "row_count": 41
+    },
+    "E-b44e1f": {
+      "sql": "SELECT accession_number, fiscal_year, fiscal_period, COUNT(DISTINCT concept) AS concept_count FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY accession_number, fiscal_year, fiscal_period HAVING COUNT(DISTINCT concept) > 1 LIMIT 5",
+      "purpose": "Check whether any single filing (accession_number) tags the same period under both revenue concepts, indicating duplicate tagging.",
+      "row_count": 5
+    },
+    "E-12deec": {
+      "sql": "SELECT accession_number, fiscal_year, fiscal_period, concept, value_usd FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') AND (accession_number, fiscal_year, fiscal_period) IN (SELECT accession_number, fiscal_year, fiscal_period FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY accession_number, fiscal_year, fiscal_period HAVING COUNT(DISTINCT concept) = 2) ORDER BY accession_number, fiscal_year, fiscal_period, concept\nLIMIT 200",
+      "purpose": "Check whether the two revenue concepts report different values for the same filing/period, to distinguish duplicate tagging from real measurement differences.",
+      "row_count": 113
+    }
+  },
+  "critic_rounds": 1,
+  "memories_written": 4,
+  "markovian": {
+    "steps": 5,
+    "prompt_tokens_used": 4661,
+    "full_transcript_estimate": 10124,
+    "tokens_saved": 5463,
+    "efficiency_percent": 54.0,
+    "status": "completed"
+  },
+  "llm_calls": 8,
+  "elapsed_s": 47.3
+}

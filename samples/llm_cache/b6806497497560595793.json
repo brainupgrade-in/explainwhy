@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"Tesla began reporting revenue under two XBRL concepts after adopting ASC\u202f606 in fiscal year\u202f2018, adding the RevenueFromContractWithCustomer concept while retaining the legacy Revenues concept for comparability; before 2018 only the Revenues concept appears. Therefore, for years\u202f2011\u20112017 use the Revenues concept, and for 2018 onward you can use either concept\u2014prefer RevenueFromContractWithCustomer for current reporting, noting that when the values differ you should examine the filing context to determine which reflects the intended measurement.\"\n}"
+}

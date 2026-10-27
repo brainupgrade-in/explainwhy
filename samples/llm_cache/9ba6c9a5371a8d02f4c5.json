@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT MAX(fiscal_year) AS max_fy FROM edgar.revenue_facts WHERE cik = 320193 AND concept = 'Revenues'\",\n  \"purpose\": \"Find the latest fiscal year for which Apple has a fact under the us-gaap Revenues concept.\",\n  \"tests\": [\"H-ec70e6\", \"H-2811fd\", \"H-dee925\", \"H-cb2288\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\"COMPLETED\": \"\", \"REMAINING\": \"Determine if Apple's Revenues concept stops after FY 2018 and why.\", \"DECISIONS\": \"\", \"CONTEXT\": \"\"},\n  \"answer\": {}\n}"
+}

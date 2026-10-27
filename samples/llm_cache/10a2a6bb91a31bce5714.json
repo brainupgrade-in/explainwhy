@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\"summary\": \"Apple reported no data for the traditional 'Revenues' concept after fiscal year 2018, while it began filing figures for the 'RevenueFromContractWithCustomerExcludingAssessedTax' concept starting in FY\u202f2019. This change is likely because Apple adopted ASC\u202f606, which required companies to recognize revenue using the new contract\u2011based concept rather than the older generic revenues line item.\"}"
+}

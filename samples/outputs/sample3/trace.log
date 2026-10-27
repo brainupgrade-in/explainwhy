@@ -1,0 +1,36 @@
+19:59:41 [harness] backend: local mirror (Zetaris not requested); model: nvidia/nemotron-3-super-120b-a12b
+19:59:41 [memory] H-MEM recalled 0 prior finding(s)
+19:59:47 [planner] H-94e4c0: Data‑artifact: Tesla files both 10‑K and 10‑Q reports, and some filings use the legacy 'Revenues' concept while others use the newer 'RevenueFromContractWithCustomerExcludingAssessedTax' concept, leading to both concepts appearing in the dataset.
+19:59:47 [planner] H-8ea727: Real‑world: Tesla adopted ASC 606 (Revenue from Contracts with Customers) effective FY2018. Before adoption it reported total revenue using the legacy 'Revenues' concept; after adoption it began reporting under the ASC 606‑specific concept, while still retaining the legacy concept for comparability or for certain regulatory filings.
+19:59:47 [planner] H-15e299: Data‑artifact: Tagging/extension errors cause some periods to have duplicate facts with both concepts for the same accession_number (i.e., the same filing incorrectly tags the same numeric value under two concepts).
+19:59:47 [planner] H-cea464: Real‑world: The two concepts represent different measurement bases – 'Revenues' includes gross sales while 'RevenueFromContractWithCustomerExcludingAssessedTax' excludes assessed taxes (e.g., sales tax). Tesla may report both to provide users with gross and net‑of‑tax views.
+19:59:47 [planner] H-f5a54e: Data‑artifact: Coverage gap – the XBRL taxonomy did not include the 'RevenueFromContractWithCustomerExcludingAssessedTax' concept until after 2017, so earlier years only have the legacy concept; later years have both because filers continue to tag the legacy concept for backward compatibility.
+19:59:49 [sql] E-713c42 See how many facts Tesla has for each revenue concept per fiscal year to understand adoption pattern.
+    SELECT fiscal_year, concept, COUNT(*) AS fact_count FROM edgar.revenue_facts WHERE cik=1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY fiscal_year, concept ORDER BY fiscal_year, concept LIMIT 200
+19:59:49 [sql] E-713c42 -> 21 row(s)
+19:59:49 [markovian] step 1 [STATE_CHECKPOINT] carryover: Determine Tesla's revenue concept usage across years.
+19:59:54 [sql] E-158c56 See which filing types (10-K, 10-Q, etc.) use each revenue concept per year to test if split is due to filing type differences.
+    SELECT fiscal_year, concept, form_type, COUNT(*) AS fact_count FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY fiscal_year, concept, form_type ORDER BY fiscal_year, concept, form_type LIMIT 100
+19:59:54 [sql] E-158c56 -> 41 row(s)
+19:59:54 [markovian] step 2 [STATE_CHECKPOINT] carryover: Determine Tesla's revenue concept usage across years.
+20:00:01 [investigator] H-15e299 -> open []
+20:00:01 [sql] E-b44e1f Check whether any single filing (accession_number) tags the same period under both revenue concepts, indicating duplicate tagging.
+    SELECT accession_number, fiscal_year, fiscal_period, COUNT(DISTINCT concept) AS concept_count FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY accession_number, fiscal_year, fiscal_period HAVING COUNT(DISTINCT con
+20:00:01 [sql] E-b44e1f -> 5 row(s)
+20:00:01 [markovian] step 3 [STATE_CHECKPOINT] carryover: Determine Tesla's revenue concept usage across years and reason for dual concepts.
+20:00:06 [sql] E-12deec Check whether the two revenue concepts report different values for the same filing/period, to distinguish duplicate tagging from real measurement differences.
+    SELECT accession_number, fiscal_year, fiscal_period, concept, value_usd FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') AND (accession_number, fiscal_year, fiscal_period) IN (SELECT accession_number, fiscal_year, fiscal_p
+20:00:06 [sql] E-12deec -> 113 row(s)
+20:00:06 [markovian] step 4 [STATE_CHECKPOINT] carryover: Determine Tesla's revenue concept usage across years and reason for dual concepts.
+20:00:18 [investigator] H-94e4c0 -> refuted ['E-b44e1f', 'E-12deec']
+20:00:18 [investigator] H-8ea727 -> supported ['E-713c42', 'E-b44e1f', 'E-12deec']
+20:00:18 [investigator] H-15e299 -> supported ['E-b44e1f', 'E-12deec']
+20:00:18 [investigator] H-cea464 -> refuted ['E-12deec']
+20:00:18 [investigator] H-f5a54e -> supported ['E-713c42']
+20:00:18 [investigator] [TASK_COMPLETE]
+20:00:25 [critic] claim 0 SUPPORTED (llm): Evidence E-713c42 shows only the 'Revenues' concept with fact counts for fiscal years 2011‑2017 and no rows for 'RevenueFromContractWithCustomerExclud
+20:00:25 [critic] claim 1 SUPPORTED (llm): Evidence E-b44e1f lists accession numbers where concept_count = 2 for 2018 Q1, Q2, Q3, FY and 2023 Q3, demonstrating that both concepts appear togethe
+20:00:25 [critic] claim 2 SUPPORTED (llm): Evidence E-12deec includes accession 0001564590-18-011086 with a 'RevenueFromContract...' value of 3408751000 and a 'Revenues' value of 3408751000, sh
+20:00:25 [critic] claim 3 SUPPORTED (llm): Evidence E-12deec also shows accession 0001564590-18-011086 with differing values: 'Revenues' 2696270000 versus 'RevenueFromContract...' 3408751000, i
+20:00:28 [writer] summary written from verified claims
+20:00:28 [agent] done in 47.3s: 4 verified claim(s), 0 unverified; report /home/rajesh/open-agent-2026/runs/20261027-195941-43bc/report.md

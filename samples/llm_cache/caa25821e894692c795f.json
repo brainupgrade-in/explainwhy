@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT fiscal_year, concept, form_type, COUNT(*) AS fact_count FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY fiscal_year, concept, form_type ORDER BY fiscal_year, concept, form_type LIMIT 100\",\n  \"purpose\": \"See which filing types (10-K, 10-Q, etc.) use each revenue concept per year to test if split is due to filing type differences.\",\n  \"tests\": [\"H-94e4c0\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"-\",\n    \"REMAINING\": \"Determine Tesla's revenue concept usage across years.\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"-\"\n  }\n}"
+}

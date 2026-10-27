@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence shows IBM's sic_code is 3570, there is exactly one row for CIK 51143, and the sic_code has length 4 with no leading/trailing whitespace.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"Querying company_dns.sic_codes_table for sic_code = '3570' returns zero rows, confirming the table contains no such entry.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"partial\",\n      \"reason\": \"The sample rows ('0111', '0112', ...) demonstrate zero\u2011padded strings, but the evidence does not prove the entire table uses zero\u2011padded formats. The second part\u2014that IBM's code 3570 matches no entry even after padding\u2014is fully supported by the pattern searches returning zero rows.\"\n    }\n  ]\n}"
+}

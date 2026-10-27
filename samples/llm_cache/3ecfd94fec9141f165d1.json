@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"select sic_code, length(sic_code) as len_raw, length(trim(sic_code)) as len_trim, trim(sic_code) as sic_trimmed from edgar.company_profiles where cik = 51143\",\n  \"purpose\": \"Check for leading/trailing whitespace in IBM's sic_code\",\n  \"tests\": [\"H-fff46c\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked IBM's sic_code value and duplicate rows\",\n    \"REMAINING\": \"Verify match with reference table; test whitespace, padding, null, obsolescence\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"IBM sic_code is 3570, single row, not null\"\n  }\n}"
+}

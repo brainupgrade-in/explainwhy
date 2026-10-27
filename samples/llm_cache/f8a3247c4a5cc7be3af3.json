@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"IBM's EDGAR profile lists sic_code 3570, but the company_dns SIC reference table contains no entry for 3570 or any zero\u2011padded variant of that code, so the join fails to find a match and IBM is dropped from the result. This missing match likely indicates that SIC code 3570 is not present in the reference list, possibly because it is obsolete or has been removed.\"\n}"
+}
