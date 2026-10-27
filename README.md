@@ -89,7 +89,7 @@ less, growing with run length; see `markovian` in each `result.json`).
 | **Zetaris** | The data harness. All evidence is Lightning SQL run through the Zetaris REST API (`POST /sql-editor/sqls/run`) against three views over live REST sources: `edgar.revenue_facts` (SEC XBRL, 5 REST tables unioned), `edgar.company_profiles` (SEC submissions), `company_dns.sic_codes_table` (getting-started recipe 12). Our Unified Semantic Layer `explainwhy_usl` links all three (sic_code ← company ← revenue_fact); its FK data-quality rule, executed with `RUN DQ`, flags IBM's missing SIC 3570 — the same answer the agent reaches by querying. Verified live on a local Zetaris instance; the agent ran live against it (`--zetaris`). Details: [`ZETARIS.md`](ZETARIS.md). | `zetaris/`, `explainwhy/data.py` (`ZetarisSource`) |
 | **Meterless** | Minimal Python implementations of three Meterless engine specs (github.com/Meterless/Meterless, Apache-2.0): **World Model** — event-sourced investigation state (append-only log, stable content IDs, idempotent ingest, version check), which is also the trace; **H-MEM** — file-based memory with mandatory source + provenance, the spec's hybrid retrieval score, supersede-don't-delete, feedback deltas, audit ledger; **Markovian** — bounded steps with the canonical carryover block and `[NEEDS_TOOL]`/`[STATE_CHECKPOINT]`/`[TASK_COMPLETE]` markers, plus token-savings stats. | `explainwhy/engines/` |
 | **NVIDIA** | Every role (planner, investigator, critic) runs on **NVIDIA Nemotron** — `nvidia/nemotron-3-super-120b-a12b` via an OpenAI-compatible endpoint (Nebius Token Factory). | `explainwhy/llm.py` |
-| **Cursor** | Not used for this build: HackOS's Cursor access instructions were still "TBC" on 27 Oct; the code was written with Claude Code (allowed by the AI Usage Policy). See "Development". | — |
+| **Cursor** | Optional since the organisers' 22 Oct update ("use any AI coding tool"). We built with Claude Code instead; no Cursor-specific work is claimed. | — |
 
 ## Setup and usage
 
@@ -130,8 +130,9 @@ questions exactly; other questions need the live model.
 ## Development
 
 Built on 27 Oct 2026 (inside the build window) with **Claude Code** as the coding agent, which the Zetaris
-getting-started repo supports alongside Cursor and Codex. The hackathon's Cursor access steps were never
-published (the HackOS Cursor folder still read "TBC" on 27 Oct), so no Cursor-specific work is claimed.
+getting-started repo supports alongside Cursor and Codex. The organisers made Cursor optional on 22 Oct
+("You can use any AI coding tool you're comfortable with, such as Cursor, Claude Code…"), so no Cursor-specific
+work is claimed.
 
 **Pre-existing components: none.** All code in this repository was written during the build window. Used
 as references only (not copied): the Meterless engine specs (`AGENTS.md` per engine, Apache-2.0) and the

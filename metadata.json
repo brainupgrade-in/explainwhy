@@ -32,7 +32,7 @@
     },
     "cursor": {
       "used": false,
-      "how": "Not used: HackOS Cursor access instructions were still TBC on 27 Oct 2026. Code was written with Claude Code, which the AI Usage Policy allows."
+      "how": "Not used. Cursor became optional in the organisers' 22 Oct 2026 onboarding-guide update (any AI coding tool allowed); the code was written with Claude Code."
     },
     "bright_data": {"used": false}
   },
