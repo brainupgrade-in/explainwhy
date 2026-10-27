@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"partial\",\n      \"reason\": \"The evidence shows zero revenue facts for Tesla before FY2011, supporting the claim for revenue facts specifically, but the claim asserts zero XBRL facts of any concept, which is broader than the revenue_facts table evidence.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The distinct fiscal years listed (2011 through 2026) demonstrate that Tesla has revenue facts in each of those years, confirming the claim.\"\n    }\n  ]\n}"
+}

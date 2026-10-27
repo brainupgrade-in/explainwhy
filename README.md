@@ -2,7 +2,7 @@
 
 **Open Agent Hackathon 2026 · Track 2: The Agent That Can Explain Why · team gheware (solo)**
 
-**Demo video (2:30):** https://youtu.be/wXIJE2PfYvo · **Slides:** [deck/ExplainWhy-deck.pdf](deck/ExplainWhy-deck.pdf)
+**Demo video (3:00):** https://youtu.be/PIml1Xwa2Iw · **Slides:** [deck/ExplainWhy-deck.pdf](deck/ExplainWhy-deck.pdf)
 
 ## Judges, start here
 
@@ -10,7 +10,7 @@
 |---|---|
 | See a run without installing anything | **Replay page:** https://brainupgrade-in.github.io/explainwhy/ — the agent's steps, the verified answer, and every evidence id opens its SQL and rows |
 | Run it yourself, no keys, no installs (Python 3.11+) | `SAMPLE_MODE=true python -m explainwhy --sample 1` (also `--sample 2`, `--sample 3`) |
-| Measured result | **5/6** questions pass the eval live on Nemotron — [`evals/results.md`](evals/results.md) (pass = the expected facts are in critic-verified claims; the failure is reported, not hidden) |
+| Measured result | **5/6 on live Zetaris** ([`evals/results-zetaris.md`](evals/results-zetaris.md); the one failure was a DNS outage, rerun passes, both reported) and **5/6** on the offline mirror — [`evals/results.md`](evals/results.md) (pass = the expected facts are in critic-verified claims; the failure is reported). **Baselines** on the same questions: Nemotron alone 5/6 and one-shot text-to-SQL 4/6 on the same lenient keyword rule — but an audit against the data finds Nemotron alone confidently wrong on two (IBM's SIC code "NULL"; Apple FY2022 "amended filings"): [`evals/baseline.md`](evals/baseline.md) |
 | Zetaris (live) | **[`ZETARIS.md`](ZETARIS.md)** — sources, live exploratory queries, our 3-table Unified Semantic Layer, the DQ rule that independently flags IBM, reflections · live agent run: [`samples/outputs/zetaris-live-ibm/`](samples/outputs/zetaris-live-ibm/report.md) · SQL: [`01_create.sql`](zetaris/01_create.sql), [`02_usl.sql`](zetaris/02_usl.sql) |
 | Tests | `python -m pytest -q` (12 offline tests, scripted model) |
 

@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"select min(fiscal_year) as min_fy, max(fiscal_year) as max_fy from edgar.revenue_facts where cik = 51143 and concept = 'Revenues'\",\n  \"purpose\": \"Determine the range of fiscal years for which IBM reports revenue using the legacy Revenues concept.\",\n  \"tests\": [\"H-5700b4\", \"H-2ff39e\", \"H-0dcf41\"]\n}"
+}

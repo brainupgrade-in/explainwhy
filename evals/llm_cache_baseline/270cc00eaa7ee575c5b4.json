@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\"sql\": \"SELECT MIN(fiscal_year) AS first_revenue_year FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax');\"}"
+}

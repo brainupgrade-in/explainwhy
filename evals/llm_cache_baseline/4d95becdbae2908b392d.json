@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"Tesla's revenue data in the edgar.revenue_facts table begins with fiscal year 2011 because there are no XBRL revenue facts recorded for Tesla (CIK 1318605) in earlier years. The earliest available fact corresponds to the company's FY2011 reporting period, indicating that prior to that either Tesla did not file the relevant XBRL tags or such filings are not present in the dataset.\",\n  \"claims\": [\n    \"The earliest revenue fact for Tesla (cik = 1318605) in edgar.revenue_facts has fiscal_year = 2011 and period_end = 2011-12-31.\",\n    \"There are no rows in edgar.revenue_facts for Tesla with fiscal_year < 2011.\"\n  ]\n}"
+}

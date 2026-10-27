@@ -1,0 +1,50 @@
+{
+  "question": "Why does Tesla's revenue history in this data start in fiscal year 2011?",
+  "run_id": "20261028-004208-16c6",
+  "backend": "zetaris-rest",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "summary": "No answer within the step/time budget.",
+  "verified_claims": [],
+  "unverified_claims": [],
+  "inferences": [],
+  "hypotheses": {
+    "H-749b8b": {
+      "text": "Tesla did not submit XBRL\u2011tagged revenue facts in SEC filings before FY2011, so no rows exist for those years.",
+      "status": "open",
+      "evidence": []
+    },
+    "H-099e37": {
+      "text": "Early Tesla revenue facts exist but were flagged as invalid by the Zetaris data\u2011quality rule (e.g., duplicate period_frame null) and removed from the usable view.",
+      "status": "open",
+      "evidence": []
+    },
+    "H-3bf73d": {
+      "text": "Tesla was a private company until its IPO in June\u202f2010; therefore it was not required to file periodic SEC reports (10\u2011K/10\u2011Q) before FY2011, resulting in no revenue data.",
+      "status": "open",
+      "evidence": []
+    },
+    "H-bf3981": {
+      "text": "The query only examines the 'RevenueFromContractWithCustomerExcludingAssessedTax' concept, which was not used in Tesla\u2019s XBRL tagging before FY2011; the older 'Revenues' concept would show earlier data.",
+      "status": "open",
+      "evidence": []
+    },
+    "H-9dba6f": {
+      "text": "Tesla\u2019s SIC code is missing or mismatched in the reference sic_codes_table, causing an inner join that drops its revenue facts when the unified semantic layer enforces the FK constraint.",
+      "status": "open",
+      "evidence": []
+    }
+  },
+  "evidence": {},
+  "critic_rounds": 0,
+  "memories_written": 0,
+  "markovian": {
+    "steps": 8,
+    "prompt_tokens_used": 3563,
+    "full_transcript_estimate": 13392,
+    "tokens_saved": 9829,
+    "efficiency_percent": 73.4,
+    "status": "max-chunks"
+  },
+  "llm_calls": 10,
+  "elapsed_s": 58.0
+}

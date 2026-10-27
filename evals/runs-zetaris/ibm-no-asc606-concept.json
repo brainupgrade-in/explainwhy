@@ -1,0 +1,147 @@
+{
+  "question": "Why does IBM have no revenue rows under the RevenueFromContractWithCustomerExcludingAssessedTax concept?",
+  "run_id": "20261028-003710-5eaf",
+  "backend": "zetaris-rest",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "summary": "IBM shows zero rows for the RevenueFromContractWithCustomerExcludingAssessedTax concept because it does not use that XBRL tag for its revenue data. Instead, IBM reports all revenue through the legacy Revenues concept, which has 235 rows spanning fiscal years 2009\u20112026. This pattern is likely due to IBM not having adopted ASC\u202f606\u2011based contract\u2011revenue tagging in its filings.",
+  "verified_claims": [
+    {
+      "text": "IBM has 0 rows for the concept RevenueFromContractWithCustomerExcludingAssessedTax.",
+      "evidence": [
+        "E-51bc1b"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "IBM has 235 rows for the concept Revenues.",
+      "evidence": [
+        "E-f8e3dd"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "The only revenue\u2011related concept IBM uses is Revenues (235 rows).",
+      "evidence": [
+        "E-a756b4",
+        "E-e5ce09"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "IBM\u2019s Revenues concept spans fiscal years 2009 through 2026.",
+      "evidence": [
+        "E-4a41de"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "IBM has 0 rows with NULL period_frame for the RevenueFromContractWithCustomerExcludingAssessedTax concept.",
+      "evidence": [
+        "E-6e13ca"
+      ],
+      "verdict": "supported"
+    }
+  ],
+  "unverified_claims": [],
+  "inferences": [
+    {
+      "text": "The absence of the ASC\u202f606 tag suggests IBM has not adopted ASC\u202f606 reporting in its XBRL filings.",
+      "basis": [
+        "Claim 1",
+        "Claim 3"
+      ]
+    },
+    {
+      "text": "IBM continues to tag revenue with the legacy Revenues concept rather than updating to the newer contract\u2011revenue concept.",
+      "basis": [
+        "Claim 2",
+        "Claim 3",
+        "Claim 4"
+      ]
+    }
+  ],
+  "hypotheses": {
+    "H-5700b4": {
+      "text": "Data\u2011artifact: IBM\u2019s XBRL filings tag revenue only with the legacy 'Revenues' concept; the newer 'RevenueFromContractWithCustomerExcludingAssessedTax' concept is absent because IBM has not updated its taxonomy tagging.",
+      "status": "supported",
+      "evidence": [
+        "E-4a41de",
+        "E-51bc1b",
+        "E-a756b4",
+        "E-e5ce09"
+      ],
+      "why": "IBM tags revenue only with the legacy Revenues concept; the newer concept is absent."
+    },
+    "H-3b6fe1": {
+      "text": "Data\u2011artifact: IBM\u2019s rows for that concept exist but are filtered out because they have a NULL period_frame (indicating duplicate/follow\u2011on filings) and the view excludes NULL period_frame values.",
+      "status": "refuted",
+      "evidence": [
+        "E-6e13ca"
+      ],
+      "why": "There are zero rows with NULL period_frame for the concept, so hiding due to NULL period_frame does not apply."
+    },
+    "H-2ff39e": {
+      "text": "Real\u2011world: IBM has not adopted ASC\u202f606 (Revenue from Contracts with Customers) reporting, so it does not populate the RevenueFromContractWithCustomerExcludingAssessedTax concept in its XBRL submissions.",
+      "status": "supported",
+      "evidence": [
+        "E-51bc1b",
+        "E-a756b4",
+        "E-e5ce09"
+      ],
+      "why": "No ASC\u202f606 concept appears, indicating IBM has not adopted ASC\u202f606 reporting."
+    },
+    "H-0dcf41": {
+      "text": "Real\u2011world: IBM reports revenue using other US\u2011GAAP elements (e.g., RevenueFromLicensingArrangements, ServiceRevenue) rather than the generic contract\u2011revenue concept, so the specific concept is intentionally omitted.",
+      "status": "refuted",
+      "evidence": [
+        "E-a756b4",
+        "E-e5ce09"
+      ],
+      "why": "IBM does not use other revenue concepts; it relies solely on Revenues."
+    }
+  },
+  "evidence": {
+    "E-51bc1b": {
+      "sql": "SELECT cik, concept, COUNT(*) AS row_count FROM edgar.revenue_facts WHERE cik = 51143 AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' GROUP BY cik, concept\nLIMIT 200",
+      "purpose": "Check if IBM has any rows for the RevenueFromContractWithCustomerExcludingAssessedTax concept.",
+      "row_count": 0
+    },
+    "E-f8e3dd": {
+      "sql": "SELECT COUNT(*) AS rev_count FROM edgar.revenue_facts WHERE cik=51143 AND concept='Revenues'\nLIMIT 200",
+      "purpose": "Check whether IBM reports revenue using the legacy Revenues concept.",
+      "row_count": 1
+    },
+    "E-6e13ca": {
+      "sql": "SELECT COUNT(*) AS null_frame_count FROM edgar.revenue_facts WHERE cik = 51143 AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' AND period_frame IS NULL\nLIMIT 200",
+      "purpose": "Check if IBM has any rows for the concept with NULL period_frame (possible duplicate/follow-on filings that might be excluded)",
+      "row_count": 1
+    },
+    "E-a756b4": {
+      "sql": "SELECT concept, COUNT(*) AS row_count FROM edgar.revenue_facts WHERE cik = 51143 GROUP BY concept ORDER BY row_count DESC LIMIT 20",
+      "purpose": "List all XBRL concepts IBM uses and their frequencies to see if alternative revenue concepts appear.",
+      "row_count": 1
+    },
+    "E-e5ce09": {
+      "sql": "select concept, count(*) as cnt from edgar.revenue_facts where cik = 51143 and concept like '%Revenue%' group by concept order by cnt desc\nLIMIT 200",
+      "purpose": "Check if IBM uses any other revenue-related XBRL concepts besides 'Revenues'",
+      "row_count": 1
+    },
+    "E-4a41de": {
+      "sql": "select min(fiscal_year) as min_fy, max(fiscal_year) as max_fy from edgar.revenue_facts where cik = 51143 and concept = 'Revenues'\nLIMIT 200",
+      "purpose": "Determine the range of fiscal years for which IBM reports revenue using the legacy Revenues concept.",
+      "row_count": 1
+    }
+  },
+  "critic_rounds": 2,
+  "memories_written": 5,
+  "markovian": {
+    "steps": 9,
+    "prompt_tokens_used": 5080,
+    "full_transcript_estimate": 20280,
+    "tokens_saved": 15200,
+    "efficiency_percent": 75.0,
+    "status": "completed"
+  },
+  "llm_calls": 13,
+  "elapsed_s": 122.6
+}

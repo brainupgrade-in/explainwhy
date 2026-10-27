@@ -9,19 +9,38 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs" / "index.html"
 
 
-def load_run(d: Path) -> dict:
+def load_run(d: Path, group: str) -> dict:
     result = json.loads((d / "result.json").read_text())
     events = [json.loads(line) for line in (d / "events.jsonl").read_text().splitlines()]
-    return {"id": d.name, "result": result, "events": events}
+    return {"id": d.name, "group": group, "result": result, "events": events}
+
+
+def run_dirs(root: Path) -> list[Path]:
+    return sorted(d for d in root.iterdir() if (d / "events.jsonl").is_file()) if root.is_dir() else []
 
 
 def main() -> None:
-    runs = [load_run(d) for d in sorted((ROOT / "samples" / "outputs").iterdir()) if (d / "result.json").is_file()]
+    runs = [load_run(d, "Recorded samples" if d.name.startswith("sample") else "Live Zetaris")
+            for d in run_dirs(ROOT / "samples" / "outputs")]
+    runs += [load_run(d, "Live Zetaris eval") for d in run_dirs(ROOT / "evals" / "runs-zetaris")]
     data = json.dumps(runs, default=str).replace("</", "<\\/")
+    base_path = ROOT / "evals" / "baseline_runs.json"
+    baselines = {b["question"]: b for b in json.loads(base_path.read_text())} if base_path.is_file() else {}
+    for q, note in AUDIT.items():
+        if q in baselines:
+            baselines[q]["audit"] = note
     OUT.parent.mkdir(exist_ok=True)
-    OUT.write_text(TEMPLATE.replace("__DATA__", data))
+    OUT.write_text(TEMPLATE.replace("__DATA__", data).replace("__BASE__", json.dumps(baselines).replace("</", "<\\/")))
     print(f"wrote {OUT} ({len(runs)} runs, {OUT.stat().st_size // 1024} KB)")
 
+
+# Verdicts from the audit against the data in evals/baseline.md
+AUDIT = {
+    "Why does IBM drop out when EDGAR company profiles are joined to the company_dns SIC reference list?":
+        "Nemotron alone says IBM's sic_code is NULL; the data says 3570.",
+    "Why does Apple have 13 revenue rows for fiscal year 2022 instead of one?":
+        "Nemotron alone invents Q4 and 8 amended filings; the data has neither (10-K FY 3, 10-Q Q1 2, Q2 4, Q3 4).",
+}
 
 TEMPLATE = r"""<!DOCTYPE html>
 <html lang="en">
@@ -39,6 +58,8 @@ TEMPLATE = r"""<!DOCTYPE html>
   nav { display:flex; gap:8px; padding:14px 32px; border-bottom:1px solid var(--line); background:#fff; flex-wrap:wrap; }
   nav button { border:1px solid var(--line); background:#fff; border-radius:999px; padding:8px 16px; font-size:14px; cursor:pointer; }
   nav button.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  nav .grp { flex-basis:100%; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted); margin-top:4px; }
+  .live { background:#1f6a93; color:#fff; border-radius:999px; padding:1px 8px; font-size:11px; margin-right:4px; }
   main { display:grid; grid-template-columns: minmax(340px, 5fr) 7fr; gap:24px; padding:24px 32px; }
   @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
   h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted); margin:0 0 12px; }
@@ -76,7 +97,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 <body>
 <header>
   <h1>ExplainWhy · replay of recorded runs</h1>
-  <p>Real runs on NVIDIA Nemotron, recorded 27 Oct 2026. Every claim links to the exact SQL and rows behind it.
+  <p>Real runs on NVIDIA Nemotron, recorded 27 Oct 2026 — offline samples and runs against a live Zetaris instance. Every claim links to the exact SQL and rows behind it.
      Code and demo video: <a href="https://github.com/brainupgrade-in/explainwhy">github.com/brainupgrade-in/explainwhy</a></p>
 </header>
 <nav id="tabs"></nav>
@@ -92,6 +113,7 @@ TEMPLATE = r"""<!DOCTYPE html>
     <div class="card"><h2>Verified claims (critic-checked)</h2><div id="claims"></div></div>
     <div class="card" id="dropped-card"><h2>Dropped by the critic</h2><div id="dropped"></div></div>
     <div class="card" id="inf-card"><h2>Inferences (likely causes the data cannot prove)</h2><div id="inferences"></div></div>
+    <div class="card" id="base-card"><h2>Same question, without the agent (baselines)</h2><div id="base"></div></div>
     <div class="card"><h2>Hypotheses</h2><div id="hyps"></div></div>
     <div class="card"><div class="stats" id="stats"></div></div>
   </section>
@@ -100,6 +122,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 <dialog id="dlg"><div class="dlg-h"><div id="dlg-t"></div><button class="x" onclick="dlg.close()">×</button></div><div class="dlg-b" id="dlg-b"></div></dialog>
 <script>
 const RUNS = __DATA__;
+const BASE = __BASE__;
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let cur = 0;
@@ -118,6 +141,14 @@ function render(i) {
   $("inferences").innerHTML = (r.inferences || []).map(x => `<div class="claim">~ ${esc(x.text)}<br><span class="small muted">basis: ${esc(Array.isArray(x.basis) ? x.basis.join(", ") : x.basis)}</span></div>`).join("");
   $("inf-card").style.display = (r.inferences || []).length ? "" : "none";
   $("hyps").innerHTML = Object.entries(r.hypotheses).map(([k, h]) => `<div class="claim"><span class="verdict v-${esc(h.status)}">${esc(h.status)}</span> <span class="small muted">${esc(k)}</span><br>${esc(h.text)}<br>${chips(h.evidence)}${h.why ? `<div class="small muted">${esc(h.why)}</div>` : ""}</div>`).join("");
+  const b = BASE[r.question];
+  $("base-card").style.display = b ? "" : "none";
+  if (b) {
+    const list = cs => (cs || []).map(c => `<div class="claim small">${esc(c)}</div>`).join("") || "<p class='muted small'>no claims</p>";
+    $("base").innerHTML = (b.audit ? `<p class="small"><b style="color:var(--bad)">Audit against the data:</b> ${esc(b.audit)}</p>` : "") +
+      `<p class="small muted"><b>Nemotron alone</b> (schema only, no data). Unbacked numbers in ${b.b1_unbacked} claim(s).</p>${list(b.b1.claims)}` +
+      `<p class="small muted"><b>One-shot text-to-SQL</b> (one query, no critic): <code>${esc(b.b2.sql)}</code></p>${list(b.b2.claims)}`;
+  }
   const m = r.markovian;
   $("stats").innerHTML = `<span>backend <b>${esc(r.backend)}</b></span><span>model <b>${esc(r.model)}</b></span><span><b>${r.llm_calls}</b> model calls</span><span><b>${r.elapsed_s}</b> s</span><span><b>${r.critic_rounds}</b> critic round(s)</span><span>Markovian: <b>${m.steps}</b> steps, <b>${m.efficiency_percent}%</b> fewer prompt tokens than a full-transcript loop</span>`;
   const rows = [];
@@ -148,7 +179,13 @@ function show(id, ev) {
   $("dlg").showModal();
 }
 
-$("tabs").innerHTML = RUNS.map((run, i) => `<button onclick="render(${i})">${esc(run.id.replace("sample", "Sample "))}: ${esc(run.result.question.slice(0, 60))}…</button>`).join("");
+let lastGroup = "";
+$("tabs").innerHTML = RUNS.map((run, i) => {
+  const head = run.group !== lastGroup ? `<span class="grp">${esc(run.group)}</span>` : "";
+  lastGroup = run.group;
+  const live = run.result.backend === "zetaris-rest" ? '<span class="live">live Zetaris</span> ' : "";
+  return head + `<button onclick="render(${i})">${live}${esc(run.result.question.slice(0, 58))}…</button>`;
+}).join("");
 render(0);
 </script>
 </body>

@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\"sql\": \"SELECT COUNT(*) AS ibm_rev_from_contract_missing\\nFROM edgar.revenue_facts\\nWHERE cik = 51143\\n  AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax';\"}"
+}

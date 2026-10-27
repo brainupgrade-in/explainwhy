@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT concept, fiscal_year, COUNT(*) AS fact_count, MIN(filed_date) AS earliest_filed, MAX(filed_date) AS latest_filed FROM lightning.metastore.explainwhy.explainwhy_usl.revenue_fact WHERE cik = '1318605' AND concept IN ('Revenues', 'RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY concept, fiscal_year ORDER BY fiscal_year, concept\",\n  \"purpose\": \"Get annual fact counts for both XBRL revenue concepts for Tesla to see temporal pattern of usage and overlap.\",\n  \"tests\": [\"H-3b9440\", \"H-e2ec90\"]\n}"
+}

@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"IBM's EDGAR profile lists its SIC code as 3570, but the company_dns.sic_codes_table does not contain a row with that SIC code (after trimming whitespace). Consequently, the left join fails to find a match and the result shows 'No match' for IBM.\",\n  \"claims\": [\n    \"The EDGAR company_profiles record for CIK 51143 (INTERNATIONAL BUSINESS MACHINES CORP) has sic_code = '3570'.\",\n    \"After applying TRIM to both cp.sic_code and s.sic_code, there is no row in company_dns.sic_codes_table where sic_code equals '3570'.\",\n    \"Because the join condition TRIM(cp.sic_code) = TRIM(s.sic_code) is not satisfied, the match_status is 'No match'.\"\n  ]\n}"
+}

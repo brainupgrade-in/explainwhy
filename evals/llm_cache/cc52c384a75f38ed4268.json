@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"Apple stopped reporting revenue under the legacy 'Revenues' XBRL concept after fiscal year 2018 because it likely adopted ASC\u202f606 beginning in FY\u202f2019, which requires revenue to be tagged with the 'RevenueFromContractWithCustomerExcludingAssessedTax' concept instead. Consequently, there are zero revenue facts for the 'Revenues' concept for FY\u202f2019 onward, while all post\u20112018 revenue facts (117 of them) use the ASC\u202f606 tag and retain valid CIK references.\"\n}"
+}

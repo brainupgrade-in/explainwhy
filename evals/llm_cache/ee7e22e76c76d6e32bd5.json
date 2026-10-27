@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT fiscal_year, period_frame FROM edgar.revenue_facts WHERE cik=320193 AND concept='Revenues' AND fiscal_year>2018 LIMIT 5\",\n  \"purpose\": \"Check if any Revenues facts exist for Apple after 2018 and whether they have period_frame NULL (testing duplicate/filter hypothesis)\",\n  \"tests\": [\"H-faefb0\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked that Apple has zero 'Revenues' facts after FY2018 (E-6f292e).\",\n    \"REMAINING\": \"Determine if Apple reports revenue under a different concept after 2018, if duplicate/filter issues exist, if concept string changed, or if FK broken.\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"-\"\n  }\n}"
+}

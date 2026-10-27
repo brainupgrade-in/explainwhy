@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT concept, COUNT(*) AS cnt FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year >= 2019 GROUP BY concept ORDER BY cnt DESC\",\n  \"purpose\": \"Check which revenue concepts Apple uses for fiscal year 2019 and later to see if it switched to the ASC 606 concept.\",\n  \"tests\": [\"H-e4168e\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked that Apple has zero 'Revenues' facts after FY2018 (E-6f292e).\",\n    \"REMAINING\": \"Determine if Apple reports revenue under a different concept after 2018, if duplicate/filter issues exist, if concept string changed, or if FK broken.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

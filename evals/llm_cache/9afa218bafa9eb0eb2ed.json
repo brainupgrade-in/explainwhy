@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"IBM drops out because its SIC code '3570' in edgar.company_profiles has no matching row in company_dns.sic_codes_table, so an inner join on sic_code finds no match for IBM. Since the reference table lacks that sic_code value, IBM\u2019s record is excluded from the join result. This absence likely reflects a gap in the reference SIC list rather than any issue with IBM\u2019s data.\"\n}"
+}

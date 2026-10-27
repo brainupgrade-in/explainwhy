@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT concept, form_type, COUNT(*) AS row_count FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY concept, form_type ORDER BY concept, form_type\",\n  \"purpose\": \"Check distribution of revenue rows by concept and filing type for Apple FY2022 to see if both concepts appear and how many rows per filing type.\",\n  \"tests\": [\"H-1418d9\", \"H-23bf9a\", \"H-6472ba\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\"COMPLETED\": \"-\", \"REMAINING\": \"H-23bf9a, H-1418d9, H-6472ba, H-54ac2e\", \"DECISIONS\": \"-\", \"CONTEXT\": \"Initial query showed only RevenueFromContractWithCustomerExcludingAssessedTax rows; need to see if Revenues concept also present.\"},\n  \"answer\": null\n}"
+}

@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence shows exactly 13 rows for Apple (CIK 320193) in FY2022, all with concept RevenueFromContractWithCustomerExcludingAssessedTax.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence breaks down the 13 rows by form_type: 3 are 10\u2011K and 10 are 10\u2011Q, matching the claim.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"supported\",\n      \"reason\": \"For each distinct fiscal period in the FY2022 revenue rows, the count of distinct accession numbers is 1, indicating no duplicate filings for the same period.\"\n    }\n  ]\n}"
+}

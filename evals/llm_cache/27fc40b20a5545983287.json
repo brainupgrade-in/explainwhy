@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT COUNT(*) AS rev_count FROM edgar.revenue_facts WHERE cik=51143 AND concept='Revenues'\",\n  \"purpose\": \"Check whether IBM reports revenue using the legacy Revenues concept.\",\n  \"tests\": [\"H-5700b4\", \"H-0dcf41\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"\",\n    \"REMAINING\": \"Check IBM revenue rows for the specific concept.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

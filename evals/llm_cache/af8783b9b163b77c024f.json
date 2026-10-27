@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\"summary\": \"Tesla began reporting revenue under two XBRL concepts in 2018 because it adopted the ASC\u202f606 revenue\u2011recognition standard, which required parallel tagging of the legacy \u2018Revenues\u2019 concept and the new \u2018RevenueFromContractWithCustomerExcludingAssessedTax\u2019 concept. For fiscal years 2011\u20112017 only the \u2018Revenues\u2019 concept was used, so that concept should be relied on for those years. Starting in 2018 the two concepts contain identical values, so either can be used, though the ASC\u202f606\u2011aligned concept is preferable for consistency with current GAAP.\"}"
+}

@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT cik, entity_name, concept, fiscal_year, fiscal_period, value_usd FROM edgar.revenue_facts WHERE cik = 1318605 AND fiscal_year < 2011 LIMIT 10\",\n  \"purpose\": \"Check if Tesla has any XBRL facts (any concept) before fiscal year 2011 in the raw source.\",\n  \"tests\": [\"H-5a179e\", \"H-99b0c6\", \"H-9a7ea7\", \"H-bbbcb8\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"\",\n    \"REMAINING\": \"Test existence of pre\u20112011 XBRL facts for Tesla.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"We have seen zero revenue facts before 2011 in the unified view; need to see if any facts exist at all in the raw EDGAR table.\"\n  },\n  \"answer\": {}\n}\n\n}"
+}

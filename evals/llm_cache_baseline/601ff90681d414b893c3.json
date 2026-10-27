@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\"sql\": \"SELECT cp.cik, cp.entity_name, cp.sic_code,\\n       CASE WHEN s.sic_code IS NULL THEN 'No match' ELSE 'Match' END AS match_status\\nFROM edgar.company_profiles cp\\nLEFT JOIN company_dns.sic_codes_table s\\n  ON TRIM(cp.sic_code) = TRIM(s.sic_code)\\nWHERE cp.cik = 51143;\"}"
+}

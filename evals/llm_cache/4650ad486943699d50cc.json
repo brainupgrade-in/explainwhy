@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT COUNT(*) AS rows FROM edgar.company_profiles WHERE cik = 51143\",\n  \"purpose\": \"Check if IBM has multiple SIC code rows in company_profiles\",\n  \"tests\": [\"H-90a48c\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"IBM's SIC code from EDGAR company profiles is '3570' (no whitespace, length 4).\",\n    \"REMAINING\": \"Verify reference table coverage and whether IBM has multiple SIC codes.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

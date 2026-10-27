@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT accession_number FROM edgar.revenue_facts WHERE cik=1318605 GROUP BY accession_number HAVING COUNT(DISTINCT concept)=2\",\n  \"purpose\": \"Find accession numbers that contain both XBRL concepts for Tesla to test duplicate-tagging hypothesis.\",\n  \"tests\": [\"H-d0b0d7\"],\n  \"hypothesis_upports\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"-\",\n    \"REMAINING\": \"Determine pattern of concept usage over years and whether duplicates exist.\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"-\"\n  }\n}"
+}

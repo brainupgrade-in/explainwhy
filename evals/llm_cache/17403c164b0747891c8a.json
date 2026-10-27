@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT COUNT(*) AS null_frame_count FROM edgar.revenue_facts WHERE cik = 51143 AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' AND period_frame IS NULL\",\n  \"purpose\": \"Check if IBM has any rows for the concept with NULL period_frame (possible duplicate/follow-on filings that might be excluded)\",\n  \"tests\": [\"H-3b6fe1\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"\",\n    \"REMAINING\": \"Check IBM revenue rows for the specific concept.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

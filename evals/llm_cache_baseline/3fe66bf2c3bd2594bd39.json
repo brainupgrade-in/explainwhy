@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"sql\": \"SELECT\\n    rf.fiscal_year,\\n    rf.concept,\\n    SUM(rf.value_usd) AS total_revenue_usd,\\n    COUNT(*) AS fact_count\\nFROM edgar.revenue_facts rf\\nWHERE rf.cik = 1318605\\n  AND rf.concept IN ('Revenues', 'RevenueFromContractWithCustomerExcludingAssessedTax')\\nGROUP BY rf.fiscal_year, rf.concept\\nORDER BY rf.fiscal_year, rf.concept;\"\n}"
+}

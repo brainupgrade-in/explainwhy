@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"sql\": \"SELECT\\n    rf.concept,\\n    rf.form_type,\\n    rf.fiscal_period,\\n    COUNT(*) AS row_count,\\n    MIN(rf.accession_number) AS sample_accession\\nFROM edgar.revenue_facts rf\\nWHERE rf.cik = 320193\\n  AND rf.fiscal_year = 2022\\nGROUP BY rf.concept, rf.form_type, rf.fiscal_period\\nORDER BY row_count DESC;\"\n}"
+}

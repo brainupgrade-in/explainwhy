@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"Tesla's revenue history in the data begins in fiscal year 2011 because the Edgar database contains no revenue facts for Tesla prior to that year. This absence of pre\u20112011 XBRL-tagged revenue figures suggests that Tesla was either too small to require such reporting or was exempt from mandatory XBRL filing before 2011.\"\n}"
+}

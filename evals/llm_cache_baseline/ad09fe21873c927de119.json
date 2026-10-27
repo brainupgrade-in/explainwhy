@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\"sql\": \"SELECT MAX(fiscal_year) AS last_fiscal_year_with_revenues\\nFROM edgar.revenue_facts\\nWHERE cik = 320193\\n  AND concept = 'Revenues';\"}"
+}

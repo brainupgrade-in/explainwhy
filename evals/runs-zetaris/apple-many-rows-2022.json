@@ -1,0 +1,128 @@
+{
+  "question": "Why does Apple have 13 revenue rows for fiscal year 2022 instead of one?",
+  "run_id": "20261028-003912-3700",
+  "backend": "zetaris-rest",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "summary": "Apple\u2019s FY2022 revenue appears in 13 separate rows because each filing\u2014ten quarterly 10\u2011Qs and three annual 10\u2011Ks\u2014contains its own revenue figure for the period it covers. The quarterly 10\u2011Qs report cumulative year\u2011to\u2011date totals, so each successive quarter adds another row that overlaps with prior quarters, leading to multiple rows for the same fiscal year rather than a single summed amount.",
+  "verified_claims": [
+    {
+      "text": "Apple FY2022 revenue rows total 13, all using the concept RevenueFromContractWithCustomerExcludingAssessedTax.",
+      "evidence": [
+        "E-038ee2"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "Of those 13 rows, 10 are from 10\u2011Q filings and 3 are from 10\u2011K filings.",
+      "evidence": [
+        "E-db2094"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "Each distinct fiscal period in the FY2022 revenue rows has exactly one accession number (no duplicate filings for the same period).",
+      "evidence": [
+        "E-0a1c48"
+      ],
+      "verdict": "supported"
+    }
+  ],
+  "unverified_claims": [],
+  "inferences": [
+    {
+      "text": "The quarterly 10\u2011Q filings report cumulative year\u2011to\u2011date revenue, causing overlapping periods (e.g., Q1, Q2\u2011YTD, Q3\u2011YTD) and thus multiple rows for the same fiscal year.",
+      "basis": "Claims show 10 quarterly rows and 3 annual rows; knowledge of 10\u2011Q reporting explains why quarters produce YTD figures."
+    }
+  ],
+  "hypotheses": {
+    "H-23bf9a": {
+      "text": "Apple submits multiple filings (original 10-Qs, 10-K, and subsequent amendments/restatements) for FY2022, each filing contains a revenue fact, resulting in duplicate rows for the same fiscal period.",
+      "status": "refuted",
+      "evidence": [
+        "E-0d779b"
+      ],
+      "why": "No fiscal period has more than one accession number, so there are no duplicate filings for the same period."
+    },
+    "H-1418d9": {
+      "text": "Two different XBRL concepts are used for revenue: 'Revenues' and 'RevenueFromContractWithCustomerExcludingAssessedTax'. Both concepts are reported in each filing, effectively doubling the number of rows per filing.",
+      "status": "refuted",
+      "evidence": [
+        "E-038ee2",
+        "E-b4663b"
+      ],
+      "why": "The 'Revenues' concept does not appear for Apple FY2022, so two concepts are not responsible for the row count."
+    },
+    "H-6472ba": {
+      "text": "Apple reports revenue for each quarterly filing (10-Q) and the annual filing (10-K) for FY2022, giving four quarterly rows plus one annual row per concept, and when combined with amendments yields the observed count.",
+      "status": "refuted",
+      "evidence": [
+        "E-0d779b",
+        "E-db2094"
+      ],
+      "why": "While there are 4 quarterly filings plus 1 annual filing per concept, the actual count is 10 quarterly and 3 annual rows due to year\u2011to\u2011date reporting, not simple quarterly + annual."
+    },
+    "H-54ac2e": {
+      "text": "Revenue facts are tagged with dimensional information (e.g., geographic region or product segment) in the XBRL instance, causing a separate row for each dimension combination within the same filing; this reflects Apple's multi\u2011segment business rather than a data error.",
+      "status": "refuted",
+      "evidence": [
+        "E-16ee26",
+        "E-db2094"
+      ],
+      "why": "Only one XBRL concept appears; no dimensional segmentation creates extra rows."
+    }
+  },
+  "evidence": {
+    "E-d47573": {
+      "sql": "SELECT concept, form_type, period_start, period_end, accession_number, COUNT(*) AS dup_count FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY concept, form_type, period_start, period_end, accession_number ORDER BY dup_count DESC LIMIT 20",
+      "purpose": "See how revenue rows are distributed by concept, filing type, period, and accession to identify duplicates or multiple concepts/filings.",
+      "row_count": 13
+    },
+    "E-db2094": {
+      "sql": "SELECT concept, form_type, COUNT(*) AS row_count FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY concept, form_type ORDER BY concept, form_type\nLIMIT 200",
+      "purpose": "Check distribution of revenue rows by concept and filing type for Apple FY2022 to see if both concepts appear and how many rows per filing type.",
+      "row_count": 2
+    },
+    "E-16ee26": {
+      "sql": "SELECT concept, form_type, COUNT(*) AS cnt FROM edgar.revenue_facts WHERE cik=320193 AND fiscal_year=2022 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY concept, form_type ORDER BY concept, form_type\nLIMIT 200",
+      "purpose": "Check whether both XBRL revenue concepts appear for Apple FY2022 and how many rows each filing type contributes.",
+      "row_count": 2
+    },
+    "E-038ee2": {
+      "sql": "SELECT concept, COUNT(*) AS rows FROM edgar.revenue_facts WHERE cik=320193 AND fiscal_year=2022 GROUP BY concept\nLIMIT 200",
+      "purpose": "Determine whether both XBRL revenue concepts ('Revenues' and 'RevenueFromContractWithCustomerExcludingAssessedTax') appear for Apple FY2022.",
+      "row_count": 1
+    },
+    "E-71274f": {
+      "sql": "SELECT DISTINCT form_type, period_start, period_end, accession_number FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' ORDER BY form_type, period_start\nLIMIT 200",
+      "purpose": "List distinct filings (form type and period) for Apple FY2022 revenue to see quarterly vs annual and presence of amendments.",
+      "row_count": 13
+    },
+    "E-b4663b": {
+      "sql": "SELECT concept, COUNT(*) AS rows FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 AND concept = 'Revenues' GROUP BY concept\nLIMIT 200",
+      "purpose": "Test whether the 'Revenues' XBRL concept appears for Apple FY2022, which would support hypothesis H-1418d9 (two concepts).",
+      "row_count": 0
+    },
+    "E-0d779b": {
+      "sql": "SELECT period_start, period_end, COUNT(DISTINCT accession_number) AS accession_count FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' GROUP BY period_start, period_end ORDER BY period_start\nLIMIT 200",
+      "purpose": "Check if any fiscal period has more than one distinct accession number (indicating amendments/restatements) for Apple FY2022 revenue.",
+      "row_count": 13
+    },
+    "E-0a1c48": {
+      "sql": "SELECT period_start, period_end, COUNT(DISTINCT accession_number) AS accession_count FROM lightning.metastore.explainwhy.explainwhy_usl.revenue_fact WHERE cik = '320193' AND fiscal_year = 2022 AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' GROUP BY period_start, period_end ORDER BY period_start, period_end\nLIMIT 200",
+      "purpose": "Verify that each distinct fiscal period in Apple FY2022 revenue rows has exactly one accession number (no duplicate filings for the same period).",
+      "row_count": 13
+    }
+  },
+  "critic_rounds": 3,
+  "memories_written": 3,
+  "markovian": {
+    "steps": 11,
+    "prompt_tokens_used": 11674,
+    "full_transcript_estimate": 48172,
+    "tokens_saved": 36498,
+    "efficiency_percent": 75.8,
+    "status": "completed"
+  },
+  "llm_calls": 16,
+  "elapsed_s": 175.4
+}

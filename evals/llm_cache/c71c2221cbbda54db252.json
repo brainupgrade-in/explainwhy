@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT concept, fiscal_year, COUNT(*) AS fact_count, MIN(filed_date) AS earliest_filed, MAX(filed_date) AS latest_filed FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues', 'RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY concept, fiscal_year ORDER BY fiscal_year, concept\",\n  \"purpose\": \"See for each fiscal year how many facts exist for each concept and the filing date range to understand timing and duplication.\",\n  \"tests\": [\"H-3b9440\", \"H-d0b0d7\", \"H-e2ec90\", \"H-5e94de\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\"COMPLETED\": \"\", \"REMAINING\": \"Determine pattern of concept usage over years and whether duplicates exist.\", \"DECISIONS\": \"\", \"CONTEXT\": \"\"},\n  \"answer\": null\n}"
+}

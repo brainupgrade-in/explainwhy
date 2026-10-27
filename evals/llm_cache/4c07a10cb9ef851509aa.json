@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT concept, COUNT(*) AS row_count FROM edgar.revenue_facts WHERE cik = 51143 GROUP BY concept ORDER BY row_count DESC LIMIT 20\",\n  \"purpose\": \"List all XBRL concepts IBM uses and their frequencies to see if alternative revenue concepts appear.\",\n  \"tests\": [\"H-5700b4\", \"H-2ff39e\", \"H-0dcf41\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked IBM rows for RevenueFromContractWithCustomerExcludingAssessedTax (0 rows) and null period_frame (0 rows). Refuted H-3b6fe1.\",\n    \"REMAINING\": \"Determine whether IBM uses other revenue concepts, or never adopted ASC 606, or simply hasn't updated taxonomy tagging.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  },\n  \"answer\": {}\n}\n\n}"
+}

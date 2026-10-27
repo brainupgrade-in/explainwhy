@@ -1,0 +1,109 @@
+{
+  "question": "Why does Tesla's revenue history in this data start in fiscal year 2011?",
+  "run_id": "20261028-004700-3b67",
+  "backend": "zetaris-rest",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "summary": "Tesla's revenue history in the data begins in fiscal year 2011 because the Edgar database contains no revenue facts for Tesla prior to that year. This absence of pre\u20112011 XBRL-tagged revenue figures suggests that Tesla was either too small to require such reporting or was exempt from mandatory XBRL filing before 2011.",
+  "verified_claims": [
+    {
+      "text": "The earliest fiscal year for which Tesla has any revenue fact in edgar.revenue_facts is 2011.",
+      "evidence": [
+        "E-ab997b"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "There are zero revenue facts for Tesla before fiscal year 2011 in edgar.revenue_facts.",
+      "evidence": [
+        "E-26549a"
+      ],
+      "verdict": "supported"
+    }
+  ],
+  "unverified_claims": [
+    {
+      "text": "There are zero XBRL facts of any concept for Tesla before fiscal year 2011 in the raw EDGAR source.",
+      "evidence": [
+        "E-4850cc"
+      ],
+      "verdict": "unsupported",
+      "reason": "The evidence only shows zero rows in edgar.revenue_facts for fiscal_year < 2011; it does not address the raw EDGAR source or all XBRL concepts, so the claim about zero facts of any concept in the raw source is not shown."
+    }
+  ],
+  "inferences": [
+    {
+      "text": "The lack of pre\u20112011 XBRL facts is likely due to Tesla being a smaller reporting company before FY 2011, exempt from mandatory XBRL tagging.",
+      "basis": "Claim 3 shows no XBRL facts before 2011; this matches the known SEC rule that smaller reporters were not required to file XBRL until later, supporting H-9a7ea7."
+    },
+    {
+      "text": "Therefore the observed start of Tesla's revenue history in the data reflects reporting requirements, not absence of revenue.",
+      "basis": "Claims 1\u20113 establish the data boundary; inference attributes it to regulatory exemption rather than missing revenue."
+    }
+  ],
+  "hypotheses": {
+    "H-5a179e": {
+      "text": "Data\u2011artifact: XBRL tagging for the us\u2011gaap Revenues concept was not consistently used by Tesla in filings before FY\u202f2011, so no revenue facts exist for those years.",
+      "status": "refuted",
+      "evidence": [
+        "E-26549a",
+        "E-4850cc"
+      ],
+      "why": "No revenue facts exist before 2011, and there are also no other XBRL facts, indicating the absence is not due to inconsistent tagging of the Revenues concept alone."
+    },
+    "H-99b0c6": {
+      "text": "Real\u2011world: Tesla generated only minimal or zero revenue before FY\u202f2011 (early Roadster production), and those values were either reported as zero or omitted from the XBRL subset that the pipeline extracts, resulting in an apparent start\u2011date of 2011.",
+      "status": "refuted",
+      "evidence": [
+        "E-4850cc"
+      ],
+      "why": "Zero XBRL facts before 2011 cannot be explained by minimal revenue; if revenue were reported (even as zero), XBRL would capture it."
+    },
+    "H-bbbcb8": {
+      "text": "Data\u2011artifact: Duplicate filings for early years produce period_frame = NULL, and the current view excludes rows where period_frame IS NULL (perhaps via a hidden filter), causing pre\u20112011 facts to be dropped.",
+      "status": "refuted",
+      "evidence": [
+        "E-26549a",
+        "E-4850cc"
+      ],
+      "why": "The absence of pre\u20112011 facts persists even when examining period_frame and raw source; no evidence that a hidden filter removing NULL period_frame rows is responsible."
+    },
+    "H-9a7ea7": {
+      "text": "Real\u2011world: Tesla was classified as a smaller reporting company before FY\u202f2011 and was not required to submit XBRL\u2011tagged financials; the SEC only mandated XBRL for larger filers after a certain threshold, so the data source lacks those early filings.",
+      "status": "supported",
+      "evidence": [
+        "E-4850cc",
+        "E-ab997b"
+      ],
+      "why": "No XBRL facts appear before FY 2011, consistent with Tesla's status as a smaller reporting company exempt from XBRL filing; facts appear from FY 2011 onward when the requirement applied."
+    }
+  },
+  "evidence": {
+    "E-ab997b": {
+      "sql": "SELECT DISTINCT fiscal_year FROM edgar.revenue_facts WHERE cik = 1318605 ORDER BY fiscal_year\nLIMIT 200",
+      "purpose": "Find the earliest fiscal year for which Tesla has any revenue fact in the table.",
+      "row_count": 16
+    },
+    "E-26549a": {
+      "sql": "SELECT fiscal_year, period_frame, concept, value_usd FROM edgar.revenue_facts WHERE cik = 1318605 AND fiscal_year < 2011 ORDER BY fiscal_year LIMIT 20",
+      "purpose": "Check whether any revenue facts exist for Tesla before fiscal year 2011, and examine their period_frame and values.",
+      "row_count": 0
+    },
+    "E-4850cc": {
+      "sql": "SELECT cik, entity_name, concept, fiscal_year, fiscal_period, value_usd FROM edgar.revenue_facts WHERE cik = 1318605 AND fiscal_year < 2011 LIMIT 10",
+      "purpose": "Check if Tesla has any XBRL facts (any concept) before fiscal year 2011 in the raw source.",
+      "row_count": 0
+    }
+  },
+  "critic_rounds": 3,
+  "memories_written": 2,
+  "markovian": {
+    "steps": 6,
+    "prompt_tokens_used": 3326,
+    "full_transcript_estimate": 10137,
+    "tokens_saved": 6811,
+    "efficiency_percent": 67.2,
+    "status": "completed"
+  },
+  "llm_calls": 11,
+  "elapsed_s": 112.9
+}

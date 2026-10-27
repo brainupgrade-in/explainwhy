@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT DISTINCT concept FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year > 2018 AND concept LIKE '%Revenue%'\",\n  \"purpose\": \"Check if Apple uses any variant of the 'Revenues' concept after 2018 (testing H-bec1af)\",\n  \"tests\": [\"H-bec1af\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked that Apple has zero 'Revenues' facts after FY2018 (E-6f292e).\",\n    \"REMAINING\": \"Determine if Apple reports revenue under a different concept after 2018, if duplicate/filter issues exist, if concept string changed, or if FK broken.\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"-\"\n  }\n}"
+}

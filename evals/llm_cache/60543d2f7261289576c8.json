@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"Apple\u2019s FY2022 revenue appears in 13 separate rows because each filing\u2014ten quarterly 10\u2011Qs and three annual 10\u2011Ks\u2014contains its own revenue figure for the period it covers. The quarterly 10\u2011Qs report cumulative year\u2011to\u2011date totals, so each successive quarter adds another row that overlaps with prior quarters, leading to multiple rows for the same fiscal year rather than a single summed amount.\"\n}"
+}

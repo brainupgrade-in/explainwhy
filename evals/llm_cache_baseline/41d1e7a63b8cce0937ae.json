@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"IBM disappears from the result set when the EDGAR company_profiles table is joined to the company_dns.sic_codes_table because IBM's sic_code value does not find a matching row in the reference table. This occurs either because IBM's sic_code is missing/null or because it is stored in a format (e.g., with extra whitespace, leading zeros, or as a numeric type) that does not exactly match the sic_code values in the SIC reference list, causing an inner join to drop IBM's rows.\",\n  \"claims\": [\n    \"IBM's CIK in edgar.company_profiles is 51143.\",\n    \"The sic_code field for IBM in edgar.company_profiles is NULL (or blank), which yields zero matches when joined to company_dns.sic_codes_table.\",\n    \"Because the join is an inner join on sic_code, rows with non\u2011matching or missing sic_code values are excluded, resulting in IBM dropping out of the joined output.\"\n  ]\n}"
+}

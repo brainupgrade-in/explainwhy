@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"The data shows that Apple's (CIK 320193) most recent fiscal year recorded for the US\u2011GAAP Revenues concept is 2018. No later fiscal years appear in the revenue_facts table for this concept, indicating that the available dataset stops at FY\u202f2018.\",\n  \"claims\": [\n    \"The maximum fiscal year with a Revenues fact for Apple (CIK 320193) in the edgar.revenue_facts table is 2018.\",\n    \"The query returned no fiscal year greater than 2018 for Apple's Revenues concept.\"\n  ]\n}"
+}

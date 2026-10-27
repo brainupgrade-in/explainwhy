@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"IBM shows zero rows for the RevenueFromContractWithCustomerExcludingAssessedTax concept because it does not use that XBRL tag for its revenue data. Instead, IBM reports all revenue through the legacy Revenues concept, which has 235 rows spanning fiscal years 2009\u20112026. This pattern is likely due to IBM not having adopted ASC\u202f606\u2011based contract\u2011revenue tagging in its filings.\"\n}"
+}

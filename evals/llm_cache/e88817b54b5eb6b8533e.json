@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence shows 3 rows with form_type='10-K' and 10 rows with form_type='10-Q' for the RevenueFromContractWithCustomerExcludingAssessedTax concept, matching the claim.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The first query returns only the RevenueFromContractWithCustomerExcludingAssessedTax concept (13 rows) and the second query returns zero rows for the Revenues concept, confirming the claim.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"unsupported\",\n      \"reason\": \"The evidence lists accession counts of 1 for various periods, including many outside FY2022, and does not demonstrate that every FY2022 fiscal period has exactly one accession number.\"\n    }\n  ]\n}"
+}

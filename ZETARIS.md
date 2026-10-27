@@ -76,6 +76,11 @@ constraint declared once in the USL DDL.
 **The agent on live Zetaris.** `python -m explainwhy --zetaris --sample 2` ran against this instance: 4 Lightning
 SQL queries over REST, 4 critic-verified claims, 85 s ([report](samples/outputs/zetaris-live-ibm/report.md)).
 
+**The eval on live Zetaris.** All 6 eval questions were run against this instance: **5/6 passed**
+([`evals/results-zetaris.md`](evals/results-zetaris.md); full traces in `evals/runs-zetaris/`, also on the replay page).
+The failure was a DNS outage on the build machine mid-run (Zetaris could not resolve `data.sec.gov`); after it we
+cached the SEC REST tables in Zetaris (`zetaris/03_cache.sql`) and the rerun passed. Both are reported.
+
 **What did not work (yet).** Asked directly "which companies break the semantic layer's data-quality rules?",
 the agent did not rely on `SHOW DQ` and instead re-derived its own rules (e.g. counted repeated periods across
 filings as "duplicates", which the USL's real key does not treat as violations). The USL's DQ output was right;

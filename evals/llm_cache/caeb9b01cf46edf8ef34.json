@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT cik, concept, COUNT(*) AS row_count FROM edgar.revenue_facts WHERE cik = 51143 AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' GROUP BY cik, concept\",\n  \"purpose\": \"Check if IBM has any rows for the RevenueFromContractWithCustomerExcludingAssessedTax concept.\",\n  \"tests\": [\"H-5700b4\", \"H-3b6fe1\", \"H-2ff39e\", \"H-0dcf41\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\"COMPLETED\": \"\", \"REMAINING\": \"Check IBM revenue rows for the specific concept.\", \"DECISIONS\": \"\", \"CONTEXT\": \"\"},\n  \"answer\": {}\n}"
+}

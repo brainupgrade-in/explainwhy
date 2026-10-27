@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT rf.cik FROM lightning.metastore.explainwhy.explainwhy_usl.revenue_fact rf WHERE rf.cik = '320193' AND rf.fiscal_year > 2018 AND rf.cik NOT IN (SELECT cik FROM lightning.metastore.explainwhy.explainwhy_usl.company)\",\n  \"purpose\": \"Test if any revenue_fact rows for Apple after 2018 have a cik that does not match a company row, indicating a broken foreign key (H-e968c5).\",\n  \"tests\": [\"H-e968c5\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked that Apple has zero 'Revenues' facts after FY2018 (E-6f292e).\",\n    \"REMAINING\": \"Determine if foreign key broken for Apple after 2018.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

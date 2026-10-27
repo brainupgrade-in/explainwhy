@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"IBM does not have any XBRL facts tagged with the RevenueFromContractWithCustomerExcludingAssessedTax concept because the company continues to report its revenue using the broader Revenues element in its SEC filings. All of IBM\u2019s revenue disclosures in the edgar.revenue_facts table are associated with the Revenues concept, leaving the alternative concept unused.\",\n  \"claims\": [\n    \"IBM (CIK 51143) has zero rows in edgar.revenue_facts where concept = 'RevenueFromContractWithCustomerExcludingAssessedTax'.\",\n    \"All of IBM\u2019s revenue facts in edgar.revenue_facts are tagged with the concept 'Revenues', for example its FY2022 Q4 revenue fact appears under that concept.\"\n  ]\n}"
+}

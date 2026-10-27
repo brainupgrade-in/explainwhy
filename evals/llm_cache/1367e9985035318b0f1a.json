@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT period_start, period_end, COUNT(DISTINCT accession_number) AS accession_count FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' GROUP BY period_start, period_end ORDER BY period_start\",\n  \"purpose\": \"Check if any fiscal period has more than one distinct accession number (indicating amendments/restatements) for Apple FY2022 revenue.\",\n  \"tests\": [\"H-23bf9a\", \"H-6472ba\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"H-1418d9 refuted (no Revenues concept rows).\",\n    \"REMAINING\": \"H-23bf9a, H-6472ba, H-54ac2e\",\n    \"DECISIONS\": \"H-1418d9 refuted.\",\n    \"CONTEXT\": \"Only one concept observed; need to test whether multiple filings (amendments) or dimensional splits cause 13 rows.\"\n  },\n  \"answer\": null\n}"
+}

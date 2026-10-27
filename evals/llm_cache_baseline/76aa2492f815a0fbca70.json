@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"The earliest revenue fact recorded for Tesla (CIK 1318605) in the EDGAR database is from fiscal year 2011, as shown by the minimum fiscal year value returned by the query. This indicates that Tesla's reported revenue data in this dataset begins in 2011, with no earlier revenue facts available for the specified concepts.\",\n  \"claims\": [\n    \"The minimum fiscal year for Tesla's revenue facts (CIK 1318605) is 2011.\"\n  ]\n}"
+}

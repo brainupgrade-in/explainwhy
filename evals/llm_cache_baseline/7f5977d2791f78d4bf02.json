@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"The search of IBM's XBRL filings in the Edgar revenue_facts table found no entries for the concept RevenueFromContractWithCustomerExcludingAssessedTax. This means IBM either does not tag its revenue with that specific XBRL element or reports revenue under alternative concepts. Consequently, there are zero revenue rows associated with that concept for IBM.\",\n  \"claims\": [\n    \"The query returned 0 rows for IBM (CIK 51143) where concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' in the Edgar revenue_facts table.\"\n  ]\n}"
+}

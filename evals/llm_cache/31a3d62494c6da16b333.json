@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"The distinct fiscal_year list starts at 2011, showing 2011 as the earliest year with revenue facts.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The query for fiscal_year < 2011 returns zero rows, confirming no revenue facts before 2011.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"unsupported\",\n      \"reason\": \"The evidence only shows zero rows in edgar.revenue_facts for fiscal_year < 2011; it does not address the raw EDGAR source or all XBRL concepts, so the claim about zero facts of any concept in the raw source is not shown.\"\n    }\n  ]\n}"
+}

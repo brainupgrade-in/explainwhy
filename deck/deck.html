@@ -159,9 +159,9 @@ the reference list (possibly obsolete).
   <h2>Where each sponsor sits in the build</h2>
   <table>
     <tr><th style="width: 18%;">Sponsor</th><th>How it is used</th></tr>
-    <tr><td><b>Zetaris</b></td><td>The data harness. All evidence is Lightning SQL over the Zetaris REST API against views over live
-      REST sources: SEC XBRL facts (5 REST tables unioned), SEC submissions, company_dns SIC list. Cross-source joins run in Zetaris.
-      <span class="muted">zetaris/01_create.sql · data.py</span></td></tr>
+    <tr><td><b>Zetaris</b></td><td><b>Verified live</b> (local Zetaris, Docker). Evidence is Lightning SQL over the REST API against 3 live REST sources:
+      SEC XBRL facts, SEC submissions, company_dns SIC list. Our USL <code>explainwhy_usl</code> links them with PK/FK rules;
+      <code>SHOW DQ</code> flags exactly IBM / SIC 3570 — the agent's answer, reached independently. <span class="muted">ZETARIS.md · zetaris/</span></td></tr>
     <tr><td><b>Meterless</b></td><td><b>World Model</b>: event-sourced investigation state and trace. <b>H-MEM</b>: verified findings
       with source, provenance, confidence and audit ledger, recalled next time. <b>Markovian</b>: bounded steps with the
       COMPLETED / REMAINING / DECISIONS / CONTEXT carryover. <span class="muted">engines/</span></td></tr>
@@ -186,8 +186,9 @@ the reference list (possibly obsolete).
       <td>Only <code>Revenues</code> in FY2011–2017; both from FY2018, in the same filings, sometimes identical (duplicate tagging).</td>
       <td>47 s · 5 steps</td></tr>
   </table>
-  <p class="muted" style="font-size: 19px; margin-top: 18px;">Markovian bounded context: 42–73 % fewer prompt tokens than re-sending the
-    transcript, and the gap grows with run length. Offline replay of all three runs: <code>SAMPLE_MODE=true</code>.</p>
+  <p class="muted" style="font-size: 18px; margin-top: 14px;">Eval 5/6. Live on Zetaris: the IBM question in 85 s, 4 verified claims.
+    Baseline audit: Nemotron alone also scores 5/6 on keywords, but states IBM's SIC code is "NULL" and invents amended filings;
+    every ExplainWhy claim is backed by rows it queried. Markovian context: 42–73 % fewer prompt tokens.</p>
   <div class="foot"><span>ExplainWhy</span><span>7</span></div>
 </section>
 
@@ -197,8 +198,8 @@ the reference list (possibly obsolete).
   <div class="cols">
     <div>
       <ul>
-        <li>Recorded sample runs used the local mirror of the Zetaris views (same names, same SQL); the live Zetaris path is
-          implemented against the documented REST API.</li>
+        <li>Recorded samples and the eval use an offline mirror of the Zetaris views so they replay without keys; one run is live.</li>
+        <li>Asked which rows break the USL's DQ rules, the agent invents its own rules instead of reading <code>SHOW DQ</code>.</li>
         <li>The critic is strict on numbers and citations, but can still accept a weak interpretation worded as a fact.</li>
         <li>Small, bounded world: 3 companies, 2 revenue concepts.</li>
       </ul>
@@ -206,7 +207,7 @@ the reference list (possibly obsolete).
     <div class="card">
       <h3>Next</h3>
       <ul>
-        <li>More Zetaris sources through its semantic layer (USL), so questions span many systems.</li>
+        <li>An agent-readable USL catalog + DQ endpoint (our Zetaris feature request), so the critic cites DQ results directly.</li>
         <li>H-MEM "dreaming": propose general rules from many verified findings, with human approval.</li>
         <li>A small web UI that shows each claim beside its rows.</li>
       </ul>

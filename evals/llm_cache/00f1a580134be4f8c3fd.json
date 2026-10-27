@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT DISTINCT form_type, period_start, period_end, accession_number FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' ORDER BY form_type, period_start\",\n  \"purpose\": \"List distinct filings (form type and period) for Apple FY2022 revenue to see quarterly vs annual and presence of amendments.\",\n  \"tests\": [\"H-23bf9a\", \"H-6472ba\", \"H-54ac2e\"]\n}"
+}

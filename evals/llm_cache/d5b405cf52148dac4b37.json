@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT concept, fiscal_year, COUNT(*) AS fact_count, MIN(filed_date) AS earliest_filed, MAX(filed_date) AS latest_filed FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY concept, fiscal_year ORDER BY fiscal_year, concept\",\n  \"purpose\": \"Get annual fact counts for both XBRL revenue concepts for Tesla to see if they overlap or show a clear shift over time.\",\n  \"tests\": [\"H-e2ec90\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Identified accession numbers that contain both XBRL concepts, confirming duplicate-tagging occurs.\",\n    \"REMAINING\": \"Clarify temporal pattern of concept usage and determine which concept to use for which years.\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"-\"\n  }\n}"
+}

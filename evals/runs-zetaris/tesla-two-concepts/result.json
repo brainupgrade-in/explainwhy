@@ -1,0 +1,153 @@
+{
+  "question": "Why does Tesla report revenue under two different XBRL concepts, and which one should be used for which years?",
+  "run_id": "20261028-003343-d2bc",
+  "backend": "zetaris-rest",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "summary": "Tesla began reporting revenue under two XBRL concepts in 2018 because it adopted the ASC\u202f606 revenue\u2011recognition standard, which required parallel tagging of the legacy \u2018Revenues\u2019 concept and the new \u2018RevenueFromContractWithCustomerExcludingAssessedTax\u2019 concept. For fiscal years 2011\u20112017 only the \u2018Revenues\u2019 concept was used, so that concept should be relied on for those years. Starting in 2018 the two concepts contain identical values, so either can be used, though the ASC\u202f606\u2011aligned concept is preferable for consistency with current GAAP.",
+  "verified_claims": [
+    {
+      "text": "Tesla reported only the 'Revenues' concept for fiscal years 2011\u20112017, with fact counts of 21\u201122 per year and no ASC 606 concept in those years.",
+      "evidence": [
+        "E-763045",
+        "E-a15cd5",
+        "E-8291d0",
+        "E-e904c5",
+        "E-59c5aa",
+        "E-a6bd98"
+      ],
+      "verdict": "supported"
+    },
+    {
+      "text": "Starting in fiscal year 2018, Tesla reported revenue under both 'Revenues' and 'RevenueFromContractWithCustomerExcludingAssessedTax' concepts.",
+      "evidence": [
+        "E-a6bd98",
+        "E-763045",
+        "E-a15cd5",
+        "E-8291d0",
+        "E-e904c5",
+        "E-59c5aa"
+      ],
+      "verdict": "supported"
+    }
+  ],
+  "unverified_claims": [
+    {
+      "text": "For accession numbers that contain both concepts, the reported USD values are identical (e.g., 3408751000, 7410982000), indicating the tags represent the same revenue figure.",
+      "evidence": [
+        "E-844982"
+      ],
+      "verdict": "unsupported",
+      "reason": "For accession numbers that contain both concepts, the evidence includes mismatched USD values (e.g., accession 0001564590-18-011086 has a Revenues value of 2696270000 alongside a RevenueFromContract value of 3408751000), demonstrating that the values are not always identical."
+    }
+  ],
+  "inferences": [
+    {
+      "text": "The dual concept usage reflects Tesla's adoption of the ASC 606 revenue recognition standard effective 2018, leading to parallel XBRL tagging during and after the transition.",
+      "basis": [
+        "Claims 1 and 2"
+      ]
+    },
+    {
+      "text": "Because the values are identical, either concept can be used for financial analysis from 2018 onward; the ASC 606 concept aligns with current GAAP but the legacy concept remains valid for continuity.",
+      "basis": [
+        "Claim 3"
+      ]
+    }
+  ],
+  "hypotheses": {
+    "H-3b9440": {
+      "text": "Tesla initially reported revenue using the legacy US\u2011GAAP concept 'Revenues' and later adopted the newer ASC\u202f606 concept 'RevenueFromContractWithCustomerExcludingAssessedTax' after the revenue recognition standard change, so the concept used shifts over time.",
+      "status": "supported",
+      "evidence": [
+        "E-0e3ef9",
+        "E-763045",
+        "E-a6bd98"
+      ],
+      "why": "Shows initial use of Revenues and later appearance of ASC 606 concept, consistent with a standard-driven shift."
+    },
+    "H-d0b0d7": {
+      "text": "Both concepts are reported simultaneously for the same period because Tesla files both an original 10-K/10-Q and an amended filing (10-K/A or 10-Q/A) that re\u2011tags the same underlying number with the newer concept, creating duplicate facts.",
+      "status": "refuted",
+      "evidence": [
+        "E-d1d862"
+      ],
+      "why": "Amended filings do not explain duplicate tagging; both concepts appear in original filings as well."
+    },
+    "H-e2ec90": {
+      "text": "The dual concepts reflect different revenue scopes: 'Revenues' captures total GAAP revenue, while 'RevenueFromContractWithCustomerExcludingAssessedTax' isolates revenue from customer contracts excluding sales tax, allowing analysts to view both gross and tax\u2011excluded figures.",
+      "status": "refuted",
+      "evidence": [
+        "E-844982"
+      ],
+      "why": "Values of the two concepts are identical, showing no difference in scope."
+    },
+    "H-5e94de": {
+      "text": "Early XBRL instance documents contained tagging errors where both concepts were mistakenly applied to the same fact due to taxonomy mapping issues, and later corrections removed the erroneous tag, leaving a mix of correct and incorrect facts in the historical data.",
+      "status": "refuted",
+      "evidence": [
+        "E-0e3ef9",
+        "E-d1d862"
+      ],
+      "why": "Evidence does not support tagging errors; duplicate concepts appear consistently after 2018, not as sporadic mistakes."
+    }
+  },
+  "evidence": {
+    "E-763045": {
+      "sql": "SELECT concept, fiscal_year, COUNT(*) AS fact_count, MIN(filed_date) AS earliest_filed, MAX(filed_date) AS latest_filed FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues', 'RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY concept, fiscal_year ORDER BY fiscal_year, concept\nLIMIT 200",
+      "purpose": "See for each fiscal year how many facts exist for each concept and the filing date range to understand timing and duplication.",
+      "row_count": 21
+    },
+    "E-0e3ef9": {
+      "sql": "SELECT accession_number FROM edgar.revenue_facts WHERE cik=1318605 GROUP BY accession_number HAVING COUNT(DISTINCT concept)=2\nLIMIT 200",
+      "purpose": "Find accession numbers that contain both XBRL concepts for Tesla to test duplicate-tagging hypothesis.",
+      "row_count": 17
+    },
+    "E-a15cd5": {
+      "sql": "SELECT concept, fiscal_year, COUNT(*) AS fact_count, MIN(filed_date) AS earliest_filed, MAX(filed_date) AS latest_filed FROM edgar.revenue_facts WHERE cik = 1318605 GROUP BY concept, fiscal_year ORDER BY fiscal_year, concept\nLIMIT 200",
+      "purpose": "See how many facts exist for each XBRL revenue concept per fiscal year for Tesla to understand timing and any overlap.",
+      "row_count": 21
+    },
+    "E-8291d0": {
+      "sql": "SELECT concept, fiscal_year, COUNT(*) AS fact_count, MIN(filed_date) AS earliest_filed, MAX(filed_date) AS latest_filed FROM lightning.metastore.explainwhy.explainwhy_usl.revenue_fact WHERE cik = '1318605' AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY concept, fiscal_year ORDER BY fiscal_year, concept\nLIMIT 200",
+      "purpose": "Count facts for each XBRL revenue concept per fiscal year for Tesla to see if usage shifts over time or if both concepts appear concurrently.",
+      "row_count": 21
+    },
+    "E-d1d862": {
+      "sql": "SELECT accession_number, form_type, COUNT(DISTINCT concept) AS concept_count FROM lightning.metastore.explainwhy.explainwhy_usl.revenue_fact WHERE cik = '1318605' AND concept IN ('Revenues', 'RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY accession_number, form_type HAVING COUNT(DISTINCT concept) = 2 ORDER BY accession_number\nLIMIT 200",
+      "purpose": "Check whether accession numbers that contain both concepts are amended filings (form_type ending with /A) to test duplicate-tagging hypothesis.",
+      "row_count": 17
+    },
+    "E-a6bd98": {
+      "sql": "SELECT concept, fiscal_year, COUNT(*) AS fact_count, MIN(filed_date) AS earliest_filed, MAX(filed_date) AS latest_filed FROM lightning.metastore.explainwhy.explainwhy_usl.revenue_fact WHERE cik = '1318605' AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' GROUP BY concept, fiscal_year ORDER BY fiscal_year\nLIMIT 200",
+      "purpose": "Count facts for the ASC 606 revenue concept per fiscal year for Tesla to see if and when it appears.",
+      "row_count": 5
+    },
+    "E-e904c5": {
+      "sql": "SELECT concept, fiscal_year, COUNT(*) AS fact_count, MIN(filed_date) AS earliest_filed, MAX(filed_date) AS latest_filed FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY concept, fiscal_year ORDER BY fiscal_year, concept\nLIMIT 200",
+      "purpose": "Get annual fact counts for both XBRL revenue concepts for Tesla to see if they overlap or show a clear shift over time.",
+      "row_count": 21
+    },
+    "E-59c5aa": {
+      "sql": "SELECT concept, fiscal_year, COUNT(*) AS fact_count, MIN(filed_date) AS earliest_filed, MAX(filed_date) AS latest_filed FROM lightning.metastore.explainwhy.explainwhy_usl.revenue_fact WHERE cik = '1318605' AND concept IN ('Revenues', 'RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY concept, fiscal_year ORDER BY fiscal_year, concept\nLIMIT 200",
+      "purpose": "Get annual fact counts for both XBRL revenue concepts for Tesla to see temporal pattern of usage and overlap.",
+      "row_count": 21
+    },
+    "E-844982": {
+      "sql": "SELECT accession_number, concept, value_usd FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax') AND accession_number IN ('0001628280-26-049270','0001628280-24-002390','0001628280-24-032662','0001628280-25-018911','0001628280-25-045968','0001564590-19-003165','0001564590-18-011086','0001564590-18-019254','0001564590-18-026353','0001628280-23-034847','0001628280-24-002390','0001628280-24-032662','0001628280-25-018911','0001628280-25-045968','0001564590-19-003165','0001564590-18-011086','0001564590-18-019254') ORDER BY accession_number, concept\nLIMIT 200",
+      "purpose": "Compare the numeric values of the two XBRL concepts for Tesla accession numbers that contain both to see if they represent different scopes (different values) or the same scope (identical values).",
+      "row_count": 69
+    }
+  },
+  "critic_rounds": 3,
+  "memories_written": 2,
+  "markovian": {
+    "steps": 16,
+    "prompt_tokens_used": 21041,
+    "full_transcript_estimate": 115234,
+    "tokens_saved": 94193,
+    "efficiency_percent": 81.7,
+    "status": "completed"
+  },
+  "llm_calls": 22,
+  "elapsed_s": 206.5
+}

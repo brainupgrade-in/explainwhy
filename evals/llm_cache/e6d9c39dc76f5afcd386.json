@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT concept, COUNT(*) AS rows FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 AND concept = 'Revenues' GROUP BY concept\",\n  \"purpose\": \"Test whether the 'Revenues' XBRL concept appears for Apple FY2022, which would support hypothesis H-1418d9 (two concepts).\",\n  \"tests\": [\"H-1418d9\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"\",\n    \"REMAINING\": \"H-23bf9a, H-1418d9, H-6472ba, H-54ac2e\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"Previous evidence shows only RevenueFromContractWithCustomerExcludingAssessedTax concept rows for Apple FY2022. Need to verify if Revenues concept exists.\"\n  },\n  \"answer\": {}\n}"
+}

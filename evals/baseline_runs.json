@@ -1,0 +1,159 @@
+[
+  {
+    "id": "apple-tag-switch",
+    "question": "Why does Apple's revenue history under the us-gaap Revenues concept stop at fiscal year 2018?",
+    "b1": {
+      "summary": "Apple stopped populating the legacy US\u2011GAAP 'Revenues' XBRL concept after its 2018 fiscal year because it adopted the new revenue\u2011recognition standard ASC\u202f606 (Revenue from Contracts with Customers) effective for fiscal years beginning after December\u202f15,\u202f2017. From FY\u202f2019 onward Apple reports its revenue under the newer concept 'RevenueFromContractWithCustomerExcludingAssessedTax', so the older 'Revenues' concept has no further facts in the EDGAR XBRL feed.",
+      "claims": [
+        "The last XBRL fact for Apple (CIK\u202f320193) with concept='Revenues' has fiscal_year=2018 and period_end=2018-09-29, with a reported value of $265,595,000,000.",
+        "Starting with fiscal_year=2019, Apple's revenue facts appear only under concept='RevenueFromContractWithCustomerExcludingAssessedTax' (e.g., FY\u202f2019 value $260,174,000,000).",
+        "ASC\u202f606 became effective for public companies for annual periods beginning after December\u202f15,\u202f2017, which corresponds to Apple\u2019s FY\u202f2018, prompting the switch from the legacy 'Revenues' concept to the new revenue\u2011recognition concept."
+      ]
+    },
+    "b2": {
+      "sql": "SELECT MAX(fiscal_year) AS last_fiscal_year_with_revenues\nFROM edgar.revenue_facts\nWHERE cik = 320193\n  AND concept = 'Revenues'\nLIMIT 200",
+      "result": "last_fiscal_year_with_revenues\n2018",
+      "summary": "The data shows that Apple's (CIK 320193) most recent fiscal year recorded for the US\u2011GAAP Revenues concept is 2018. No later fiscal years appear in the revenue_facts table for this concept, indicating that the available dataset stops at FY\u202f2018.",
+      "claims": [
+        "The maximum fiscal year with a Revenues fact for Apple (CIK 320193) in the edgar.revenue_facts table is 2018.",
+        "The query returned no fiscal year greater than 2018 for Apple's Revenues concept."
+      ]
+    },
+    "b1_unbacked": 3,
+    "b2_unbacked": 0,
+    "b1_missing": [],
+    "b2_missing": [
+      "RevenueFromContract"
+    ]
+  },
+  {
+    "id": "ibm-sic-gap",
+    "question": "Why does IBM drop out when EDGAR company profiles are joined to the company_dns SIC reference list?",
+    "b1": {
+      "summary": "IBM disappears from the result set when the EDGAR company_profiles table is joined to the company_dns.sic_codes_table because IBM's sic_code value does not find a matching row in the reference table. This occurs either because IBM's sic_code is missing/null or because it is stored in a format (e.g., with extra whitespace, leading zeros, or as a numeric type) that does not exactly match the sic_code values in the SIC reference list, causing an inner join to drop IBM's rows.",
+      "claims": [
+        "IBM's CIK in edgar.company_profiles is 51143.",
+        "The sic_code field for IBM in edgar.company_profiles is NULL (or blank), which yields zero matches when joined to company_dns.sic_codes_table.",
+        "Because the join is an inner join on sic_code, rows with non\u2011matching or missing sic_code values are excluded, resulting in IBM dropping out of the joined output."
+      ]
+    },
+    "b2": {
+      "sql": "SELECT cp.cik, cp.entity_name, cp.sic_code,\n       CASE WHEN s.sic_code IS NULL THEN 'No match' ELSE 'Match' END AS match_status\nFROM edgar.company_profiles cp\nLEFT JOIN company_dns.sic_codes_table s\n  ON TRIM(cp.sic_code) = TRIM(s.sic_code)\nWHERE cp.cik = 51143\nLIMIT 200",
+      "result": "cik | entity_name | sic_code | match_status\n51143 | INTERNATIONAL BUSINESS MACHINES CORP | 3570 | No match",
+      "summary": "IBM's EDGAR profile lists its SIC code as 3570, but the company_dns.sic_codes_table does not contain a row with that SIC code (after trimming whitespace). Consequently, the left join fails to find a match and the result shows 'No match' for IBM.",
+      "claims": [
+        "The EDGAR company_profiles record for CIK 51143 (INTERNATIONAL BUSINESS MACHINES CORP) has sic_code = '3570'.",
+        "After applying TRIM to both cp.sic_code and s.sic_code, there is no row in company_dns.sic_codes_table where sic_code equals '3570'.",
+        "Because the join condition TRIM(cp.sic_code) = TRIM(s.sic_code) is not satisfied, the match_status is 'No match'."
+      ]
+    },
+    "b1_unbacked": 1,
+    "b2_unbacked": 0,
+    "b1_missing": [
+      "3570"
+    ],
+    "b2_missing": []
+  },
+  {
+    "id": "tesla-two-concepts",
+    "question": "Why does Tesla report revenue under two different XBRL concepts, and which one should be used for which years?",
+    "b1": {
+      "summary": "Tesla reports revenue under two XBRL concepts because it adopted the new ASC\u202f606 revenue\u2011recognition standard (which introduced the concept \u2018RevenueFromContractWithCustomerExcludingAssessedTax\u2019) in its fiscal year 2018 filing, while still providing the legacy \u2018Revenues\u2019 concept for backward compatibility. For periods before the adoption (FY\u202f2017 and earlier) the appropriate figure is the \u2018Revenues\u2019 concept; beginning with FY\u202f2018 (the year ended December\u202f31\u202f2018) the \u2018RevenueFromContractWithCustomerExcludingAssessedTax\u2019 concept should be used as the primary revenue measure.",
+      "claims": [
+        "Tesla\u2019s FY\u202f2017 Form\u202f10\u2011K (filed\u202f2018\u201102\u201128) reports revenue only under the XBRL concept \u2018Revenues\u2019 with a value of $11,759,000,000.",
+        "Tesla\u2019s FY\u202f2018 Form\u202f10\u2011K (filed\u202f2019\u201102\u201128) includes both concepts: \u2018Revenues\u2019 $21,461,000,000 and \u2018RevenueFromContractWithCustomerExcludingAssessedTax\u2019 $21,461,000,000, reflecting the adoption of ASC\u202f606 effective for that year.",
+        "From FY\u202f2019 onward (e.g., FY\u202f2019 Form\u202f10\u2011K filed\u202f2020\u201102\u201126 showing \u2018RevenueFromContractWithCustomerExcludingAssessedTax\u2019 $24,558,000,000) Tesla continues to report revenue under the newer concept as the primary figure."
+      ]
+    },
+    "b2": {
+      "sql": "SELECT\n    rf.fiscal_year,\n    rf.concept,\n    SUM(rf.value_usd) AS total_revenue_usd,\n    COUNT(*) AS fact_count\nFROM edgar.revenue_facts rf\nWHERE rf.cik = 1318605\n  AND rf.concept IN ('Revenues', 'RevenueFromContractWithCustomerExcludingAssessedTax')\nGROUP BY rf.fiscal_year, rf.concept\nORDER BY rf.fiscal_year, rf.concept\nLIMIT 200",
+      "result": "fiscal_year | concept | total_revenue_usd | fact_count\n2011 | Revenues | 1764070000 | 22\n2012 | Revenues | 2059343000 | 21\n2013 | Revenues | 9091899000 | 21\n2014 | Revenues | 20473726000 | 21\n2015 | Revenues | 29933684000 | 21\n2016 | Revenues | 44696882000 | 21\n2017 | Revenues | 75838689000 | 21\n2018 | RevenueFromContractWithCustomerExcludingAssessedTax | 57343040000 | 6\n2018 | Revenues | 131748773000 | 21\n2019 | Revenues | 184997244000 | 21\n2020 | Revenues | 232573000000 | 21\n2021 | Revenues | 258097000000 | 13\n2022 | Revenues | 411354000000 | 13\n2023 | RevenueFromContractWithCustomerExcludingAssessedTax | 405612000000 | 7\n2023 | Revenues | 573504000000 | 13\n2024 | RevenueFromContractWithCustomerExcludingAssessedTax | 658160000000 | 13\n2024 | Revenues | 658160000000 | 13\n2025 | RevenueFromContractWithCustomerExcludingAssessedTax | 661740000000 | 13\n2025 | Revenues | 661740000000 | 13\n2026 | RevenueFromContractWithCustomerExcludingAssessedTax | 389644000000 | 10\n2026 | Revenues | 389644000000 | 10",
+      "summary": "Tesla uses two XBRL revenue concepts because it adopted ASC\u202f606 in 2018, adding the more specific 'RevenueFromContractWithCustomerExcludingAssessedTax' while keeping the legacy 'Revenues' concept for continuity. Before 2018 only the legacy concept appears; from 2018 onward both are filed, with the newer concept representing revenue excluding assessed tax and matching the legacy value in later years. Therefore, use 'Revenues' for 2011\u20112017 and the 'RevenueFromContractWithCustomerExcludingAssessedTax' concept (or either when values equal) for 2018 and later.",
+      "claims": [
+        "Fiscal years 2011\u20112017: only 'Revenues' reported, e.g., $1,764,070,000 in 2011 and $75,838,689,000 in 2017.",
+        "2018: both concepts filed\u2014'Revenues' $131,748,773,000 and 'RevenueFromContractWithCustomerExcludingAssessedTax' $57,343,040,000.",
+        "2023\u20112026: the two concepts show identical amounts (e.g., $658,160,000,000 in 2024)."
+      ]
+    },
+    "b1_unbacked": 3,
+    "b2_unbacked": 0,
+    "b1_missing": [],
+    "b2_missing": []
+  },
+  {
+    "id": "ibm-no-asc606-concept",
+    "question": "Why does IBM have no revenue rows under the RevenueFromContractWithCustomerExcludingAssessedTax concept?",
+    "b1": {
+      "summary": "IBM does not have any XBRL facts tagged with the RevenueFromContractWithCustomerExcludingAssessedTax concept because the company continues to report its revenue using the broader Revenues element in its SEC filings. All of IBM\u2019s revenue disclosures in the edgar.revenue_facts table are associated with the Revenues concept, leaving the alternative concept unused.",
+      "claims": [
+        "IBM (CIK 51143) has zero rows in edgar.revenue_facts where concept = 'RevenueFromContractWithCustomerExcludingAssessedTax'.",
+        "All of IBM\u2019s revenue facts in edgar.revenue_facts are tagged with the concept 'Revenues', for example its FY2022 Q4 revenue fact appears under that concept."
+      ]
+    },
+    "b2": {
+      "sql": "SELECT COUNT(*) AS ibm_rev_from_contract_missing\nFROM edgar.revenue_facts\nWHERE cik = 51143\n  AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax'\nLIMIT 200",
+      "result": "ibm_rev_from_contract_missing\n0",
+      "summary": "The search of IBM's XBRL filings in the Edgar revenue_facts table found no entries for the concept RevenueFromContractWithCustomerExcludingAssessedTax. This means IBM either does not tag its revenue with that specific XBRL element or reports revenue under alternative concepts. Consequently, there are zero revenue rows associated with that concept for IBM.",
+      "claims": [
+        "The query returned 0 rows for IBM (CIK 51143) where concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' in the Edgar revenue_facts table."
+      ]
+    },
+    "b1_unbacked": 2,
+    "b2_unbacked": 0,
+    "b1_missing": [],
+    "b2_missing": [
+      "Revenues"
+    ]
+  },
+  {
+    "id": "apple-many-rows-2022",
+    "question": "Why does Apple have 13 revenue rows for fiscal year 2022 instead of one?",
+    "b1": {
+      "summary": "Apple\u2019s revenue facts for fiscal year\u202f2022 appear as 13 separate rows because the edgar.revenue_facts table records every filing that contains a revenue figure \u2013 the annual 10\u2011K, each quarterly 10\u2011Q, and any amended or restated versions of those filings. Each filing creates its own row, even when it covers the same fiscal period, so multiple rows accumulate for the same year.",
+      "claims": [
+        "For CIK\u202f320193 (Apple Inc.) and fiscal_year\u202f=\u202f2022, there are 13 rows in edgar.revenue_facts where concept is either 'Revenues' or 'RevenueFromContractWithCustomerExcludingAssessedTax'.",
+        "These 13 rows consist of 1 annual 10\u2011K filing (form_type='10-K'), 4 regular quarterly 10\u2011Q filings (Q1\u2011Q4, form_type='10-Q'), and 8 amended/restated filings (4 quarterly 10\u2011Q/A and 4 annual 10\u2011K/A) that each reported revenue for the same fiscal periods.",
+        "The earliest filing among the 13 rows has a filed_date of 2022\u201101\u201128 (Q1\u202f2022 10\u2011Q) and the latest has a filed_date of 2023\u201102\u201103 (annual 10\u2011K/A for FY\u202f2022).",
+        "All 13 rows share the same fiscal_year value of 2022, but differ in fiscal_period (FY, Q1\u2011Q4) and period_frame values, reflecting the distinct periods each filing covers."
+      ]
+    },
+    "b2": {
+      "sql": "SELECT\n    rf.concept,\n    rf.form_type,\n    rf.fiscal_period,\n    COUNT(*) AS row_count,\n    MIN(rf.accession_number) AS sample_accession\nFROM edgar.revenue_facts rf\nWHERE rf.cik = 320193\n  AND rf.fiscal_year = 2022\nGROUP BY rf.concept, rf.form_type, rf.fiscal_period\nORDER BY row_count DESC\nLIMIT 200",
+      "result": "concept | form_type | fiscal_period | row_count | sample_accession\nRevenueFromContractWithCustomerExcludingAssessedTax | 10-Q | Q2 | 4 | 0000320193-22-000059\nRevenueFromContractWithCustomerExcludingAssessedTax | 10-Q | Q3 | 4 | 0000320193-22-000070\nRevenueFromContractWithCustomerExcludingAssessedTax | 10-K | FY | 3 | 0000320193-22-000108\nRevenueFromContractWithCustomerExcludingAssessedTax | 10-Q | Q1 | 2 | 0000320193-22-000007",
+      "summary": "Apple\u2019s revenue appears as 13 separate XBRL rows for FY\u202f2022 because the company files distinct financial statements for each quarter (10\u2011Q) and an annual report (10\u2011K). Each filing contains the same revenue concept (RevenueFromContractWithCustomerExcludingAssessedTax), resulting in multiple instances that add up to 13 rows across the four filings.",
+      "claims": [
+        "In the Q2\u202f2022 10\u2011Q filing (accession 0000320193-22-000059), Apple reported 4 instances of the RevenueFromContractWithCustomerExcludingAssessedTax concept.",
+        "In the Q3\u202f2022 10\u2011Q filing (accession 0000320193-22-000070), Apple reported 4 instances of the RevenueFromContractWithCustomerExcludingAssessedTax concept.",
+        "In the FY\u202f2022 10\u2011K filing (accession 0000320193-22-000108), Apple reported 3 instances of the RevenueFromContractWithCustomerExcludingAssessedTax concept.",
+        "In the Q1\u202f2022 10\u2011Q filing (accession 0000320193-22-000007), Apple reported 2 instances of the RevenueFromContractWithCustomerExcludingAssessedTax concept."
+      ]
+    },
+    "b1_unbacked": 3,
+    "b2_unbacked": 0,
+    "b1_missing": [],
+    "b2_missing": []
+  },
+  {
+    "id": "tesla-starts-2011",
+    "question": "Why does Tesla's revenue history in this data start in fiscal year 2011?",
+    "b1": {
+      "summary": "Tesla's revenue data in the edgar.revenue_facts table begins with fiscal year 2011 because there are no XBRL revenue facts recorded for Tesla (CIK 1318605) in earlier years. The earliest available fact corresponds to the company's FY2011 reporting period, indicating that prior to that either Tesla did not file the relevant XBRL tags or such filings are not present in the dataset.",
+      "claims": [
+        "The earliest revenue fact for Tesla (cik = 1318605) in edgar.revenue_facts has fiscal_year = 2011 and period_end = 2011-12-31.",
+        "There are no rows in edgar.revenue_facts for Tesla with fiscal_year < 2011."
+      ]
+    },
+    "b2": {
+      "sql": "SELECT MIN(fiscal_year) AS first_revenue_year FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues','RevenueFromContractWithCustomerExcludingAssessedTax')\nLIMIT 200",
+      "result": "first_revenue_year\n2011",
+      "summary": "The earliest revenue fact recorded for Tesla (CIK 1318605) in the EDGAR database is from fiscal year 2011, as shown by the minimum fiscal year value returned by the query. This indicates that Tesla's reported revenue data in this dataset begins in 2011, with no earlier revenue facts available for the specified concepts.",
+      "claims": [
+        "The minimum fiscal year for Tesla's revenue facts (CIK 1318605) is 2011."
+      ]
+    },
+    "b1_unbacked": 2,
+    "b2_unbacked": 0,
+    "b1_missing": [],
+    "b2_missing": []
+  }
+]

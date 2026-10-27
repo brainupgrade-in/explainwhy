@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT fiscal_year, period_frame, concept, value_usd FROM edgar.revenue_facts WHERE cik = 1318605 AND fiscal_year < 2011 ORDER BY fiscal_year LIMIT 20\",\n  \"purpose\": \"Check whether any revenue facts exist for Tesla before fiscal year 2011, and examine their period_frame and values.\",\n  \"tests\": [\"H-5a179e\", \"H-99b0c6\", \"H-bbbcb8\", \"H-9a7ea7\"]\n}"
+}
