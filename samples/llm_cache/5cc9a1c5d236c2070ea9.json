@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT COUNT(*) AS cnt FROM edgar.revenue_facts WHERE cik = 1318605 AND (concept = 'Revenues' OR concept = 'RevenueFromContractWithCustomerExcludingAssessedTax') AND fiscal_year < 2011\",\n  \"purpose\": \"Check if any revenue facts exist for Tesla before FY2011 regardless of period_frame\",\n  \"tests\": [\"H-34ece3\", \"H-620cc6\", \"H-dec1ef\", \"H-1a5c05\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"-\",\n    \"REMAINING\": \"Determine if any pre\u20112011 revenue facts exist; if none, examine period_frame null rows and filing types.\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"Earliest revenue fact observed is FY2011.\"\n  }\n}"
+}

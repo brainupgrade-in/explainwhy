@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"select min(fiscal_year) as first_year from edgar.revenue_facts where concept = 'RevenueFromContractWithCustomerExcludingAssessedTax'\",\n  \"purpose\": \"Determine when the specific concept first appears in the dataset to test if it postdates IBM's filings (H-9c0642).\",\n  \"tests\": [\"H-9c0642\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked IBM rows for RevenueFromContractWithCustomerExcludingAssessedTax concept (0 rows).\",\n    \"REMAINING\": \"Determine if concept exists elsewhere; if not, consider timing or reference-data issues. If it exists elsewhere, examine IBM's revenue reporting and possible zero-fact omission or naming variance.\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"-\"\n  }\n}"
+}

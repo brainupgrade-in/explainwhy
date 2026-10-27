@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"partial\",\n      \"reason\": \"The evidence shows the earliest revenue fact is in FY2011 and the latest in FY2026, confirming bounds but not proving that a revenue fact exists for every year in between.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The count of revenue facts with fiscal_year < 2011 is zero, directly supporting the claim that no such revenue facts exist before FY2011.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"unsupported\",\n      \"reason\": \"The evidence only checks the revenue_facts table (which may contain only revenue-related facts) and finds zero entries before FY2011; it does not demonstrate the absence of all XBRL facts of any concept before FY2011.\"\n    }\n  ]\n}"
+}

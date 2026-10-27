@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence shows the concept 'RevenueFromContractWithCustomerExcludingAssessedTax' first appears with non-zero counts in 2018 (FY, Q1, Q2, Q3) and has no rows for that concept in any earlier year, supporting the claim that it begins in fiscal year 2018.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"unsupported\",\n      \"reason\": \"While the 'Revenues' concept appears for many fiscal year/period combinations (e.g., FY, Q1, Q2, Q3), the provided evidence does not include any rows for Q4 periods, so it does not demonstrate that the concept is present for every fiscal year/period as claimed.\"\n    }\n  ]\n}"
+}

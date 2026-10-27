@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"Tesla shows revenue under both the legacy 'Revenues' tag and the newer 'RevenueFromContractWithCustomerExcludingAssessedTax' tag because the XBRL taxonomy was updated after the SEC adopted ASC\u202f606, so the older concept remained in earlier filings while the newer concept was added for later periods. Consequently, analysts should rely on the 'Revenues' concept for filings made before the taxonomy change and on the 'RevenueFromContractWithCustomerExcludingAssessedTax' concept for filings made after the change.\"\n}"
+}

@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"The query results show at least one record for the concept 'RevenueFromContractWithCustomerExcludingAssessedTax' for each fiscal year from 2019 through 2024, indicating Apple reported revenue under the ASC 606 concept in those years.\"\n    }\n  ]\n}"
+}

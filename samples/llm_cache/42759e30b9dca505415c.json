@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT COUNT(*) AS cnt FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 AND (concept = 'Revenues' OR concept = 'RevenueFromContractWithCustomerExcludingAssessedTax')\",\n  \"purpose\": \"Get total number of revenue rows for Apple FY2022 across both concepts.\",\n  \"tests\": [\"H-ab018a\", \"H-4c3763\", \"H-bcfac0\", \"H-7bc26e\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\"COMPLETED\": \"\", \"REMAINING\": \"Determine why there are 13 rows instead of 1.\", \"DECISIONS\": \"\", \"CONTEXT\": \"\"},\n  \"answer\": {}\n}"
+}

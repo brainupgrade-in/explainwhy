@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT fiscal_year, fiscal_period, concept, COUNT(*) AS cnt FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues', 'RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY fiscal_year, fiscal_period, concept ORDER BY fiscal_year, fiscal_period, concept\",\n  \"purpose\": \"Check for each fiscal year/period whether each revenue concept appears for Tesla, especially Q4 periods, to verify completeness of Revenues and onset of the second concept.\",\n  \"tests\": [\"H-8edb42\", \"H-df72bc\", \"H-43efd2\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"\",\n    \"REMAINING\": \"Verify presence of Revenues concept for all periods (including Q4) and determine when RevenueFromContract... concept appears.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

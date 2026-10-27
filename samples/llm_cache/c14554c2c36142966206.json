@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT concept, COUNT(*) AS cnt FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 GROUP BY concept\",\n  \"purpose\": \"Determine whether the 'Revenues' concept appears for Apple FY2022, testing hypothesis H-bcfac0 about multiple concepts.\",\n  \"tests\": [\"H-bcfac0\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"-\",\n    \"REMAINING\": \"Determine why there are 13 rows instead of 1.\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"-\"\n  }\n}"
+}

@@ -1,0 +1,20 @@
+[
+  {"id": "apple-tag-switch",
+   "question": "Why does Apple's revenue history under the us-gaap Revenues concept stop at fiscal year 2018?",
+   "expect": ["2018", "RevenueFromContract"]},
+  {"id": "ibm-sic-gap",
+   "question": "Why does IBM drop out when EDGAR company profiles are joined to the company_dns SIC reference list?",
+   "expect": ["3570", "(no|zero|0|not|absent|missing)"]},
+  {"id": "tesla-two-concepts",
+   "question": "Why does Tesla report revenue under two different XBRL concepts, and which one should be used for which years?",
+   "expect": ["2018", "Revenues"]},
+  {"id": "ibm-no-asc606-concept",
+   "question": "Why does IBM have no revenue rows under the RevenueFromContractWithCustomerExcludingAssessedTax concept?",
+   "expect": ["(no|zero|0) (rows|facts|records)|does not (have|report|appear)", "Revenues"]},
+  {"id": "apple-many-rows-2022",
+   "question": "Why does Apple have 13 revenue rows for fiscal year 2022 instead of one?",
+   "expect": ["(accession|filing|10-Q|10-K|quarter|period)"]},
+  {"id": "tesla-starts-2011",
+   "question": "Why does Tesla's revenue history in this data start in fiscal year 2011?",
+   "expect": ["2011"]}
+]

@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"select fiscal_period, concept, count(*) as cnt from edgar.revenue_facts where cik=320193 and fiscal_year=2022 group by fiscal_period, concept order by fiscal_period, concept\",\n  \"purpose\": \"Break down the 13 rows by fiscal period and XBRL concept to see which periods and concepts contribute to the count.\",\n  \"tests\": [\"H-4c3763\", \"H-bcfac0\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"-\",\n    \"REMAINING\": \"Determine why there are 13 rows instead of 1.\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"-\"\n  }\n}"
+}

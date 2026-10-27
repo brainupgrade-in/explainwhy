@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"unsupported\",\n      \"reason\": \"The evidence only shows zero revenue facts in the revenue_facts table before 2011, not zero XBRL facts of any concept.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The query counting revenue facts for the two specified concepts before fiscal year 2011 returns 0, directly supporting the claim.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"supported\",\n      \"reason\": \"The query returns minimum fiscal year 2011 and maximum fiscal year 2026 for the two standard revenue concepts, matching the claim.\"\n    }\n  ]\n}"
+}

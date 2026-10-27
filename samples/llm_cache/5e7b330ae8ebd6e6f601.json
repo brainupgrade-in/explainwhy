@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT concept, fiscal_period, COUNT(*) AS cnt FROM edgar.revenue_facts WHERE cik = 320193 AND fiscal_year = 2022 GROUP BY concept, fiscal_period ORDER BY concept, fiscal_period\",\n  \"purpose\": \"Check distribution of rows by XBRL concept and fiscal period for Apple FY2022 to see if both concepts appear and how many rows per period.\",\n  \"tests\": [\"H-bcfac0\", \"H-4c3763\", \"H-ab018a\", \"H-7bc26e\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"-\",\n    \"REMAINING\": \"Determine why there are 13 rows instead of 1.\",\n    \"DECISIONS\": \"-\",\n    \"CONTEXT\": \"-\"\n  }\n}"
+}

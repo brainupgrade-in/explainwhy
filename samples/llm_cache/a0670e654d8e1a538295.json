@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"Distinct sic_code for CIK 51143 is only 3570 and null count is 0, showing consistent non\u2011null value.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"Row count is 1005 and sample sic_code values display leading zeros (e.g., 0111), indicating string storage with leading zeros.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"supported\",\n      \"reason\": \"Query for sic_code = '3570' OR '03570' returns zero rows, confirming absence of those values.\"\n    },\n    {\n      \"index\": 3,\n      \"verdict\": \"supported\",\n      \"reason\": \"Null count for CIK 51143 is 0, indicating IBM's sic_code is never null in company_profiles.\"\n    }\n  ]\n}"
+}

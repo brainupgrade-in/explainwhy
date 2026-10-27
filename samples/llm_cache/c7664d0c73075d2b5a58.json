@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"IBM has no rows for RevenueFromContractWithCustomerExcludingAssessedTax because it does not disclose revenue broken out by contract under ASC\u202f606; instead it reports all sales under the generic Revenues concept (235 rows). Since zero\u2011value facts are not stored for this concept, the absence indicates IBM simply did not file any such line items, and the lack of variant strings rules out a mere labeling mismatch.\"\n}"
+}

@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"IBM's sic_code in the company_profiles table is stored as the integer 3570, while the sic_codes_table reference list stores sic_code values as strings with leading zeros (e.g., '0111'). Because the reference table contains no row where sic_code equals '3570' or its zero\u2011padded form '03570', the join between the two tables fails to find a match for IBM, causing it to drop out of the result.\"\n}"
+}

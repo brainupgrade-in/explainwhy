@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence shows FY:3, Q1:2, Q2:4, Q3:4 rows, summing to 13, matching the claim.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence lists period_frame counts: FY (2 NULL, 1 CY2020), Q1 (1 NULL, 1 CY2020Q4), Q2 (3 NULL, 1 CY2021Q1), Q3 (3 NULL, 1 CY2021Q2), exactly as claimed.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence groups by fiscal_period and shows only FY, Q1, Q2, Q3 rows for FY2022; no Q4 rows appear, supporting the claim that none are present.\"\n    }\n  ]\n}"
+}

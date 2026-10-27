@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT COUNT(*) AS zero_cnt FROM edgar.revenue_facts WHERE concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' AND value_usd = 0\",\n  \"purpose\": \"Check if any company stores zero-valued facts for the specific concept to see if zero rows are present in the table.\",\n  \"tests\": [\"H-bbdf2a\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"IBM has 0 rows for specific concept; other companies have 166 rows; IBM has 235 generic Revenues rows; concept first appears 2018; IBM filing years 2009-2026.\",\n    \"REMAINING\": \"Test zero-value storage and variant concept strings for IBM.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  },\n  \"answer\": {}\n}"
+}

@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT COUNT(*) AS total_cnt, SUM(CASE WHEN value_usd = 0 THEN 1 ELSE 0 END) AS zero_cnt, SUM(CASE WHEN value_usd IS NULL THEN 1 ELSE 0 END) AS null_cnt FROM edgar.revenue_facts WHERE cik = 320193 AND concept = 'Revenues' AND fiscal_year > 2018\",\n  \"purpose\": \"Check for any zero or null Revenues facts for Apple after FY2018 to test hypothesis H-f3cf79 (duplicate/overridden null/zero values).\",\n  \"tests\": [\"H-f3cf79\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked that Apple has no Revenues facts after FY2018 (E-b549e1). Found ASC 606 concept usage after FY2018 (E-f49a73).\",\n    \"REMAINING\": \"Determine if Apple uses zero/null Revenues facts after FY2018, check for pipeline miss, and examine subsidiary-specific revenue concepts.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

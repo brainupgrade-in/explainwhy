@@ -4,6 +4,16 @@
 
 **Demo video (2:30):** https://youtu.be/wXIJE2PfYvo · **Slides:** [deck/ExplainWhy-deck.pdf](deck/ExplainWhy-deck.pdf)
 
+## Judges, start here
+
+| What | Where |
+|---|---|
+| See a run without installing anything | **Replay page:** https://brainupgrade-in.github.io/explainwhy/ — the agent's steps, the verified answer, and every evidence id opens its SQL and rows |
+| Run it yourself, no keys, no installs (Python 3.11+) | `SAMPLE_MODE=true python -m explainwhy --sample 1` (also `--sample 2`, `--sample 3`) |
+| Measured result | **5/6** questions pass the eval live on Nemotron — [`evals/results.md`](evals/results.md) (pass = the expected facts are in critic-verified claims; the failure is reported, not hidden) |
+| Zetaris | [`zetaris/01_create.sql`](zetaris/01_create.sql) (REST sources) · [`zetaris/02_usl.sql`](zetaris/02_usl.sql) (our 3-table Unified Semantic Layer with FK data-quality rules) |
+| Tests | `python -m pytest -q` (12 offline tests, scripted model) |
+
 Ask a bounded "why" question about data spread across several sources. ExplainWhy plans competing
 hypotheses, tests each one with SQL against **Zetaris**, has a critic check every claim against the rows the
 queries returned, sends unsupported claims back for more evidence, and answers with **only the claims that
@@ -142,10 +152,12 @@ Zetaris getting-started SQL recipes (Apache-2.0), whose REST-table pattern `zeta
 ```
 explainwhy/   agent.py (planner/investigator/critic loop) · data.py (Zetaris + local harness, SQL guard)
               llm.py (Nemotron client, record/replay) · engines/ (world_model, hmem, markovian) · __main__.py (CLI)
-zetaris/      01_create.sql — Zetaris REST tables + views the agent queries
+zetaris/      01_create.sql — Zetaris REST tables + views the agent queries · 02_usl.sql — Unified Semantic Layer + DQ
+docs/         index.html — replay page (GitHub Pages), built by scripts/build_replay.py
+evals/        questions.json · results.md · runs/ — the eval set and its live results
 data/         public snapshots for SAMPLE_MODE (see data/README.md)
 samples/      outputs/sample{1,2,3}/ (report, result, events, trace) · llm_cache/ (recorded replies)
-scripts/      fetch_sample_data.py
+scripts/      fetch_sample_data.py · build_replay.py · run_eval.py
 tests/        offline tests with a scripted model
 ```
 

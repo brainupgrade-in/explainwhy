@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT DISTINCT concept FROM edgar.revenue_facts WHERE cik = 1318605 AND concept LIKE '%Revenue%'\",\n  \"purpose\": \"List all revenue-related XBRL concepts used by Tesla to see if the second concept appears.\",\n  \"tests\": [\"H-8edb42\", \"H-8348d9\", \"H-df72bc\", \"H-43efd2\"]\n}"
+}

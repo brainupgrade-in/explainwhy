@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\"summary\": \"Apple\u2019s FY2022 revenue appears in 13 rows because the data includes separate entries for each fiscal period\u2014annual (FY), Q1, Q2, and Q3\u2014with some rows lacking a period_frame and others specifying a calendar frame (e.g., CY2020, CY2020Q4). This split creates three FY rows, two Q1 rows, four Q2 rows, and four Q3 rows, while no Q4 rows are present for that year.\"}"
+}

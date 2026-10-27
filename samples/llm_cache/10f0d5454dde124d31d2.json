@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"select distinct concept from edgar.revenue_facts where cik=320193 and fiscal_year>2018\",\n  \"purpose\": \"Check whether Apple uses any revenue-related concepts besides the two known ones after FY2018, to test subsidiary\u2011specific revenue hypothesis.\",\n  \"tests\": [\"H-d7f2af\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked Apple has no Revenues facts after FY2018; found ASC 606 usage after FY2018; IBM/Tesla have Revenues after FY2018; no zero/null Revenues after FY2018.\",\n    \"REMAINING\": \"Determine if Apple uses subsidiary\u2011specific revenue concepts after FY2018.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

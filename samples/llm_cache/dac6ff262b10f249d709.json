@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\"summary\": \"Apple stopped reporting under the legacy us\u2011gaap\u202fRevenues concept after FY2018 because it adopted the new ASC\u202f606 revenue recognition standard beginning in FY2019, switching to the \u2018RevenueFromContractWithCustomerExcludingAssessedTax\u2019 concept instead. Consequently, there are no Revenues facts (zero or otherwise) for Apple in fiscal years after 2018.\"}"
+}

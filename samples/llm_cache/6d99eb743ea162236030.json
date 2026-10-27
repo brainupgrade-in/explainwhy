@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"select fiscal_year, count(*) as cnt from edgar.revenue_facts where cik = 320193 and concept = 'RevenueFromContractWithCustomerExcludingAssessedTax' and fiscal_year > 2018 group by fiscal_year order by fiscal_year\",\n  \"purpose\": \"Test whether Apple reports revenue under the ASC 606 concept after FY2018, which would support H-c710de.\",\n  \"tests\": [\"H-c710de\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked that Apple has no Revenues facts after FY2018 (E-b549e1).\",\n    \"REMAINING\": \"Determine if Apple uses the ASC 606 concept after FY2018, check for zero/null Revenues facts, and examine other concepts.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

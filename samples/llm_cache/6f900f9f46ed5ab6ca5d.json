@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"partial\",\n      \"reason\": \"The evidence shows zero revenue facts before FY2011, but the claim asserts zero XBRL facts of any concept. The evidence does not cover all possible concepts, so the qualifier 'any concept' is not shown.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence directly shows the minimum fiscal year is 2011 and the maximum is 2026 for the two specified us\u2011gaap revenue concepts, matching the claim exactly.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence shows a count of zero for the two standard revenue concepts before FY2011 without restricting period_frame, confirming there are no such revenue facts prior to FY2011.\"\n    }\n  ]\n}"
+}

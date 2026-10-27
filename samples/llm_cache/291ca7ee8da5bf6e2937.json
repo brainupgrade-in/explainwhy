@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT fiscal_period, COUNT(DISTINCT accession_number) AS distinct_acc FROM edgar.revenue_facts WHERE cik=320193 AND fiscal_year=2022 AND concept='RevenueFromContractWithCustomerExcludingAssessedTax' GROUP BY fiscal_period ORDER BY fiscal_period\",\n  \"purpose\": \"Test H-ab018a: see if multiple accession numbers (filings) exist per fiscal period, indicating amended filings.\",\n  \"tests\": [\"H-ab018a\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"H-bcfac0 refuted: only RevenueFromContractWithCustomerExcludingAssessedTax concept appears for Apple FY2022.\",\n    \"REMAINING\": \"Determine why there are 13 rows instead of 1.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"Evidence shows 13 rows split across FY (3), Q1 (2), Q2 (4), Q3 (4). No Revenues concept rows.\"\n  },\n  \"answer\": null\n}"
+}

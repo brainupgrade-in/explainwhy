@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\"index\": 0, \"verdict\": \"supported\", \"reason\": \"Evidence shows count 0 for IBM and the concept.\"},\n    {\"index\": 1, \"verdict\": \"supported\", \"reason\": \"Evidence shows count 166 for other companies.\"},\n    {\"index\": 2, \"verdict\": \"supported\", \"reason\": \"Evidence shows count 235 for IBM and Revenues concept.\"},\n    {\"index\": 3, \"verdict\": \"supported\", \"reason\": \"Evidence shows minimum fiscal year 2018 for the concept.\"},\n    {\"index\": 4, \"verdict\": \"supported\", \"reason\": \"Evidence shows IBM's filing years min 2009, max 2026.\"},\n    {\"index\": 5, \"verdict\": \"supported\", \"reason\": \"Evidence shows zero-valued facts count 0 for the concept.\"},\n    {\"index\": 6, \"verdict\": \"supported\", \"reason\": \"Evidence shows no variant strings matching pattern for IBM (0 rows).\"}\n  ]\n}"
+}

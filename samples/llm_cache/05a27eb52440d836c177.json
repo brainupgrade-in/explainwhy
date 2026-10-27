@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT COUNT(*) AS cnt FROM edgar.revenue_facts WHERE cik != 51143 AND concept = 'RevenueFromContractWithCustomerExcludingAssessedTax'\",\n  \"purpose\": \"Check whether any other company has rows for the specific concept to confirm the concept exists in the dataset.\",\n  \"tests\": [\"H-9c0642\", \"H-d6269f\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked IBM rows for RevenueFromContractWithCustomerExcludingAssessedTax concept (0 rows).\",\n    \"REMAINING\": \"Determine if the concept exists elsewhere; if not, consider timing or reference-data issues. If it exists elsewhere, examine IBM's revenue reporting and possible zero-fact omission or naming variance.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"Evidence E-bf5668 shows IBM has zero rows for the concept.\"\n  }\n}"
+}

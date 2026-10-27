@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT fiscal_year, fiscal_period, concept, COUNT(*) AS cnt FROM edgar.revenue_facts WHERE cik = 1318605 AND concept IN ('Revenues', 'RevenueFromContractWithCustomerExcludingAssessedTax') GROUP BY fiscal_year, fiscal_period, concept ORDER BY fiscal_year, fiscal_period, concept\",\n  \"purpose\": \"Determine for each Tesla fiscal year/period how many times each of the two revenue concepts appears, to see when the newer concept is used.\",\n  \"tests\": [\"H-8edb42\", \"H-df72bc\", \"H-43efd2\"]\n}"
+}
