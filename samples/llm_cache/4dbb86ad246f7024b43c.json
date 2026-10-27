@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"partial\",\n      \"reason\": \"Evidence shows IBM (CIK 51143) has sic_code 3570, but provides no information about the sic_codes_table to confirm whether this code is absent.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The query result includes a row for CIK 320193, concept RevenueFromContractWithCustomerExcludingAssessedTax, period 2017-10-01 to 2017-12-30 with count 2, confirming the duplicate.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"partial\",\n      \"reason\": \"Evidence shows that each of the three CIKs (320193, 51143, 1318605) has at least one NULL period_frame row, but does not provide the total count of such rows (claimed to be five).\"\n    }\n  ]\n}"
+}

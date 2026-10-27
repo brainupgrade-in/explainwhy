@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"The evidence table lists duplicate counts for Apple's CIK 320193 and the specified concept exactly as claimed: 2, 2, 2, 4, 2.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The left\u2011join query returns IBM (CIK 51143) with SIC code 3570 and no match in sic_codes_table, confirming the SIC code is absent.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"supported\",\n      \"reason\": \"The query selecting revenue_fact rows with missing company_profiles returns zero rows, matching the claim of zero such references.\"\n    },\n    {\n      \"index\": 3,\n      \"verdict\": \"supported\",\n      \"reason\": \"The count of negative values for the given concept is reported as 0, which aligns exactly with the claim.\"\n    }\n  ]\n}"
+}

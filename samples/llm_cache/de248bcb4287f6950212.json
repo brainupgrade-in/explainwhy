@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT cik, entity_name FROM edgar.company_profiles WHERE sic_code = '3570' AND cik != 51143\",\n  \"purpose\": \"Check if any company besides IBM uses sic_code 3570 in EDGAR profiles to distinguish coverage gap vs retired code\",\n  \"tests\": [\"H-aa8a77\", \"H-871553\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"IBM sic_code = 3570, length 4, no leading zero; not found in reference SIC table\",\n    \"REMAINING\": \"Determine if 3570 is used by other companies (indicating coverage gap) or only IBM (possibly historic/retired)\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

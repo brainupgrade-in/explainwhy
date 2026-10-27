@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT DISTINCT cik, entity_name FROM lightning.metastore.explainwhy.explainwhy_usl.revenue_fact WHERE period_frame IS NULL\",\n  \"purpose\": \"Identify which companies have revenue facts with NULL period_frame, violating the NOT NULL rule\",\n  \"tests\": [\"H-87e69e\"]\n}"
+}

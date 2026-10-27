@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"select cik, concept, period_start, period_end, count(*) as cnt from edgar.revenue_facts group by cik, concept, period_start, period_end having count(*) > 1 limit 5\",\n  \"purpose\": \"Identify duplicate revenue facts for the same CIK, concept, and period that would violate the semantic layer\u2019s uniqueness constraint\",\n  \"tests\": [\"H-f80ecf\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked company table DQ (E-70e0af) and revenue_fact DQ (E-98ed96); IBM sic_code missing (E-826451).\",\n    \"REMAINING\": \"Test H-87e69e (period_frame), H-f80ecf (duplicate revenue facts), H-963b69 (CIK type mismatch), H-b0874d (stale CIK).\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"Last observation: IBM's sic_code not found in reference sic_codes_table.\"\n  },\n  \"answer\": {}\n}"
+}

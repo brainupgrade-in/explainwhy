@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\"summary\": \"Apple violates the ExplainWhy semantic layer's data\u2011quality rule by having duplicate revenue facts for the same CIK, concept, and period (e.g., RevenueFromContractWithCustomerExcludingAssessedTax for Q4\u202f2017 appears twice). This duplication likely results from amended filings such as a 10\u2011Q/A that re\u2011submit the same period, breaching the layer\u2019s uniqueness constraint.\"}"
+}

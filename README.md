@@ -11,7 +11,7 @@
 | See a run without installing anything | **Replay page:** https://brainupgrade-in.github.io/explainwhy/ — the agent's steps, the verified answer, and every evidence id opens its SQL and rows |
 | Run it yourself, no keys, no installs (Python 3.11+) | `SAMPLE_MODE=true python -m explainwhy --sample 1` (also `--sample 2`, `--sample 3`) |
 | Measured result | **5/6** questions pass the eval live on Nemotron — [`evals/results.md`](evals/results.md) (pass = the expected facts are in critic-verified claims; the failure is reported, not hidden) |
-| Zetaris | [`zetaris/01_create.sql`](zetaris/01_create.sql) (REST sources) · [`zetaris/02_usl.sql`](zetaris/02_usl.sql) (our 3-table Unified Semantic Layer with FK data-quality rules) |
+| Zetaris (live) | **[`ZETARIS.md`](ZETARIS.md)** — sources, live exploratory queries, our 3-table Unified Semantic Layer, the DQ rule that independently flags IBM, reflections · live agent run: [`samples/outputs/zetaris-live-ibm/`](samples/outputs/zetaris-live-ibm/report.md) · SQL: [`01_create.sql`](zetaris/01_create.sql), [`02_usl.sql`](zetaris/02_usl.sql) |
 | Tests | `python -m pytest -q` (12 offline tests, scripted model) |
 
 Ask a bounded "why" question about data spread across several sources. ExplainWhy plans competing
@@ -86,7 +86,7 @@ less, growing with run length; see `markovian` in each `result.json`).
 
 | Sponsor | How it is used | Where |
 |---|---|---|
-| **Zetaris** | The data harness. All evidence is Lightning SQL run through the Zetaris REST API (`POST /sql-editor/sqls/run`) against three views over live REST sources: `edgar.revenue_facts` (SEC XBRL, 5 REST tables unioned), `edgar.company_profiles` (SEC submissions), `company_dns.sic_codes_table` (getting-started recipe 12). Questions are answered by joining across sources inside Zetaris. | `zetaris/01_create.sql`, `explainwhy/data.py` (`ZetarisSource`) |
+| **Zetaris** | The data harness. All evidence is Lightning SQL run through the Zetaris REST API (`POST /sql-editor/sqls/run`) against three views over live REST sources: `edgar.revenue_facts` (SEC XBRL, 5 REST tables unioned), `edgar.company_profiles` (SEC submissions), `company_dns.sic_codes_table` (getting-started recipe 12). Our Unified Semantic Layer `explainwhy_usl` links all three (sic_code ← company ← revenue_fact); its FK data-quality rule, executed with `RUN DQ`, flags IBM's missing SIC 3570 — the same answer the agent reaches by querying. Verified live on a local Zetaris instance; the agent ran live against it (`--zetaris`). Details: [`ZETARIS.md`](ZETARIS.md). | `zetaris/`, `explainwhy/data.py` (`ZetarisSource`) |
 | **Meterless** | Minimal Python implementations of three Meterless engine specs (github.com/Meterless/Meterless, Apache-2.0): **World Model** — event-sourced investigation state (append-only log, stable content IDs, idempotent ingest, version check), which is also the trace; **H-MEM** — file-based memory with mandatory source + provenance, the spec's hybrid retrieval score, supersede-don't-delete, feedback deltas, audit ledger; **Markovian** — bounded steps with the canonical carryover block and `[NEEDS_TOOL]`/`[STATE_CHECKPOINT]`/`[TASK_COMPLETE]` markers, plus token-savings stats. | `explainwhy/engines/` |
 | **NVIDIA** | Every role (planner, investigator, critic) runs on **NVIDIA Nemotron** — `nvidia/nemotron-3-super-120b-a12b` via an OpenAI-compatible endpoint (Nebius Token Factory). | `explainwhy/llm.py` |
 | **Cursor** | Not used for this build: HackOS's Cursor access instructions were still "TBC" on 27 Oct; the code was written with Claude Code (allowed by the AI Usage Policy). See "Development". | — |
@@ -119,8 +119,9 @@ H-MEM memory persists in `memory/` across runs.
 **Zetaris setup.** Install Zetaris locally (Docker) per the
 [getting-started guide](https://github.com/zetaris/getting-started), onboard the SIC list
 (`python3 scripts/onboard.py run company_dns` in that repo), then run our script with its runner:
-`python3 scripts/run_sql.py <path>/zetaris/01_create.sql --dry-run`, then without `--dry-run`. Put
-`ZETARIS_REST_URL`, `ZETARIS_ORG_ID`, `ZETARIS_API_KEY` in `.env`.
+`python3 scripts/run_sql.py <path>/zetaris/01_create.sql --dry-run`, then without `--dry-run`; the same for
+`zetaris/02_usl.sql` (the semantic layer and its DQ rules). Put `ZETARIS_REST_URL`, `ZETARIS_ORG_ID`,
+`ZETARIS_API_KEY` in `.env`. `python3 zetaris/showcase.py` reruns the live queries into `zetaris/live_results.md`.
 
 **SAMPLE_MODE** = local SQLite mirror of the three Zetaris views (`data/`, same table names and columns) +
 recorded Nemotron replies (`samples/llm_cache/`, keyed by request hash). It replays the three sample
@@ -138,8 +139,11 @@ Zetaris getting-started SQL recipes (Apache-2.0), whose REST-table pattern `zeta
 
 ## Limitations (honest)
 
-- The live Zetaris path (`--zetaris`) is implemented against the documented REST API, but the recorded
-  sample runs used the local mirror of the same views (see `backend` in each `result.json`).
+- The three recorded sample runs and the eval used the local mirror of the Zetaris views (same names, same
+  SQL) so they replay offline; one sample was re-run live on Zetaris (`samples/outputs/zetaris-live-ibm/`).
+  Each `result.json` names its backend.
+- Asked directly which rows break the semantic layer's DQ rules, the agent re-derived its own rules instead of
+  relying on Zetaris's `SHOW DQ` result (see `ZETARIS.md`, 1c).
 - The critic is strict on numbers and citations but can still accept a weak inference phrased as a fact
   (e.g. in sample 3 it accepted "different values, so not duplicate tagging" based on yearly sums that
   include restated facts).

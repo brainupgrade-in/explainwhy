@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT DISTINCT rf.cik FROM edgar.revenue_facts rf LEFT JOIN edgar.company_profiles cp ON rf.cik = cp.cik WHERE cp.cik IS NULL LIMIT 5\",\n  \"purpose\": \"Find revenue_fact rows whose CIK does not exist in company_profiles, testing foreign-key violation H-e4ad8f\",\n  \"tests\": [\"H-e4ad8f\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"-\",\n    \"REMAINING\": \"H-e4ad8f, H-f19f03, H-7f7feb\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"Duplicate revenue facts found support H-e548ae\"\n  }\n}"
+}

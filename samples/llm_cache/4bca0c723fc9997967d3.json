@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"The sic_codes_table query returns 0 rows for sic_code '3570', and the invalid table record shows a company (IBM) with sic='3570', confirming the foreign-key violation.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The duplicate detection query shows CIK 320193 (Apple) with concept RevenueFromContractWithCustomerExcludingAssessedTax for period 2017-10-01 to 2017-12-30 having a count of 2, exactly as claimed.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"unsupported\",\n      \"reason\": \"The evidence only shows the query header and blank lines; no actual period_frame values (NULL or malformed) are displayed, so we cannot verify that five such rows exist.\"\n    }\n  ]\n}"
+}

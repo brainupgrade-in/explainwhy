@@ -21,6 +21,7 @@ from explainwhy.data import open_source  # noqa: E402
 
 def main() -> None:
     questions = json.loads((ROOT / "evals" / "questions.json").read_text())
+    config.LLM_CACHE_DIR = ROOT / "evals" / "llm_cache"  # keep eval replies apart from the sample-replay cache
     source, note = open_source(prefer_zetaris="--zetaris" in sys.argv)
     rows, passed = [], 0
     out_dir = ROOT / "evals" / "runs"

@@ -177,3 +177,17 @@ def test_summary_with_unverified_number_falls_back_to_claims(tmp_path):
     assert r["summary"] == claim
     r, _, _ = run(list(script), tmp_path / "b", summary="Apple likely moved to ASC 606; the old concept ends in 2018.")
     assert r["summary"].startswith("Apple likely")
+
+
+def test_zetaris_rest_result_shape():
+    from explainwhy.data import normalize_result
+    cols, rows = normalize_result({"headers": ["sic_code", "n"], "data": [["0111", "3"]], "total": 1, "timeUsed": 5})
+    assert cols == ["sic_code", "n"] and rows == [["0111", "3"]]
+
+
+def test_guard_allows_only_the_usl_dq_show_command():
+    ok = "SHOW DQ ALL INVALID TABLE lightning.metastore.explainwhy.explainwhy_usl.company"
+    assert guard(ok) == ok
+    for bad in ["SHOW TABLES", "SHOW DQ ALL INVALID TABLE other.schema.t", "RUN DQ TABLE lightning.metastore.explainwhy.explainwhy_usl.company"]:
+        with pytest.raises(SQLRejected):
+            guard(bad)

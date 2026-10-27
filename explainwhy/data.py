@@ -31,6 +31,15 @@ company_dns.sic_codes_table -- SIC reference list from the company_dns API (sepa
   major_group_desc, industry_group, industry_group_desc.
 """
 
+USL_CATALOG = """
+lightning.metastore.explainwhy.explainwhy_usl -- Zetaris Unified Semantic Layer over the three sources above.
+  .sic_code (PK sic_code), .company (PK cik text, FK sic -> sic_code), .revenue_fact (PK fact_id, FK cik -> company;
+  same columns as edgar.revenue_facts, cik as text). The PK/FK constraints are Zetaris data-quality rules.
+  To see the rows that break them, run exactly: SHOW DQ ALL INVALID TABLE lightning.metastore.explainwhy.explainwhy_usl.<table>
+"""
+
+DQ_SHOW = re.compile(r"(?is)^show\s+dq\s+all\s+invalid\s+table\s+lightning\.metastore\.explainwhy\.explainwhy_usl\.(sic_code|company|revenue_fact)$")
+
 FORBIDDEN = re.compile(r"\b(insert|update|delete|drop|create|alter|grant|revoke|truncate|merge|call|attach|pragma)\b", re.I)
 
 
@@ -43,6 +52,8 @@ def guard(sql: str, limit: int = 200) -> str:
     sql = sql.strip().rstrip(";").strip()
     if ";" in sql:
         raise SQLRejected("one statement only")
+    if DQ_SHOW.match(sql):  # the one read-only non-SELECT command: Zetaris DQ results for our USL
+        return sql
     if not re.match(r"(?is)^(select|with)\b", sql):
         raise SQLRejected("only SELECT / WITH queries are allowed")
     if FORBIDDEN.search(sql):
@@ -54,6 +65,7 @@ def guard(sql: str, limit: int = 200) -> str:
 
 class LocalSource:
     name = "local-sqlite (SAMPLE_MODE mirror of the Zetaris views)"
+    catalog = CATALOG
 
     TABLES = {
         ("edgar", "revenue_facts"): ("edgar_revenue_facts.csv", {"cik", "value_usd", "fiscal_year"}),
@@ -82,6 +94,7 @@ class LocalSource:
 class ZetarisSource:
     """Zetaris Lightning SQL over the REST API (POST /sql-editor/sqls/run)."""
     name = "zetaris-rest"
+    catalog = CATALOG + USL_CATALOG
 
     def __init__(self):
         self.base = config.env("ZETARIS_REST_URL", "http://localhost:8888/api/v1.0").rstrip("/")
@@ -106,9 +119,10 @@ class ZetarisSource:
 
 
 def normalize_result(out) -> tuple[list[str], list[list]]:
-    """Zetaris returns {data: rows} where rows are lists or dicts; columns may come separately."""
+    """Zetaris returns {headers: [...], data: [[...]], total, timeUsed}; values arrive as strings and stay strings
+    (SIC codes like '0111' keep their leading zeros). Dict rows and other column keys are handled too."""
     data = out.get("data") if isinstance(out, dict) else out
-    cols = (out.get("columns") or out.get("schema") or []) if isinstance(out, dict) else []
+    cols = (out.get("headers") or out.get("columns") or out.get("schema") or []) if isinstance(out, dict) else []
     if isinstance(data, dict):
         cols = data.get("columns") or cols
         data = data.get("rows") or data.get("data") or []

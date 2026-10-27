@@ -13,7 +13,7 @@ import uuid
 from pathlib import Path
 
 from . import config
-from .data import CATALOG, SQLRejected, guard
+from .data import SQLRejected, guard
 from .engines.hmem import HMem, tokens
 from .engines.markovian import ChunkConfig, MarkovianRun
 from .engines.world_model import WorldModel, stable_id
@@ -123,7 +123,7 @@ class Investigation:
     def plan(self, memory_block: str) -> None:
         self.world.emit("question_set", "Q", {"text": self.question}, "user")
         plan = self.llm.chat_json([
-            {"role": "system", "content": PLANNER_SYS.format(catalog=CATALOG)},
+            {"role": "system", "content": PLANNER_SYS.format(catalog=self.source.catalog)},
             {"role": "user", "content": f"QUESTION: {self.question}\n\nMEMORY\n{memory_block}"}])
         for h in plan.get("hypotheses", [])[:5]:
             hid = stable_id("H", h["text"])
@@ -170,7 +170,7 @@ class Investigation:
                       if last else f"Steps left in this round: {max_steps - i}. Finish as soon as every hypothesis has a verdict.")
             prompt = f"QUESTION: {self.question}\n\n{context}\n\nHYPOTHESES\n{hyp}\n\nEVIDENCE SO FAR\n{ev}\n\n{budget}"
             try:
-                step = self.llm.chat_json([{"role": "system", "content": INVESTIGATOR_SYS.format(catalog=CATALOG)},
+                step = self.llm.chat_json([{"role": "system", "content": INVESTIGATOR_SYS.format(catalog=self.source.catalog)},
                                            {"role": "user", "content": prompt}], max_tokens=4096)
             except ValueError as e:  # unparseable even after the repair turn: tell the model, do not crash
                 self.log("investigator", f"unparseable reply ({e}); retrying with a shorter-answer instruction")

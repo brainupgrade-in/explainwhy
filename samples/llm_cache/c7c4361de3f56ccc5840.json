@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"Evidence E-826451 shows zero rows for sic_code='3570', confirming the claim.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"Evidence E-f2c666 lists Apple (CIK 320193) duplicate revenue facts with counts 2,2,2,4,2 for the specified periods, matching the claim exactly.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"partial\",\n      \"reason\": \"Evidence E-c3ae3a shows 5 rows with NULL period_frame, supporting the claim of five NULL rows. Evidence E-bf575e returns 5 rows where period_frame IS NULL OR NOT LIKE 'CY%', but the displayed blanks could be NULL or empty strings; thus it does not definitively show all five are NULL, making the claim only partially supported.\"\n    }\n  ]\n}"
+}

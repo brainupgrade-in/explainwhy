@@ -14,7 +14,8 @@
 -- from first principles in sample 2. Run after 01_create.sql, with the getting-started runner:
 --   python3 scripts/run_sql.py <path>/zetaris/02_usl.sql --dry-run
 --   python3 scripts/run_sql.py <path>/zetaris/02_usl.sql --skip-exists
--- COMPILE USL is one statement; run_sql.py keeps it whole.
+-- COMPILE USL is one statement; run_sql.py keeps it whole. NOT NULL columns need COALESCE in the
+-- activation queries (Zetaris checks the activation schema against the DDL).
 -- =============================================================================
 
 CREATE NAMESPACE IF NOT EXISTS lightning.metastore;
@@ -73,13 +74,15 @@ LATERAL VIEW explode(
 ) AS sic_code, sic_val;
 
 ACTIVATE USL TABLE lightning.metastore.explainwhy.explainwhy_usl.company AS
-SELECT CAST(cik AS STRING) AS cik, entity_name, COALESCE(sic_code, '') AS sic, sic_description_edgar
+SELECT COALESCE(CAST(cik AS STRING), '') AS cik, COALESCE(entity_name, '') AS entity_name,
+    COALESCE(sic_code, '') AS sic, sic_description_edgar
 FROM edgar.company_profiles;
 
 ACTIVATE USL TABLE lightning.metastore.explainwhy.explainwhy_usl.revenue_fact AS
 SELECT
-    concat_ws('|', accession_number, concept, COALESCE(period_start, ''), period_end) AS fact_id,
-    CAST(cik AS STRING) AS cik, concept, period_start, period_end, value_usd, accession_number,
+    COALESCE(concat_ws('|', accession_number, concept, COALESCE(period_start, ''), period_end), '') AS fact_id,
+    COALESCE(CAST(cik AS STRING), '') AS cik, COALESCE(concept, '') AS concept, period_start,
+    COALESCE(period_end, '') AS period_end, value_usd, COALESCE(accession_number, '') AS accession_number,
     fiscal_year, fiscal_period, period_frame, form_type, filed_date
 FROM edgar.revenue_facts;
 

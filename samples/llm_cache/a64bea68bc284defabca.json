@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT cp.cik, cp.entity_name, cp.sic_code FROM edgar.company_profiles cp LEFT JOIN company_dns.sic_codes_table sic ON cp.sic_code = sic.sic_code WHERE sic.sic_code IS NULL\",\n  \"purpose\": \"Identify company profiles with SIC codes missing from the sic_codes_table reference, testing foreign-key violation H-f19f03\",\n  \"tests\": [\"H-f19f03\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"\",\n    \"REMAINING\": \"H-e4ad8f, H-f19f03, H-7f7feb\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"Duplicate revenue facts found support H-e548ae\"\n  }\n}"
+}

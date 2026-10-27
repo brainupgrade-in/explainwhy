@@ -14,8 +14,10 @@
     "zetaris": {
       "used": true,
       "how": "Data harness. All evidence is Lightning SQL sent to the Zetaris REST API (POST /sql-editor/sqls/run) against three views over live REST sources: edgar.revenue_facts (SEC XBRL companyconcept, 5 REST tables unioned), edgar.company_profiles (SEC submissions), company_dns.sic_codes_table (getting-started recipe 12). Cross-source joins run inside Zetaris.",
-      "where": ["zetaris/01_create.sql", "explainwhy/data.py:ZetarisSource"],
-      "note": "Recorded sample runs used the SAMPLE_MODE local mirror of the same views (same names, same SQL)."
+      "where": ["zetaris/01_create.sql", "zetaris/02_usl.sql", "zetaris/showcase.py", "ZETARIS.md", "explainwhy/data.py:ZetarisSource"],
+      "usl": "explainwhy_usl (zetaris/02_usl.sql): 3 tables over 3 sources, FK/PK DQ rules; SHOW DQ ALL INVALID flags IBM (SIC 3570)",
+      "live": "Verified on a local Zetaris instance (Docker, 2.4.3); live queries in zetaris/live_results.md; live agent run in samples/outputs/zetaris-live-ibm/",
+      "note": "The three recorded sample runs and the eval used the SAMPLE_MODE local mirror of the same views so they replay offline. Details: ZETARIS.md"
     },
     "meterless": {
       "used": true,

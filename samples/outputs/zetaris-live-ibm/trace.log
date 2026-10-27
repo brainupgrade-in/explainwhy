@@ -1,0 +1,33 @@
+00:00:39 [harness] backend: connected to Zetaris; model: nvidia/nemotron-3-super-120b-a12b
+00:00:39 [memory] H-MEM recalled 0 prior finding(s)
+00:00:50 [planner] H-964b06: IBM's sic_code in edgar.company_profiles is NULL or empty, so the inner join to company_dns.sic_codes_table produces no matching rows.
+00:00:50 [planner] H-dfe948: IBM's sic_code contains leading zeros (e.g., '0371') while the reference sic_codes_table stores the same code without leading zeros (e.g., '371'), causing a mismatch on the text join.
+00:00:50 [planner] H-aa8a77: IBM's sic_code is a valid 4‑digit SIC that is simply absent from company_dns.sic_codes_table due to a coverage gap in the reference data (e.g., a newer or industry‑specific code not yet loaded).
+00:00:50 [planner] H-871553: IBM's sic_code reflects a historic or retired SIC that has been removed from the active company_dns reference list (real‑world change in classification), so no current reference row exists.
+00:00:52 [sql] E-a5d3db Retrieve IBM's sic_code from company_profiles to see its value and format.
+    SELECT sic_code FROM edgar.company_profiles WHERE cik = 51143 LIMIT 200
+00:00:55 [sql] E-a5d3db -> 1 row(s)
+00:00:55 [markovian] step 1 [STATE_CHECKPOINT] carryover: Check IBM sic_code and compare to reference table.
+00:01:00 [sql] E-826451 Check if IBM's sic_code '3570' exists in the reference SIC table.
+    SELECT sic_code FROM company_dns.sic_codes_table WHERE sic_code = '3570' LIMIT 200
+00:01:01 [sql] E-826451 -> 0 row(s)
+00:01:01 [markovian] step 2 [STATE_CHECKPOINT] carryover: Determine if 3570 matches any row in company_dns.sic_codes_table
+00:01:16 [sql] E-603b63 Verify IBM's sic_code format (length, leading zero) to test H-964b06 and H-dfe948
+    select sic_code, length(sic_code) as len, left(sic_code,1) as first_char from edgar.company_profiles where cik=51143 LIMIT 200
+00:01:17 [sql] E-603b63 -> 1 row(s)
+00:01:17 [markovian] step 3 [STATE_CHECKPOINT] carryover: Determine if 3570 matches any row in company_dns.sic_codes_table; check format and presence of other companies with same sic_code
+00:01:24 [sql] E-51ccea Check if any company besides IBM uses sic_code 3570 in EDGAR profiles to distinguish coverage gap vs retired code
+    SELECT cik, entity_name FROM edgar.company_profiles WHERE sic_code = '3570' AND cik != 51143 LIMIT 200
+00:01:25 [sql] E-51ccea -> 0 row(s)
+00:01:25 [markovian] step 4 [STATE_CHECKPOINT] carryover: Determine if 3570 is used by other companies (indicating coverage gap) or only IBM (possibly historic/retired)
+00:01:54 [investigator] H-964b06 -> refuted ['E-a5d3db']
+00:01:54 [investigator] H-dfe948 -> refuted ['E-603b63']
+00:01:54 [investigator] H-aa8a77 -> refuted ['E-826451', 'E-51ccea']
+00:01:54 [investigator] H-871553 -> supported ['E-826451', 'E-51ccea', 'E-603b63']
+00:01:54 [investigator] [TASK_COMPLETE]
+00:02:00 [critic] claim 0 SUPPORTED (llm): The query on edgar.company_profiles for CIK 51143 returns sic_code 3570, confirming IBM's sic_code.
+00:02:00 [critic] claim 1 SUPPORTED (llm): The query on company_dns.sic_codes_table for sic_code = '3570' returns zero rows, indicating the value does not appear there.
+00:02:00 [critic] claim 2 SUPPORTED (llm): The query shows sic_code '3570' with length 4 and first character '3', matching the claim.
+00:02:00 [critic] claim 3 SUPPORTED (llm): The query for other companies with sic_code '3570' and cik != 51143 returns zero rows, showing no other company uses that code.
+00:02:04 [writer] summary written from verified claims
+00:02:04 [agent] done in 84.9s: 4 verified claim(s), 0 unverified; report /home/rajesh/open-agent-2026/runs/20261028-000039-26ca/report.md

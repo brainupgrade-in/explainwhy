@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"claims\": [\n    {\n      \"index\": 0,\n      \"verdict\": \"supported\",\n      \"reason\": \"The query on edgar.company_profiles for CIK 51143 returns sic_code 3570, confirming IBM's sic_code.\"\n    },\n    {\n      \"index\": 1,\n      \"verdict\": \"supported\",\n      \"reason\": \"The query on company_dns.sic_codes_table for sic_code = '3570' returns zero rows, indicating the value does not appear there.\"\n    },\n    {\n      \"index\": 2,\n      \"verdict\": \"supported\",\n      \"reason\": \"The query shows sic_code '3570' with length 4 and first character '3', matching the claim.\"\n    },\n    {\n      \"index\": 3,\n      \"verdict\": \"supported\",\n      \"reason\": \"The query for other companies with sic_code '3570' and cik != 51143 returns zero rows, showing no other company uses that code.\"\n    }\n  ]\n}"
+}

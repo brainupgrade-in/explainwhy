@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT cik, concept, period_start, period_end, COUNT(*) AS dup_count FROM edgar.revenue_facts GROUP BY cik, concept, period_start, period_end HAVING COUNT(*) > 1 LIMIT 5\",\n  \"purpose\": \"Check for duplicate revenue facts for same company, concept, and period which would violate primary key in revenue_fact.\",\n  \"tests\": [\"H-e548ae\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\"COMPLETED\": \"\", \"REMAINING\": \"All hypotheses\", \"DECISIONS\": \"\", \"CONTEXT\": \"\"},\n  \"answer\": {}\n}"
+}

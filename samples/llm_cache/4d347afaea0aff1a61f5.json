@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT period_frame FROM edgar.revenue_facts WHERE period_frame IS NULL OR period_frame NOT LIKE 'CY%' LIMIT 5\",\n  \"purpose\": \"Check for NULL or malformed period_frame values that would violate the semantic layer\u2019s NOT NULL / format rule.\",\n  \"tests\": [\"H-87e69e\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"Checked company table DQ (E-70e0af) and revenue_fact DQ (E-98ed96); IBM sic_code missing (E-826451).\",\n    \"REMAINING\": \"Test H-87e69e (period_frame), H-f80ecf (duplicate revenue facts), and finalize verdicts for all hypotheses.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"Last observation: IBM's sic_code not found in reference sic_codes_table.\"\n  },\n  \"answer\": {}\n}"
+}

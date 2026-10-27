@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SHOW DQ ALL INVALID TABLE lightning.metastore.explainwhy.explainwhy_usl.company\",\n  \"purpose\": \"Identify rows in the company table that violate semantic layer DQ rules (e.g., PK/FK, data type mismatches).\",\n  \"tests\": [\"H-963b69\", \"H-b0874d\"],\n  \"hypothesis_updates\": [],\n  \"carryover\": {\n    \"COMPLETED\": \"\",\n    \"REMAINING\": \"Check DQ for revenue_fact and sic_code tables; evaluate hypotheses.\",\n    \"DECISIONS\": \"\",\n    \"CONTEXT\": \"\"\n  }\n}"
+}

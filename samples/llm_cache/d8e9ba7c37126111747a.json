@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"summary\": \"Apple Inc. breaks the data\u2011quality rule because it has duplicate revenue facts for the concept RevenueFromContractWithCustomerExcludingAssessedTax (dup_count values of 2, 2, 2, 4, and 2). IBM breaks the rule because its reported SIC code 3570 is not found in the sic_codes_table. All other checks show no violations (zero revenue_fact rows reference a missing CIK and there are no negative values for that revenue concept).\"\n}"
+}

@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\n  \"marker\": \"NEEDS_TOOL\",\n  \"sql\": \"SELECT sic_code FROM company_dns.sic_codes_table WHERE sic_code = '3570'\",\n  \"purpose\": \"Check if IBM's sic_code exists in the reference sic_codes_table\",\n  \"tests\": [\"H-963b69\", \"H-87e69e\", \"H-f80ecf\", \"H-b0874d\"]\n}"
+}

@@ -1,0 +1,4 @@
+{
+ "model": "nvidia/nemotron-3-super-120b-a12b",
+ "content": "{\"summary\": \"IBM drops out because its SIC code '3570' in edgar.company_profiles does not exist in the company_dns.sic_codes_table, so the join cannot match that record. Since no other company uses '3570', the absence likely reflects that this code is historic or retired, causing IBM to be excluded from the joined result.\"}"
+}

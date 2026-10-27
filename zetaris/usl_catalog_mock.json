@@ -1,0 +1,25 @@
+{
+  "_note": "MOCK of a proposed Zetaris endpoint (see ZETARIS.md 2c). Not a real Zetaris response.",
+  "usl": "explainwhy_usl",
+  "namespace": "lightning.metastore.explainwhy",
+  "description": "ExplainWhy semantic layer - SEC XBRL revenue facts, SEC company profiles and the company_dns SIC hierarchy in one FK-linked model.",
+  "tables": [
+    {"name": "sic_code", "description": "SIC hierarchy reference (company_dns).",
+     "columns": [{"name": "sic_code", "type": "varchar(4)"}, {"name": "description", "type": "varchar(200)"},
+                 {"name": "division", "type": "varchar(1)"}, {"name": "major_group", "type": "varchar(2)"}],
+     "primary_key": ["sic_code"], "foreign_keys": [], "row_count": 1005},
+    {"name": "company", "description": "One row per company - CIK, name, SIC code as reported by EDGAR.",
+     "columns": [{"name": "cik", "type": "varchar(10)"}, {"name": "entity_name", "type": "varchar(200)"},
+                 {"name": "sic", "type": "varchar(4)"}, {"name": "sic_description_edgar", "type": "varchar(200)"}],
+     "primary_key": ["cik"], "foreign_keys": [{"column": "sic", "references": "sic_code.sic_code"}], "row_count": 3,
+     "dq": {"last_run": "2026-10-27T00:00:00Z",
+            "rules": [{"id": "pk_company_cik", "total": 3, "valid": 3, "invalid": 0},
+                      {"id": "fk_company_sic", "total": 3, "valid": 2, "invalid": 1,
+                       "invalid_keys": [{"cik": "51143", "sic": "3570"}]}]}},
+    {"name": "revenue_fact", "description": "One row per reported revenue value.",
+     "columns": [{"name": "fact_id", "type": "varchar(200)"}, {"name": "cik", "type": "varchar(10)"},
+                 {"name": "concept", "type": "varchar(100)"}, {"name": "value_usd", "type": "bigint"},
+                 {"name": "fiscal_year", "type": "int"}, {"name": "fiscal_period", "type": "varchar(4)"}],
+     "primary_key": ["fact_id"], "foreign_keys": [{"column": "cik", "references": "company.cik"}], "row_count": 698}
+  ]
+}
